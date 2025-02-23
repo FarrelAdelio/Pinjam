@@ -5,5 +5,5 @@ base = "/"
 
 [[redirects]]
 from = "/*"
-to = "src/login"
+to = "src/index.html"
 status = 200
