@@ -1,0 +1,9 @@
+[build]
+command = "npm run dev"
+publish = "/src"
+base = "/"
+
+[[redirects]]
+from = "/*"
+to = "src/login/index.html"
+status = 200
