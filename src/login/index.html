@@ -7,42 +7,42 @@
     <title>Login Page | Pinjam</title>
     <link rel="stylesheet" href="../output.css">
     <style>
-        .conn {
-            background-image: url(../assets/indonesia-landscape-digital-art.jpg);
-            background-position: center;
-            background-size: cover;
-        }
     </style>
 </head>
 
-<body>
-    <div class="container conn absolute min-h-screen w-full">
-        <!-- BG -->
-
-
+<body class="bg-slate-200 p-7 md:p-0">
+    <div
+        class="container w-fit flex justify-between relative my-auto md:top-28 m-auto bg-white rounded-2xl flex-col md:flex-row">
         <!-- MAIN -->
-        <div class="font-poppins m-auto w-fit relative top-36 text-primary2 bg-primary2 p-8 bg-opacity-35 rounded-xl">
-            <div class="w-72 m-auto">
-                <img src="../assets/logo-putih.png" alt="">
+        <div class="flex w-fit p-7 overflow-hidden">
+            <img src="../assets/indonesia-landscape-digital-art.jpg" alt="" class="w-imageLogin h-40 md:h-auto rounded-2xl">
+        </div>
+
+        <div class="font-poppins w-fit text-primary2 m-auto md:m-0 p-5 md:py-10 md:pr-10">
+            <div class="w-40 m-auto overflow-hidden">
+                <img src="../assets/logo.png" alt="" class="w-full">
             </div>
 
-            <form class="flex flex-col gap-3 mt-8 w-96 tracking-wide ">
+            <form class="flex flex-col md:w-80 gap-3 mt-8 tracking-wide ">
                 <div class="flex flex-col gap-1">
-                    <p class="font-semibold relative text-white">NIK</p>
-                    <input type="text" placeholder="NIK" class="border-2 px-2 py-1 w-full rounded-md text-sm">
+                    <p class="font-semibold relative">NIK</p>
+                    <input type="text" placeholder="NIK" class="border-2 border-slate-200 px-2 py-1 w-full rounded-md text-sm bg-slate-100">
                 </div>
                 <div class="flex flex-col gap-1">
-                    <p class="font-semibold text-white">Kata Sandi</p>
-                    <input type="password" placeholder="Kata Sandi" class="border-2 px-2 py-1 w-full rounded-md text-sm">
+                    <p class="font-semibold">Kata Sandi</p>
+                    <input type="password" placeholder="Kata Sandi"
+                    class="border-2 border-slate-200 px-2 py-1 w-full rounded-md text-sm bg-slate-100">
                 </div>
+                <a href="#" class="text-blue-700 text-sm font-semibold text-right">Lupa kata sandi?</a>
 
-                <button class="bg-primary1 mt-6 rounded-md font-bold p-2 text-primary2">Masuk</button>
+                <button class="bg-primary1 mt-4 rounded-md font-bold p-2 text-primary2">Masuk</button>
 
-                <p class="text-slate-50 text-center text-sm mt-5">Lupa kata sandi anda? hubungi kami
-                <div class="text-center text-white font-semibold tracking-wide">@politekniknegeribatam</div>
+                <p class="text-slate-700 text-center text-sm mt-3">Ada kendala dalam proses login? hubungi kami
+                    <b>@politekniknegeribatam</b>
                 </p>
             </form>
         </div>
+
     </div>
 
 

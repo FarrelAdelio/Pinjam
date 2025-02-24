@@ -10,6 +10,9 @@
       fontFamily: {
         poppins: "Poppins"
       },
+      width: {
+        imageLogin: "360px"
+      }
     },
   },
   plugins: [],
