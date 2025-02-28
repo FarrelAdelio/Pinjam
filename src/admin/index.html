@@ -6,56 +6,177 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Admin</title>
     <link rel="stylesheet" href="../output.css">
-    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </head>
 
 <body>
     <div class="flex bg-slate-200 w-screen">
         <!-- NAVBAR -->
-        <div class="flex flex-col relative gap-10 bg-primary2 w-fit h-screen px-7  py-2 text-white">
-            <div class="flex relative left-1 w-36 mt-3">
-                <img src="../assets/logo-putih.png" alt="">
+        <div class="flex flex-col relative gap-10 bg-white w-fit h-screen pl-7 py-2 text-white">
+            <div class="flex relative w-36 top-8">
+                <img src="../assets/logo.png" alt="">
             </div>
 
-            <ul class="relative left-3 flex flex-col gap-8 text-white font-semibold mt-10 text-sm">
-                <li class="w-max pr-24  "><a href="#" class="w-fit">Dashboard</a></li>
-                <li class="w-max pr-24  "><a href="#" class="w-fit">Pinjam Sekarang</a></li>
-                <li class="w-max pr-24  "><a href="#" class="w-fit">Call Service</a></li>
-                <li class="w-max pr-24  "><a href="#" class="w-fit">Tambah Kendaraan</a></li>
-                <li class="w-max pr-24  "><a href="#" class="w-fit">Tambah User</a></li>
-                <li class="w-max pr-24  "><a href="#" class="w-fit">Log out</a></li>
+            <ul class="relative ml-1 flex flex-col gap-3 text-white font-semibold mt-10 text-sm">
+                <li class="w-full pr-10 p-2 rounded-l-full hover:bg-slate-200 text-primary2"><a href="#"
+                        class="w-full whitespace-nowrap flex items-center"><ion-icon name="apps"
+                            class="text-2xl relative pr-2"></ion-icon>Dashboard</a></li>
+                <li class="w-full pr-10 p-2 rounded-l-full hover:bg-slate-200 text-primary2"><a href="#"
+                        class="w-full whitespace-nowrap flex items-center"><ion-icon name="calendar"
+                            class="text-2xl relative pr-2"></ion-icon>Pinjam Kendaraan</a></li>
+                <li class="w-full pr-10 p-2 rounded-l-full hover:bg-slate-200 text-primary2"><a href="#"
+                        class="w-full whitespace-nowrap flex items-center"><ion-icon name="car"
+                            class="text-2xl relative pr-2"></ion-icon>Tambah Kendaraan</a></li>
+                <li class="w-full pr-10 p-2 rounded-l-full hover:bg-slate-200 text-primary2"><a href="#"
+                        class="w-full whitespace-nowrap flex items-center"><ion-icon name="person-add"
+                            class="text-2xl relative pr-2"></ion-icon>Tambah User</a></li>
+                <li class="w-full pr-10 p-2 rounded-l-full hover:bg-slate-200 text-primary2"><a href="#"
+                        class="w-full whitespace-nowrap flex items-center"><ion-icon name="alert"
+                            class="text-2xl relative pr-2"></ion-icon>Call Service</a></li>
+                <li class="w-full pr-10 p-2 rounded-l-full hover:bg-slate-200 text-primary2"><a href="#"
+                        class="w-full whitespace-nowrap flex items-center"><ion-icon name="log-out"
+                            class="text-2xl relative pr-2"></ion-icon>Keluar</a></li>
             </ul>
         </div>
 
         <!-- MAIN -->
-        <div class="flex w-full flex-col mt-10 text-primary2">
-            <div class="flex justify-between px-5">
-                <div class="flex text-white h-fit w-80 p-10 rounded-md bg-primary2">
+        <div class="flex w-full flex-col mt-10 px-5 text-primary2">
+            <div class="flex justify-between">
+                <div class="flex justify-between text-primary2 h-fit w-80 p-10 rounded-md bg-white">
                     <div class="flex flex-col gap-2">
                         <h1 class="font-bold text-3xl">10</h1>
-                        <p class="text-slate-200">Jumlah Kendaraan</p>
+                        <p class="text-primary2">Jumlah Kendaraan</p>
                     </div>
                     <!-- LOGO -->
-                    <p class="text-center m-auto"><ion-icon name="car" class="text-white text-2xl"></ion-icon></p>
+                    <p class="text-center flex items-center w-fit"><ion-icon name="podium" class="text-6xl text-primary2"></ion-icon></p>
                 </div>
 
-                <div class="flex text-white h-fit w-80 p-10 rounded-md bg-primary2">
+                <div class="flex text-primary2 justify-between h-fit w-80 p-10 rounded-md bg-white">
                     <div class="flex flex-col gap-2">
                         <h1 class="font-bold text-3xl">7</h1>
-                        <p class="text-slate-200">Kendaraan Tersedia</p>
+                        <p class="text-primary2">Kendaraan Tersedia</p>
                     </div>
                     <!-- LOGO -->
-                    <p class="text-center m-auto">logo</p>
+                    <p class="text-center flex items-center w-fit"><ion-icon name="cog" class="text-6xl text-primary2"></ion-icon></p>
                 </div>
 
-                <div class="flex text-white h-fit w-80 p-10 rounded-md bg-primary2">
+                <div class="flex justify-between text-primary2 h-fit w-80 p-10 rounded-md bg-white">
                     <div class="flex flex-col gap-2">
                         <h1 class="font-bold text-3xl">3</h1>
-                        <p class="text-slate-200">Kendaraan Dipinjamkan</p>
+                        <p class="text-primary2">Kendaraan Dipinjamkan</p>
                     </div>
                     <!-- LOGO -->
-                    <p class="text-center m-auto">logo</p>
+                    <p class="text-center flex items-center w-fit"><ion-icon name="map" class="text-6xl text-primary2"></ion-icon></p>
                 </div>
+            </div>
+
+            <div class="flex flex-col mt-10">
+
+
+                <div class="relative overflow-x-auto text-primary2">
+                    <h1 class="mb-3 font-poppins font-semibold text-xl">Timeline</h1>
+
+                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                        <table class="w-full text-sm text-left rtl:text-right text-primary2">
+                            <thead class="text-xs text-gray-700 uppercase bg-white">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">
+                                        Plat Nomor
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Merk/Seri
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        kategori
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Peminjam
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        STATUS
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Action
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium whitespace-nowrap text-primary2">
+                                        BP1234
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        Avanza
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        Mobil
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        Abdul
+                                    <td class="px-6 py-4">
+                                        <p class="bg-yellow-100 rounded-full w-fit px-1 font-semibold">Digunakan</p>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <a href="#"
+                                            class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:underline">Edit</a>
+                                        <a href="#"
+                                            class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:underline">Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium whitespace-nowrap text-primary2">
+                                        BP1234
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        Avanza
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        Mobil
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        Abdul
+                                    <td class="px-6 py-4">
+                                        <p class="bg-green-400 rounded-full w-fit px-1 font-semibold">Availible</p>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <a href="#"
+                                            class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:underline">Edit</a>
+                                        <a href="#"
+                                            class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:underline">Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium whitespace-nowrap text-primary2">
+                                        BP1234
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        Avanza
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        Mobil
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        Abdul
+                                    <td class="px-6 py-4">
+                                        <p class="bg-red-300 rounded-full w-fit px-1 font-semibold">Perbaikan</p>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <a href="#"
+                                            class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:underline">Edit</a>
+                                        <a href="#"
+                                            class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:underline">Hapus</a>
+                                    </td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
