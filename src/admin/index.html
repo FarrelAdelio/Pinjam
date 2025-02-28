@@ -10,15 +10,15 @@
 </head>
 
 <body>
-    <div class="flex bg-slate-200 w-screen">
-        <!-- NAVBAR -->
-        <div class="flex flex-col relative gap-10 bg-white w-fit h-screen pl-7 py-2 text-white">
+    <div class="flex bg-slate-200">
+        <!-- Sidebar -->
+        <div class="flex flex-col sticky top-0 bottom-0 left-0 gap-10 bg-white w-fit h-screen pl-7 py-2 text-white">
             <div class="flex relative w-36 top-8">
                 <img src="../assets/logo.png" alt="">
             </div>
 
             <ul class="relative ml-1 flex flex-col gap-3 text-white font-semibold mt-10 text-sm">
-                <li class="w-full pr-10 p-2 rounded-l-full hover:bg-slate-200 text-primary2"><a href="#"
+                <li class="w-full pr-10 p-2 rounded-l-full hover:bg-slate-200 text-primary2"><a href="index.html"
                         class="w-full whitespace-nowrap flex items-center"><ion-icon name="apps"
                             class="text-2xl relative pr-2"></ion-icon>Dashboard</a></li>
                 <li class="w-full pr-10 p-2 rounded-l-full hover:bg-slate-200 text-primary2"><a href="#"
@@ -39,42 +39,100 @@
             </ul>
         </div>
 
+
         <!-- MAIN -->
-        <div class="flex w-full flex-col mt-10 px-5 text-primary2">
-            <div class="flex justify-between">
-                <div class="flex justify-between text-primary2 h-fit w-80 p-10 rounded-md bg-white">
+        <div class="flex w-full flex-col mt-5 px-5 text-primary2">
+                    <!-- Navbar -->
+         <div class="flex justify-between">
+            <h1 class="font-poppins font-bold text-2xl flex items-center">Analiytics</h1>
+
+            <a href="#" class="flex w-fit gap-3">
+                <div class="flex flex-col text-sm">
+                    <h1>Hey, <b>Farrel</b>.</h1>
+                    <p>Admin</p>
+                </div>
+
+                <div class="flex">
+                    <div class="w-9 h-9 overflow-hidden rounded-full my-auto bg-center bg-cover shadow-sm" style="background-image: url(../assets/user\ \(2\).jpg);"></div>
+                </div>
+            </a>
+         </div>
+
+
+            <div class="flex justify-between mt-5">
+                <div class="flex justify-between text-primary2 h-fit w-80 p-10 rounded-md bg-white shadow-md hover:bg-primary2 hover:text-white">
                     <div class="flex flex-col gap-2">
                         <h1 class="font-bold text-3xl">10</h1>
-                        <p class="text-primary2">Jumlah Kendaraan</p>
+                        <p class="">Jumlah Kendaraan</p>
                     </div>
                     <!-- LOGO -->
-                    <p class="text-center flex items-center w-fit"><ion-icon name="podium" class="text-6xl text-primary2"></ion-icon></p>
+                    <p class="text-center flex items-center w-fit"><ion-icon name="podium"
+                            class="text-6xl"></ion-icon></p>
                 </div>
 
-                <div class="flex text-primary2 justify-between h-fit w-80 p-10 rounded-md bg-white">
+                <div class="flex text-primary2 justify-between h-fit w-80 p-10 rounded-md bg-white shadow-md hover:bg-primary2 hover:text-white">
                     <div class="flex flex-col gap-2">
                         <h1 class="font-bold text-3xl">7</h1>
-                        <p class="text-primary2">Kendaraan Tersedia</p>
+                        <p class="">Kendaraan Tersedia</p>
                     </div>
                     <!-- LOGO -->
-                    <p class="text-center flex items-center w-fit"><ion-icon name="cog" class="text-6xl text-primary2"></ion-icon></p>
+                    <p class="text-center flex items-center w-fit"><ion-icon name="cog"
+                            class="text-6xl"></ion-icon></p>
                 </div>
 
-                <div class="flex justify-between text-primary2 h-fit w-80 p-10 rounded-md bg-white">
+                <div class="flex justify-between text-primary2 h-fit w-80 p-10 rounded-md bg-white shadow-md hover:bg-primary2 hover:text-white">
                     <div class="flex flex-col gap-2">
                         <h1 class="font-bold text-3xl">3</h1>
-                        <p class="text-primary2">Kendaraan Dipinjamkan</p>
+                        <p class="">Kendaraan Dipinjamkan</p>
                     </div>
                     <!-- LOGO -->
-                    <p class="text-center flex items-center w-fit"><ion-icon name="map" class="text-6xl text-primary2"></ion-icon></p>
+                    <p class="text-center flex items-center w-fit"><ion-icon name="map"
+                            class="text-6xl"></ion-icon></p>
+                </div>
+            </div>
+
+
+
+            <!-- USER -->
+            <div class="flex mt-10 flex-col">
+                <h1 class="font-semibold font-poppins text-xl">Users</h1>
+
+                <div class="flex justify-between mt-5 bg-white shadow-md px-20 py-5 rounded-xl">
+                    <div class="flex flex-col gap-3 w-fit text-center hover:bottom-2 duration-1000">
+                        <div class="background w-24 h-24 bg-center bg-cover rounded-full m-auto shadow-sm" style=" 
+                            background-image: url(../assets/user\ \(2\).jpg);"></div>
+                        <div class="flex flex-col">
+                            <h1 class="font-bold tracking-wide text-center font-poppins">Farrel</h1>
+                            <p class="text-center text-slate-400 font-poppins">Dept. Informatika</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-3 w-fit text-center hover:bottom-2 transition-all">
+                        <div class="background w-24 h-24 bg-center bg-cover rounded-full m-auto shadow-sm" style=" 
+                            background-image: url(../assets/user\ \(3\).jpg);"></div>
+                        <div class="flex flex-col">
+                            <h1 class="font-bold tracking-wide text-center font-poppins">Adelio</h1>
+                            <p class="text-center text-slate-400 font-poppins">Dept. Informatika</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-3 w-fit text-center hover:bottom-2 transition-all">
+                        <div class="background w-24 h-24 bg-center bg-cover rounded-full m-auto shadow-sm" style=" 
+                            background-image: url(../assets/user\ \(4\).jpg);"></div>
+                        <div class="flex flex-col">
+                            <h1 class="font-bold tracking-wide text-center font-poppins">Asman</h1>
+                            <p class="text-center text-slate-400 font-poppins">Dept. Informatika</p>
+                        </div>
+                    </div>
+                    <a href="#" class="flex flex-col gap-3 w-fit text-center my-auto relative hover:bottom-2 transition-all">
+                        <ion-icon name="add" class="text-7xl font-bold rounded-full p-2 hover:bg-slate-100"></ion-icon>
+                        <p class="font-bold font-poppins tracking-wide text-center">More..</p>
+                    </a>
                 </div>
             </div>
 
             <div class="flex flex-col mt-10">
-
-
+                <!-- TIMELINE -->
                 <div class="relative overflow-x-auto text-primary2">
-                    <h1 class="mb-3 font-poppins font-semibold text-xl">Timeline</h1>
+                    <h1 class="mb-5 font-poppins font-semibold text-xl">Timeline</h1>
 
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                         <table class="w-full text-sm text-left rtl:text-right text-primary2">
@@ -102,8 +160,7 @@
                             </thead>
                             <tbody>
                                 <tr class="bg-white border-b border-gray-200">
-                                    <th scope="row"
-                                        class="px-6 py-4 font-medium whitespace-nowrap text-primary2">
+                                    <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap text-primary2">
                                         BP1234
                                     </th>
                                     <td class="px-6 py-4">
@@ -119,14 +176,13 @@
                                     </td>
                                     <td class="px-6 py-4">
                                         <a href="#"
-                                            class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:underline">Edit</a>
+                                            class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
                                         <a href="#"
-                                            class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:underline">Hapus</a>
+                                            class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
                                     </td>
                                 </tr>
                                 <tr class="bg-white border-b border-gray-200">
-                                    <th scope="row"
-                                        class="px-6 py-4 font-medium whitespace-nowrap text-primary2">
+                                    <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap text-primary2">
                                         BP1234
                                     </th>
                                     <td class="px-6 py-4">
@@ -142,14 +198,13 @@
                                     </td>
                                     <td class="px-6 py-4">
                                         <a href="#"
-                                            class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:underline">Edit</a>
+                                            class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
                                         <a href="#"
-                                            class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:underline">Hapus</a>
+                                            class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
                                     </td>
                                 </tr>
                                 <tr class="bg-white border-b border-gray-200">
-                                    <th scope="row"
-                                        class="px-6 py-4 font-medium whitespace-nowrap text-primary2">
+                                    <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap text-primary2">
                                         BP1234
                                     </th>
                                     <td class="px-6 py-4">
@@ -165,12 +220,12 @@
                                     </td>
                                     <td class="px-6 py-4">
                                         <a href="#"
-                                            class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:underline">Edit</a>
+                                            class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
                                         <a href="#"
-                                            class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:underline">Hapus</a>
+                                            class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
                                     </td>
                                 </tr>
-                               
+
                             </tbody>
                         </table>
                     </div>
