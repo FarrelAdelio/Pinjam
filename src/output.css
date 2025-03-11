@@ -627,16 +627,25 @@ video {
   top: 2rem;
 }
 
-.z-50{
-  z-index: 50;
-}
-
 .z-10{
   z-index: 10;
 }
 
+.z-20{
+  z-index: 20;
+}
+
+.z-50{
+  z-index: 50;
+}
+
 .m-auto{
   margin: auto;
+}
+
+.mx-2{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .my-5{
@@ -662,24 +671,12 @@ video {
   margin-bottom: 0.5rem;
 }
 
-.mb-3{
-  margin-bottom: 0.75rem;
-}
-
 .mb-4{
   margin-bottom: 1rem;
 }
 
 .mb-5{
   margin-bottom: 1.25rem;
-}
-
-.ml-2{
-  margin-left: 0.5rem;
-}
-
-.ml-3{
-  margin-left: 0.75rem;
 }
 
 .ml-auto{
@@ -718,8 +715,8 @@ video {
   margin-top: 2rem;
 }
 
-.mr-0{
-  margin-right: 0px;
+.mt-auto{
+  margin-top: auto;
 }
 
 .block{
@@ -907,10 +904,6 @@ video {
   overflow-y: auto;
 }
 
-.whitespace-nowrap{
-  white-space: nowrap;
-}
-
 .rounded-2xl{
   border-radius: 1rem;
 }
@@ -1028,12 +1021,12 @@ video {
   background-color: rgb(253 224 71 / var(--tw-bg-opacity, 1));
 }
 
-.bg-opacity-50{
-  --tw-bg-opacity: 0.5;
-}
-
 .bg-opacity-0{
   --tw-bg-opacity: 0;
+}
+
+.bg-opacity-50{
+  --tw-bg-opacity: 0.5;
 }
 
 .bg-cover{
@@ -1058,6 +1051,10 @@ video {
 
 .p-8{
   padding: 2rem;
+}
+
+.p-1{
+  padding: 0.25rem;
 }
 
 .px-2{
@@ -1128,6 +1125,11 @@ video {
 .text-3xl{
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-base{
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .text-lg{
@@ -1214,6 +1216,11 @@ video {
   color: rgb(148 163 184 / var(--tw-text-opacity, 1));
 }
 
+.text-slate-500{
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity, 1));
+}
+
 .text-slate-700{
   --tw-text-opacity: 1;
   color: rgb(51 65 85 / var(--tw-text-opacity, 1));
@@ -1224,14 +1231,9 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-.text-slate-300{
+.text-green-500{
   --tw-text-opacity: 1;
-  color: rgb(203 213 225 / var(--tw-text-opacity, 1));
-}
-
-.text-slate-500{
-  --tw-text-opacity: 1;
-  color: rgb(100 116 139 / var(--tw-text-opacity, 1));
+  color: rgb(34 197 94 / var(--tw-text-opacity, 1));
 }
 
 .underline{
@@ -1262,6 +1264,14 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.transition{
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .transition-all{
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1270,14 +1280,6 @@ video {
 
 .transition-transform{
   transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.transition{
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1332,6 +1334,14 @@ video {
   opacity: 0.8;
 }
 
+.hover\:opacity-15:hover{
+  opacity: 0.15;
+}
+
+.hover\:opacity-85:hover{
+  opacity: 0.85;
+}
+
 .focus\:outline-none:focus{
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -1352,25 +1362,7 @@ video {
   --tw-bg-opacity: 0.5;
 }
 
-@media not all and (min-width: 1024px){
-  .max-lg\:w-6{
-    width: 1.5rem;
-  }
-}
-
 @media (min-width: 640px){
-  .sm\:mb-3{
-    margin-bottom: 0.75rem;
-  }
-
-  .sm\:ml-3{
-    margin-left: 0.75rem;
-  }
-
-  .sm\:flex{
-    display: flex;
-  }
-
   .sm\:w-1\/2{
     width: 50%;
   }
@@ -1383,8 +1375,8 @@ video {
     flex-direction: row;
   }
 
-  .sm\:gap-4{
-    gap: 1rem;
+  .sm\:justify-between{
+    justify-content: space-between;
   }
 
   .sm\:text-2xl{
@@ -1415,24 +1407,12 @@ video {
     margin-left: 16rem;
   }
 
-  .md\:ml-3{
-    margin-left: 0.75rem;
-  }
-
-  .md\:mb-3{
-    margin-bottom: 0.75rem;
-  }
-
-  .md\:mt-0{
-    margin-top: 0px;
-  }
-
-  .md\:mr-0{
-    margin-right: 0px;
-  }
-
   .md\:hidden{
     display: none;
+  }
+
+  .md\:w-24{
+    width: 6rem;
   }
 
   .md\:w-80{
@@ -1496,8 +1476,12 @@ video {
     width: 5rem;
   }
 
-  .xl\:w-96{
-    width: 24rem;
+  .xl\:w-32{
+    width: 8rem;
+  }
+
+  .xl\:w-80{
+    width: 20rem;
   }
 
   .xl\:p-10{
