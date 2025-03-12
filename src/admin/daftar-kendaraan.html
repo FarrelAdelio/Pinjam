@@ -32,10 +32,12 @@
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="daftar-permohonan.html"
                         class="flex items-center"><ion-icon name="megaphone" class="text-2xl pr-2"></ion-icon>Daftar
                         Permohonan</a></li>
-                <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="#" class="flex items-center"><ion-icon
-                            name="person-add" class="text-2xl pr-2"></ion-icon>Permohonan Verifikasi</a></li>
-                <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="#" class="flex items-center"><ion-icon
-                            name="alert" class="text-2xl pr-2"></ion-icon>Call Service</a></li>
+                <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="users.html"
+                        class="flex items-center"><ion-icon name="person"
+                            class="text-2xl pr-2"></ion-icon>Users</a></li>
+                <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="permohonan-verifikasi.html"
+                        class="flex items-center"><ion-icon name="person-add"
+                            class="text-2xl pr-2"></ion-icon>Permohonan Verifikasi</a></li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="#" class="flex items-center"><ion-icon
                             name="log-out" class="text-2xl pr-2"></ion-icon>Keluar</a></li>
             </ul>
@@ -177,15 +179,41 @@
                     Negeri Batam.
                 </p>
 
-                <div class="flex gap-1">
+                <div class="flex gap-1 mt-10">
                     <button id="openPopupPinjam" class="bg-blue-500 text-white w-fit h-fit px-2 py-2 rounded-md">Tambah
                         Kendaraan</button>
 
+                    <div class="flex mb-2 items-center ml-auto w-fit">
+                        <input type="text" id="searchInput" placeholder="Cari nama kendaraan..."
+                            class="p-2 border rounded-md mr-2" onkeyup="searchByCarName()"> <label for="sort"
+                            class="mr-2 font-semibold">Sort by</label>
+                        <select name="sort" id="sort" class="p-2 border rounded-md cursor-pointer">
+                            <option value="terbaru">Terbaru</option>
+                            <option value="terlama">Terlama</option>
+                        </select>
+                    </div>
                     <!-- Popup (Modal) -->
                     <div id="popupPinjam"
                         class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
                         <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full max-h-[90vh] overflow-y-auto">
                             <h2 class="text-xl font-semibold mb-4">Tambah Kendaraan</h2>
+
+
+                            <script>
+                                document.getElementById('searchInput').addEventListener('input', function () {
+                                    const query = this.value.toLowerCase();
+                                    const cards = document.querySelectorAll('#cardContainer .card');
+
+                                    cards.forEach(card => {
+                                        const button = card.querySelector('button.openModal');
+                                        if (button && button.textContent.toLowerCase().includes(query)) {
+                                            card.style.display = '';
+                                        } else {
+                                            card.style.display = 'none';
+                                        }
+                                    });
+                                });
+                            </script>
 
                             <form id="popupFormPinjam">
                                 <div class="mb-4">
@@ -230,9 +258,10 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-5 font-semibold">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-5 font-semibold" id="cardContainer">
+
                     <!-- Card 1 -->
-                    <div class="h-64 rounded-xl flex flex-col shadow-sm justify-between relative group overflow-hidden"
+                    <div class="card h-64 rounded-xl flex flex-col shadow-sm justify-between relative group overflow-hidden"
                         style="background-image: url(../assets/avanza\ \(4\).jpg); background-size: cover; background-position: center;">
                         <div
                             class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300">
@@ -240,7 +269,7 @@
                         <div class="flex justify-between mt-auto mb-2 mx-2 gap-1">
                             <button
                                 class="bg-white w-fit px-4 py-2 rounded-md font-semibold shadow relative z-10 openModal"
-                                data-modal="modal1">Detail Kendaraan</button>
+                                data-modal="modal1">Avanza 123</button>
 
                             <select name="depart" id="sort"
                                 class="p-2 border rounded-md md:w-24 xl:w-32 z-20 focus:ring-2 focus:ring-blue-400">
@@ -252,7 +281,7 @@
                     </div>
 
                     <!-- Card 2 -->
-                    <div class="h-64 rounded-xl flex flex-col shadow-sm justify-between relative group overflow-hidden"
+                    <div class=" card h-64 rounded-xl flex flex-col shadow-sm justify-between relative group overflow-hidden"
                         style="background-image: url(../assets/avanza\ \(5\).jpg); background-size: cover; background-position: center;">
                         <div
                             class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300">
@@ -260,7 +289,7 @@
                         <div class="flex justify-between mt-auto mb-2 mx-2 gap-1">
                             <button
                                 class="bg-white w-fit px-4 py-2 rounded-md font-semibold shadow relative z-10 openModal"
-                                data-modal="modal1">Detail Kendaraan</button>
+                                data-modal="modal2">Avanza 2</button>
 
                             <select name="depart" id="sort"
                                 class="p-2 border rounded-md md:w-24 xl:w-32 z-20 focus:ring-2 focus:ring-blue-400">
@@ -271,7 +300,7 @@
                     </div>
 
                     <!-- Card 3 -->
-                    <div class="h-64 rounded-xl flex flex-col shadow-sm justify-between relative group overflow-hidden"
+                    <div class="card h-64 rounded-xl flex flex-col shadow-sm justify-between relative group overflow-hidden"
                         style="background-image: url(../assets/avanza\ \(6\).jpg); background-size: cover; background-position: center;">
                         <div
                             class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300">
@@ -279,7 +308,7 @@
                         <div class="flex justify-between mt-auto mb-2 mx-2 gap-1">
                             <button
                                 class="bg-white w-fit px-4 py-2 rounded-md font-semibold shadow relative z-10 openModal"
-                                data-modal="modal1">Detail Kendaraan</button>
+                                data-modal="modal3">Avanza 3</button>
 
                             <select name="depart" id="sort"
                                 class="p-2 border rounded-md md:w-24 xl:w-32 z-20 focus:ring-2 focus:ring-blue-400">
@@ -290,7 +319,7 @@
                     </div>
 
                     <!-- Card 4 -->
-                    <div class="h-64 rounded-xl flex flex-col shadow-sm justify-between relative group overflow-hidden"
+                    <div class="card h-64 rounded-xl flex flex-col shadow-sm justify-between relative group overflow-hidden"
                         style="background-image: url(../assets/avanza\ \(3\).jpg); background-size: cover; background-position: center;">
                         <div
                             class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300">
@@ -298,7 +327,7 @@
                         <div class="flex justify-between mt-auto mb-2 mx-2 gap-1">
                             <button
                                 class="bg-white w-fit px-4 py-2 rounded-md font-semibold shadow relative z-10 openModal"
-                                data-modal="modal1">Detail Kendaraan</button>
+                                data-modal="modal4">Avanza 4</button>
 
                             <select name="depart" id="sort"
                                 class="p-2 border rounded-md md:w-24 xl:w-32 z-20 focus:ring-2 focus:ring-blue-400">
@@ -309,7 +338,7 @@
                     </div>
 
                     <!-- Card 5 -->
-                    <div class="h-64 rounded-xl flex flex-col shadow-sm justify-between relative group overflow-hidden"
+                    <div class="card h-64 rounded-xl flex flex-col shadow-sm justify-between relative group overflow-hidden"
                         style="background-image: url(../assets/honda\ \(1\).jpg); background-size: cover; background-position: center;">
                         <div
                             class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300">
@@ -317,7 +346,7 @@
                         <div class="flex justify-between mt-auto mb-2 mx-2 gap-1">
                             <button
                                 class="bg-white w-fit px-4 py-2 rounded-md font-semibold shadow relative z-10 openModal"
-                                data-modal="modal1">Detail Kendaraan</button>
+                                data-modal="modal5">Avanza 5</button>
 
                             <select name="depart" id="sort"
                                 class="p-2 border rounded-md md:w-24 xl:w-32 z-20 focus:ring-2 focus:ring-blue-400">
@@ -328,7 +357,7 @@
                     </div>
 
                     <!-- Card 6 -->
-                    <div class="h-64 rounded-xl flex flex-col shadow-sm justify-between relative group overflow-hidden"
+                    <div class="card h-64 rounded-xl flex flex-col shadow-sm justify-between relative group overflow-hidden"
                         style="background-image: url(../assets/honda\ \(2\).jpg); background-size: cover; background-position: center;">
                         <div
                             class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300">
@@ -336,7 +365,7 @@
                         <div class="flex justify-between mt-auto mb-2 mx-2 gap-1">
                             <button
                                 class="bg-white w-fit px-4 py-2 rounded-md font-semibold shadow relative z-10 openModal"
-                                data-modal="modal1">Detail Kendaraan</button>
+                                data-modal="modal6">Beat 1</button>
 
                             <select name="depart" id="sort"
                                 class="p-2 border rounded-md md:w-24 xl:w-32 z-20 focus:ring-2 focus:ring-blue-400">
@@ -346,7 +375,7 @@
                         </div>
                     </div>
 
-                    <div class="h-64 rounded-xl flex flex-col shadow-sm justify-between relative group overflow-hidden"
+                    <div class=" card h-64 rounded-xl flex flex-col shadow-sm justify-between relative group overflow-hidden"
                         style="background-image: url(../assets/honda\ \(2\).jpg); background-size: cover; background-position: center;">
                         <div
                             class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300">
@@ -354,7 +383,7 @@
                         <div class="flex justify-between mt-auto mb-2 mx-2 gap-1">
                             <button
                                 class="bg-white w-fit px-4 py-2 rounded-md font-semibold shadow relative z-10 openModal"
-                                data-modal="modal1">Detail Kendaraan</button>
+                                data-modal="modal7">Beat 2</button>
 
                             <select name="depart" id="sort"
                                 class="p-2 border rounded-md md:w-24 xl:w-32 z-20 focus:ring-2 focus:ring-blue-400">
@@ -464,7 +493,7 @@
                 <div id="modal6"
                     class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                     <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg">
-                        <h2 class="text-xl font-semibold mb-4">Avanza Pro Max</h2>
+                        <h2 class="text-xl font-semibold mb-4">Beat 1</h2>
                         <ul class="normal-nums text-left">
                             <li><b>Kapasitas Penumpang</b>: 7 orang</li>
                             <li><b>Muatan Maksimal</b>: ± 500 kg (termasuk penumpang dan barang)</li>
@@ -483,7 +512,7 @@
                 <div id="modal7"
                     class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                     <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg">
-                        <h2 class="text-xl font-semibold mb-4">Avanza Pro Max</h2>
+                        <h2 class="text-xl font-semibold mb-4">Beat 2</h2>
                         <ul class="normal-nums text-left">
                             <li><b>Kapasitas Penumpang</b>: 7 orang</li>
                             <li><b>Muatan Maksimal</b>: ± 500 kg (termasuk penumpang dan barang)</li>
