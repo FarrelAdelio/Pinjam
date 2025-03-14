@@ -33,8 +33,8 @@
                         class="flex items-center"><ion-icon name="megaphone" class="text-2xl pr-2"></ion-icon>Daftar
                         Permohonan</a></li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="users.html"
-                        class="flex items-center"><ion-icon name="person"
-                            class="text-2xl pr-2"></ion-icon>Users</a></li>
+                        class="flex items-center"><ion-icon name="person" class="text-2xl pr-2"></ion-icon>Users</a>
+                </li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="permohonan-verifikasi.html"
                         class="flex items-center"><ion-icon name="person-add"
                             class="text-2xl pr-2"></ion-icon>Permohonan Verifikasi</a></li>
@@ -50,7 +50,8 @@
 
             <!-- Navbar -->
             <div class="flex justify-between">
-                <h1 class="font-poppins font-bold text-xl sm:text-2xl flex items-center">Daftar Permohonan Peminjaman</h1>
+                <h1 class="font-poppins font-bold text-xl sm:text-2xl flex items-center">Daftar Permohonan Peminjaman
+                </h1>
 
                 <button class="flex w-fit gap-3" id="openPopupProfile">
                     <div class="flex flex-col text-sm">
@@ -135,29 +136,20 @@
                                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                             </div>
 
-                            <div class="flex justify-between gap-2">
-                                <div class="mb-4 w-full">
-                                    <label for="jabatan" class="block text-sm font-medium">Jabatan</label>
-                                    <input type="text" id="jabatan" name="jabatan" required
-                                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                                        value="Pimpinan">
-                                </div>
+                            <div class="flex flex-col w-full">
+                                <label for="depart"
+                                    class="block text-sm font-medium  focus:ring-2 focus:ring-blue-400">Departemen</label>
 
-                                <div class="flex flex-col w-full">
-                                    <label for="depart"
-                                        class="block text-sm font-medium  focus:ring-2 focus:ring-blue-400">Departemen</label>
-
-                                    <select name="depart" id="sort"
-                                        class="p-2 border rounded-md w-full  focus:ring-2 focus:ring-blue-400">
-                                        <option value="poltek">Informatika</option>
-                                        <option value="saab">Mesin</option>
-                                        <option value="mercedes">Manajemen Bisnis</option>
-                                    </select>
-                                </div>
+                                <select name="depart" id="sort"
+                                    class="p-2 border rounded-md w-full  focus:ring-2 focus:ring-blue-400">
+                                    <option value="poltek">Informatika</option>
+                                    <option value="saab">Mesin</option>
+                                    <option value="mercedes">Manajemen Bisnis</option>
+                                </select>
                             </div>
 
 
-                            <div class="flex justify-end space-x-2">
+                            <div class="flex justify-end space-x-2 mt-2">
                                 <button type="button" id="closePopupProfile"
                                     class="bg-gray-300 text-black px-4 py-2 rounded-md">Cancel</button>
                                 <button type="submit"
@@ -176,70 +168,153 @@
 
                 <div class="flex mb-2 items-center ml-auto w-fit">
                     <!-- Input Pencarian -->
-                    <input type="text" id="search" placeholder="Cari..." class="p-2 border rounded-md mr-2" onkeyup="searchTable()">
-                
+                    <input type="text" id="search" placeholder="Cari..." class="p-2 border rounded-md mr-2"
+                        onkeyup="searchTable()">
+
                     <label for="sort" class="mr-2 font-semibold">Sort by</label>
                     <select name="sort" id="sort" class="p-2 border rounded-md cursor-pointer">
                         <option value="terbaru">Terbaru</option>
                         <option value="terlama">Terlama</option>
                     </select>
                 </div>
-                
+
                 <script>
                     // Fungsi Pencarian di Tabel
                     function searchTable() {
                         const input = document.getElementById('search').value.toLowerCase();
                         const rows = document.querySelectorAll('tbody tr');
-                
+
                         rows.forEach(row => {
                             const text = row.textContent.toLowerCase();
                             row.style.display = text.includes(input) ? '' : 'none';
                         });
                     }
                 </script>
-                
-                <!-- <table class="min-w-[700px] w-full text-sm text-left rtl:text-right text-primary2">
+
+                <table class="min-w-[700px] w-full text-sm text-left rtl:text-right text-primary2">
                     <thead class="text-xs text-gray-700 uppercase bg-white">
                         <tr>
-                            <th scope="col" class="px-4 py-3">Nama</th>
-                            <th scope="col" class="px-4 py-3">No Whatsapp</th>
-                            <th scope="col" class="px-4 py-3">Seri Kendaraan</th>
-                            <th scope="col" class="px-4 py-3">Tujuan Peminjaman</th>
-                            <th scope="col" class="px-4 py-3">Di Pinjamkan</th>
-                            <th scope="col" class="px-4 py-3">Estimasi di Kembalikan</th>
-                            <th scope="col" class="px-4 py-3">Aksi</th>
+                            <th scope="col" class="px-4 py-3 text-base">Users</th>
+                            <th scope="col" class="px-4 py-3"></th>
+                            <th scope="col" class="px-4 py-3"></th>
+                            <th scope="col" class="px-4 py-3"></th>
+                            <th scope="col" class="px-4 py-3"></th>
+                            <th scope="col" class="px-4 py-3"></th>
+                            <th scope="col" class="px-4 py-3"></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="bg-white border-b border-gray-200">
-                            <th scope="row" class="px-4 py-4 font-medium text-primary2">Farrel Adelio Asman</th>
-                            <td class="px-4 py-4">089686968886</td>
-                            <td class="px-4 py-4">Honda Civic 2017</td>
-                            <td class="px-4 py-4">Menjenguk mahasiswa yang sedang rawat inap</td>
-                            <td class="px-4 py-4">01/23/2025 07:40 PM</td>
-                            <td class="px-4 py-4">01/24/2025 07:40 PM</td>
-                            <td class="px-4 py-4 space-x-2 flex whitespace-nowrap">
-                                <a href="#" class="rounded-full hover:opacity-85"><ion-icon name="checkmark-circle" class="text-3xl text-green-500"></ion-icon></a>
-                                <a href="#" class="rounded-full hover:opacity-85"><ion-icon name="close-circle" class="text-3xl text-red-500"></ion-icon></a>
+                            <th scope="row" class="px-4 py-4 font-medium text-primary2"><img
+                                    src="../assets/user (1).jpg" alt="" class="rounded-full w-12 h-12"></th>
+                            <th scope="row" class="px-4 py-4 font-semibold text-primary2 whitespace-nowrap">Farrel
+                                Adelio
+                                Asman</th>
+                            <td class="px-4 py-4">farreladelioasman@gmail.com</td>
+                            <td class="px-4 py-4">12345xxxxxxxx</td>
+                            <td class="px-4 py-4">Informatika</td>
+                            <td class="px-4 py-4">Admin</td>
+                            <td class="px-4 py-4 space-x-2">
+                                <button class="font-medium bg-yellow-400 px-3 py-1 rounded-lg hover:opacity-60"
+                                    id="Edit">Edit</button>
+                                <button class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60"
+                                    id="">Hapus</button>
                             </td>
                         </tr>
                         <tr class="bg-white border-b border-gray-200">
-                            <th scope="row" class="px-4 py-4 font-medium text-primary2">Zoro</th>
-                            <td class="px-4 py-4">0987654321</td>
-                            <td class="px-4 py-4">Pajero Pro Max</td>
-                            <td class="px-4 py-4">Menjenguk mahasiswa yang sedang rawat inap</td>
-                            <td class="px-4 py-4">02/23/2025 07:40 PM</td>
-                            <td class="px-4 py-4">02/24/2025 07:40 PM</td>
-                            <td class="px-4 py-4 space-x-2 flex whitespace-nowrap">
-                                <a href="#" class="rounded-full hover:opacity-85"><ion-icon name="checkmark-circle" class="text-3xl text-green-500"></ion-icon></a>
-                                <a href="#" class="rounded-full hover:opacity-85"><ion-icon name="close-circle" class="text-3xl text-red-500"></ion-icon></a>
+                            <th scope="row" class="px-4 py-4 font-medium text-primary2"><img
+                                    src="../assets/user (2).jpg" alt="" class="rounded-full w-12 h-12"></th>
+                            <th scope="row" class="px-4 py-4 font-semibold text-primary2 whitespace-nowrap">Zoro</th>
+                            <td class="px-4 py-4">bangzoro@gmail.com</td>
+                            <td class="px-4 py-4">12345xxxxxxxx</td>
+                            <td class="px-4 py-4">Mesin</td>
+                            <td class="px-4 py-4">Staff</td>
+                            <td class="px-4 py-4 space-x-2">
+                                <button class="font-medium bg-yellow-400 px-3 py-1 rounded-lg hover:opacity-60"
+                                    id="openPopupUser">Edit</button>
+                                <button class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60"
+                                    id="">Hapus</button>
                             </td>
                         </tr>
                     </tbody>
-                </table> -->
-                
-                
-                
+                </table>
+
+                <!-- Popup (Modal) -->
+                <div id="popupUser"
+                    class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                    <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full max-h-[90vh] overflow-y-auto">
+                        <h2 class="text-xl font-semibold mb-4">Form: Data Diri</h2>
+
+                        <form id="popupFormUser">
+                            <div class="mb-4">
+                                <label for="name" class="block text-sm font-medium">Nama</label>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                    value="Farrel Adelio Asman">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium">Email</label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                    value="farreladelioasman@gmail.com">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="nip" class="block text-sm font-medium">NIP</label>
+                                <input type="nip" id="nip" name="nip" required
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                    maxlength="18" value="11111111111111111">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="no-hp" class="block text-sm font-medium">No Whatsapp</label>
+                                <input type="text" id="no-hp" name="no-hp" required
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                    maxlength="18" value="089686968886">
+                            </div>
+
+                            <div class="mb-4 relative">
+                                <label for="pass" class="block text-sm font-medium">Password</label>
+                                <input type="password" id="pass" name="pass" required
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                    value="farrel@2025">
+
+                                <!-- Tombol Show/Hide dengan Ionicons -->
+                                <button type="button" id="togglePass"
+                                    class="absolute right-2 top-8 text-xl text-gray-500">
+                                    <ion-icon id="eyeIcon" name="eye-off"></ion-icon>
+                                </button>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium">KTP</label>
+                                <input type="file" id="email" name="email" required
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                            </div>
+
+                            <div class="flex flex-col w-full">
+                                <label for="depart"
+                                    class="block text-sm font-medium  focus:ring-2 focus:ring-blue-400">Departemen</label>
+
+                                <select name="depart" id="sort"
+                                    class="p-2 border rounded-md w-full  focus:ring-2 focus:ring-blue-400">
+                                    <option value="poltek">Informatika</option>
+                                    <option value="saab">Mesin</option>
+                                    <option value="mercedes">Manajemen Bisnis</option>
+                                </select>
+                            </div>
+
+
+                            <div class="flex justify-end space-x-2 mt-2">
+                                <button type="button" id="closePopupUser"
+                                    class="bg-gray-300 text-black px-4 py-2 rounded-md">Cancel</button>
+                                <button type="submit"
+                                    class="bg-green-500 text-white px-4 py-2 rounded-md">Simpan</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -275,6 +350,29 @@
 
         // Submit form
         document.getElementById('popupForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Form submitted!');
+            popup.classList.add('hidden');
+        });
+
+        // popup UsersTable
+
+        const openPopupUser = document.getElementById('openPopupUser');
+        const closePopupUser = document.getElementById('closePopupUser');
+        const popupUser = document.getElementById('popupUser');
+
+        // Buka popup
+        openPopupUser.addEventListener('click', () => {
+            popupUser.classList.remove('hidden');
+        });
+
+        // Tutup popup
+        closePopupUser.addEventListener('click', () => {
+            popup.classList.add('hidden');
+        });
+
+        // Submit form
+        document.getElementById('popupFormUser').addEventListener('submit', (e) => {
             e.preventDefault();
             alert('Form submitted!');
             popup.classList.add('hidden');

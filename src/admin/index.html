@@ -135,29 +135,20 @@
                                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                             </div>
 
-                            <div class="flex justify-between gap-2">
-                                <div class="mb-4 w-full">
-                                    <label for="jabatan" class="block text-sm font-medium">Jabatan</label>
-                                    <input type="text" id="jabatan" name="jabatan" required
-                                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                                        value="Pimpinan">
-                                </div>
+                            <div class="flex flex-col w-full">
+                                <label for="depart"
+                                    class="block text-sm font-medium  focus:ring-2 focus:ring-blue-400">Departemen</label>
 
-                                <div class="flex flex-col w-full">
-                                    <label for="depart"
-                                        class="block text-sm font-medium  focus:ring-2 focus:ring-blue-400">Departemen</label>
-
-                                    <select name="depart" id="sort"
-                                        class="p-2 border rounded-md w-full  focus:ring-2 focus:ring-blue-400">
-                                        <option value="poltek">Informatika</option>
-                                        <option value="saab">Mesin</option>
-                                        <option value="mercedes">Manajemen Bisnis</option>
-                                    </select>
-                                </div>
+                                <select name="depart" id="sort"
+                                    class="p-2 border rounded-md w-full  focus:ring-2 focus:ring-blue-400">
+                                    <option value="poltek">Informatika</option>
+                                    <option value="saab">Mesin</option>
+                                    <option value="mercedes">Manajemen Bisnis</option>
+                                </select>
                             </div>
 
 
-                            <div class="flex justify-end space-x-2">
+                            <div class="flex justify-end space-x-2 mt-2">
                                 <button type="button" id="closePopupProfile"
                                     class="bg-gray-300 text-black px-4 py-2 rounded-md">Cancel</button>
                                 <button type="submit"
@@ -262,7 +253,8 @@
                     <thead class="text-xs text-gray-700 uppercase bg-white">
                         <tr>
                             <th scope="col" class="px-4 py-3">Plat Nomor</th>
-                            <th scope="col" class="px-4 py-3">Merk/Seri</th>
+                            <th scope="col" class="px-4 py-3">Merk</th>
+                            <th scope="col" class="px-4 py-3">Seri</th>
                             <th scope="col" class="px-4 py-3">Kategori</th>
                             <th scope="col" class="px-4 py-3">Peminjam</th>
                             <th scope="col" class="px-4 py-3">Status</th>
@@ -273,6 +265,7 @@
                         <tr class="bg-white border-b border-gray-200">
                             <th scope="row" class="px-4 py-4 font-medium text-primary2">BP1234</th>
                             <td class="px-4 py-4">Avanza</td>
+                            <td class="px-4 py-4">Avanza 1</td>
                             <td class="px-4 py-4">Mobil</td>
                             <td class="px-4 py-4">Abdul</td>
                             <td class="px-4 py-4">
@@ -288,6 +281,7 @@
                         <tr class="bg-white border-b border-gray-200">
                             <th scope="row" class="px-4 py-4 font-medium text-primary2">BP1234</th>
                             <td class="px-4 py-4">Avanza</td>
+                            <td class="px-4 py-4">Avanza 2</td>
                             <td class="px-4 py-4">Mobil</td>
                             <td class="px-4 py-4">Abdul</td>
                             <td class="px-4 py-4">
@@ -303,6 +297,7 @@
                         <tr class="bg-white border-b border-gray-200">
                             <th scope="row" class="px-4 py-4 font-medium text-primary2">BP1234</th>
                             <td class="px-4 py-4">Avanza</td>
+                            <td class="px-4 py-4">Avanza 3</td>
                             <td class="px-4 py-4">Mobil</td>
                             <td class="px-4 py-4">Abdul</td>
                             <td class="px-4 py-4">

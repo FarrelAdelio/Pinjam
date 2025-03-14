@@ -33,8 +33,8 @@
                         class="flex items-center"><ion-icon name="megaphone" class="text-2xl pr-2"></ion-icon>Daftar
                         Permohonan</a></li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="users.html"
-                        class="flex items-center"><ion-icon name="person"
-                            class="text-2xl pr-2"></ion-icon>Users</a></li>
+                        class="flex items-center"><ion-icon name="person" class="text-2xl pr-2"></ion-icon>Users</a>
+                </li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="permohonan-verifikasi.html"
                         class="flex items-center"><ion-icon name="person-add"
                             class="text-2xl pr-2"></ion-icon>Permohonan Verifikasi</a></li>
@@ -50,7 +50,8 @@
 
             <!-- Navbar -->
             <div class="flex justify-between gap-1">
-                <h1 class="font-poppins font-bold text-xl sm:text-2xl flex items-center">Daftar Permohonan Verifikasi Akun</h1>
+                <h1 class="font-poppins font-bold text-xl sm:text-2xl flex items-center">Daftar Permohonan Verifikasi
+                    Akun</h1>
 
                 <button class="flex w-fit gap-3" id="openPopupProfile">
                     <div class="flex flex-col text-sm">
@@ -103,18 +104,19 @@
                                 <input type="password" id="pass" name="pass" required
                                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                                     value="farrel@2025">
-                            
+
                                 <!-- Tombol Show/Hide dengan Ionicons -->
-                                <button type="button" id="togglePass" class="absolute right-2 top-8 text-xl text-gray-500">
+                                <button type="button" id="togglePass"
+                                    class="absolute right-2 top-8 text-xl text-gray-500">
                                     <ion-icon id="eyeIcon" name="eye-off"></ion-icon>
                                 </button>
                             </div>
-                            
+
                             <script>
                                 const passInput = document.getElementById('pass');
                                 const togglePass = document.getElementById('togglePass');
                                 const eyeIcon = document.getElementById('eyeIcon');
-                            
+
                                 togglePass.addEventListener('click', () => {
                                     if (passInput.type === 'password') {
                                         passInput.type = 'text';
@@ -134,29 +136,20 @@
                                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                             </div>
 
-                            <div class="flex justify-between gap-2">
-                                <div class="mb-4 w-full">
-                                    <label for="jabatan" class="block text-sm font-medium">Jabatan</label>
-                                    <input type="text" id="jabatan" name="jabatan" required
-                                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                                        value="Pimpinan">
-                                </div>
+                            <div class="flex flex-col w-full">
+                                <label for="depart"
+                                    class="block text-sm font-medium  focus:ring-2 focus:ring-blue-400">Departemen</label>
 
-                                <div class="flex flex-col w-full">
-                                    <label for="depart"
-                                        class="block text-sm font-medium  focus:ring-2 focus:ring-blue-400">Departemen</label>
-
-                                    <select name="depart" id="sort"
-                                        class="p-2 border rounded-md w-full  focus:ring-2 focus:ring-blue-400">
-                                        <option value="poltek">Informatika</option>
-                                        <option value="saab">Mesin</option>
-                                        <option value="mercedes">Manajemen Bisnis</option>
-                                    </select>
-                                </div>
+                                <select name="depart" id="sort"
+                                    class="p-2 border rounded-md w-full  focus:ring-2 focus:ring-blue-400">
+                                    <option value="poltek">Informatika</option>
+                                    <option value="saab">Mesin</option>
+                                    <option value="mercedes">Manajemen Bisnis</option>
+                                </select>
                             </div>
 
 
-                            <div class="flex justify-end space-x-2">
+                            <div class="flex justify-end space-x-2 mt-2">
                                 <button type="button" id="closePopupProfile"
                                     class="bg-gray-300 text-black px-4 py-2 rounded-md">Cancel</button>
                                 <button type="submit"
@@ -173,21 +166,22 @@
             <div class="relative overflow-x-auto shadow-md rounded-lg mt-8">
                 <div class="flex mb-2 items-center ml-auto w-fit">
                     <!-- Input Pencarian -->
-                    <input type="text" id="search" placeholder="Cari..." class="p-2 border rounded-md mr-2" onkeyup="searchTable()">
-                
+                    <input type="text" id="search" placeholder="Cari..." class="p-2 border rounded-md mr-2"
+                        onkeyup="searchTable()">
+
                     <label for="sort" class="mr-2 font-semibold">Sort by</label>
                     <select name="sort" id="sort" class="p-2 border rounded-md cursor-pointer">
                         <option value="terbaru">Terbaru</option>
                         <option value="terlama">Terlama</option>
                     </select>
                 </div>
-                
+
                 <script>
                     // Fungsi Pencarian di Tabel
                     function searchTable() {
                         const input = document.getElementById('search').value.toLowerCase();
                         const rows = document.querySelectorAll('tbody tr');
-                
+
                         rows.forEach(row => {
                             const text = row.textContent.toLowerCase();
                             row.style.display = text.includes(input) ? '' : 'none';
@@ -220,9 +214,9 @@
                             <td class="px-4 py-4">Informatika</td>
                             <td class="px-4 py-4 space-x-2 flex whitespace-nowrap">
                                 <a href="#"
-                                    class="rounded-full hover:opacity-85"><ion-icon name="checkmark-circle" class="text-3xl text-green-500"></ion-icon></a>
-                                    <a href="#"
-                                    class="rounded-full hover:opacity-85"><ion-icon name="close-circle" class="text-3xl text-red-500"></ion-icon></a>
+                                    class="rounded-md hover:opacity-85 bg-green-500 flex p-2 font-semibold text-white">Confirm</a>
+                                <a href="#"
+                                    class="rounded-md hover:opacity-85 bg-red-500 flex p-2 font-semibold text-white">Decilined</a>
                             </td>
                         </tr>
                         <tr class="bg-white border-b border-gray-200">
@@ -236,9 +230,9 @@
                             <td class="px-4 py-4">Informatika</td>
                             <td class="px-4 py-4 space-x-2 flex whitespace-nowrap">
                                 <a href="#"
-                                    class="rounded-full hover:opacity-85"><ion-icon name="checkmark-circle" class="text-3xl text-green-500"></ion-icon></a>
-                                    <a href="#"
-                                    class="rounded-full hover:opacity-85"><ion-icon name="close-circle" class="text-3xl text-red-500"></ion-icon></a>
+                                    class="rounded-md hover:opacity-85 bg-green-500 flex p-2 font-semibold text-white">Confirm</a>
+                                <a href="#"
+                                    class="rounded-md hover:opacity-85 bg-red-500 flex p-2 font-semibold text-white">Decilined</a>
                             </td>
                         </tr>
                     </tbody>
