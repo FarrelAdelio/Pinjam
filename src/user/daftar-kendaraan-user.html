@@ -164,6 +164,16 @@
                     Negeri Batam.
                 </p>
 
+                <div class="flex items-center ml-auto w-fit mt-5">
+                    <input type="text" id="searchInput" placeholder="Cari nama kendaraan..."
+                        class="p-2 border rounded-md mr-2" onkeyup="searchByCarName()"> <label for="sort"
+                        class="mr-2 font-semibold">Sort by</label>
+                    <select name="sort" id="sort" class="p-2 border rounded-md cursor-pointer">
+                        <option value="terbaru">Terbaru</option>
+                        <option value="terlama">Terlama</option>
+                    </select>
+                </div>
+
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-5 font-semibold" id="cardContainer">
 
                     <!-- Card 1 -->

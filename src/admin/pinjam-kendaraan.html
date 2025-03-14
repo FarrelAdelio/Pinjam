@@ -33,8 +33,8 @@
                         class="flex items-center"><ion-icon name="megaphone" class="text-2xl pr-2"></ion-icon>Daftar
                         Permohonan</a></li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="users.html"
-                        class="flex items-center"><ion-icon name="person"
-                            class="text-2xl pr-2"></ion-icon>Users</a></li>
+                        class="flex items-center"><ion-icon name="person" class="text-2xl pr-2"></ion-icon>Users</a>
+                </li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="permohonan-verifikasi.html"
                         class="flex items-center"><ion-icon name="person-add"
                             class="text-2xl pr-2"></ion-icon>Permohonan Verifikasi</a></li>
@@ -201,21 +201,28 @@
                                     <div class="flex flex-col gap-2 sm:flex-row sm:justify-between">
                                         <input type="datetime-local" id="email" name="email" required
                                             class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 w-full">
-                                        
+
                                         <input type="datetime-local" id="email" name="email" required
                                             class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 w-full">
                                     </div>
                                 </div>
-                                
+
 
                                 <div class="mb-4">
                                     <label for="merk" class="block text-sm font-medium">Pilih Kendaraan</label>
-
+                                    <div class="mb-4">
+                                        <select name="depart" id="sort"
+                                            class="p-2 border rounded-md md:w-24 xl:w-32 z-20 focus:ring-2 focus:ring-blue-400">
+                                            <option value="poltek">Avanza</option>
+                                            <option value="saab">Toyota</option>
+                                            <option value="saab">Beat</option>
+                                        </select>
+                                    </div>
 
                                     <div class="relative inline-block w-64">
                                         <!-- Dropdown Button -->
                                         <button id="dropdownButton" type="button"
-                                            class="p-2 w-full border rounded-md text-left bg-white">Merk/Seri</button>
+                                            class="p-2 w-full border rounded-md text-left bg-white">Seri Kendaraan</button>
 
                                         <!-- Dropdown -->
                                         <div id="dropdownContent"
@@ -227,19 +234,19 @@
                                             </div>
                                             <div class="option p-2 hover:bg-gray-100 flex items-center cursor-pointer"
                                                 data-value="toyota2">
-                                                <img src="../assets/avanza (4).jpg"
-                                                    alt="2022 Toyota Avanza 1.3 E" class="w-10 h-10 mr-2">2022 Toyota
+                                                <img src="../assets/avanza (4).jpg" alt="2022 Toyota Avanza 1.3 E"
+                                                    class="w-10 h-10 mr-2">2022 Toyota
                                                 Avanza 1.3 E
                                             </div>
                                             <div class="option p-2 hover:bg-gray-100 flex items-center cursor-pointer"
                                                 data-value="toyota3">
-                                                <img src="../assets/avanza (5).jpg"
-                                                    alt="Toyota Avanza 1.3 E" class="w-10 h-10 mr-2">Toyota Avanza 1.3 E
+                                                <img src="../assets/avanza (5).jpg" alt="Toyota Avanza 1.3 E"
+                                                    class="w-10 h-10 mr-2">Toyota Avanza 1.3 E
                                             </div>
                                             <div class="option p-2 hover:bg-gray-100 flex items-center cursor-pointer"
                                                 data-value="toyota3">
-                                                <img src="../assets/beat-deluxe.jpg"
-                                                    alt="Toyota Avanza 1.3 E" class="w-10 h-10 mr-2">Toyota Avanza 1.3 E
+                                                <img src="../assets/beat-deluxe.jpg" alt="Toyota Avanza 1.3 E"
+                                                    class="w-10 h-10 mr-2">Toyota Avanza 1.3 E
                                             </div>
                                         </div>
 
@@ -271,7 +278,7 @@
                                         });
                                     </script>
                                 </div>
-                                
+
                                 <div class="mb-4">
                                     <label for="tujuan" class="block text-sm font-medium">Tujuan Peminjaman</label>
                                     <textarea type="text" id="tujuan" name="tujuan" required
@@ -289,20 +296,21 @@
                     </div>
 
                     <div class="flex mb-2 items-center ml-auto w-fit">
-                        <input type="text" id="search" placeholder="Cari..." class="p-2 border rounded-md mr-2" onkeyup="searchTable()">
-                    
+                        <input type="text" id="search" placeholder="Cari..." class="p-2 border rounded-md mr-2"
+                            onkeyup="searchTable()">
+
                         <label for="sort" class="mr-2 font-semibold">Sort by</label>
                         <select name="sort" id="sort" class="p-2 border rounded-md cursor-pointer">
                             <option value="terbaru">Terbaru</option>
                             <option value="terlama">Terlama</option>
                         </select>
                     </div>
-                    
+
                     <script>
                         function searchTable() {
                             const input = document.getElementById('search').value.toLowerCase();
                             const rows = document.querySelectorAll('tbody tr');
-                    
+
                             rows.forEach(row => {
                                 const text = row.textContent.toLowerCase();
                                 row.style.display = text.includes(input) ? '' : 'none';
@@ -417,19 +425,19 @@
 
 
         // Ambil elemen yang dibutuhkan
-const openPopupProfile = document.getElementById('openPopupProfile');
-const closePopupProfile = document.getElementById('closePopupProfile');
-const popupProfile = document.getElementById('popupProfile');
+        const openPopupProfile = document.getElementById('openPopupProfile');
+        const closePopupProfile = document.getElementById('closePopupProfile');
+        const popupProfile = document.getElementById('popupProfile');
 
-// Buka popup profile
-openPopupProfile.addEventListener('click', () => {
-    popupProfile.classList.remove('hidden');
-});
+        // Buka popup profile
+        openPopupProfile.addEventListener('click', () => {
+            popupProfile.classList.remove('hidden');
+        });
 
-// Tutup popup profile
-closePopupProfile.addEventListener('click', () => {
-    popupProfile.classList.add('hidden');
-});
+        // Tutup popup profile
+        closePopupProfile.addEventListener('click', () => {
+            popupProfile.classList.add('hidden');
+        });
 
 
 
