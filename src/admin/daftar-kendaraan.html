@@ -50,7 +50,7 @@
 
             <!-- Navbar -->
             <div class="flex justify-between">
-                <h1 class="font-poppins font-bold text-xl sm:text-2xl flex items-center">Daftar Kendaraan</h1>
+                <h1 class="font-poppins font-bold text-xl sm:text-2xl flex items-center">Tambah Kendaraan</h1>
 
                 <button class="flex w-fit gap-3" id="openPopupProfile">
                     <div class="flex flex-col text-sm">
@@ -170,90 +170,22 @@
                     Negeri Batam.
                 </p>
 
-                <div class="flex gap-1 mt-10">
-                    <button id="openPopupPinjam" class="bg-blue-500 text-white w-fit h-fit px-2 py-2 rounded-md">Tambah
-                        Kendaraan</button>
-
-                    <div class="flex mb-2 items-center ml-auto w-fit">
+                <div class="flex flex-wrap gap-2 mt-10 items-center justify-between">
+                    <button id="openPopupPinjam"
+                        class="bg-blue-500 text-white w-fit px-3 py-2 rounded-md">Tambah Kendaraan</button>
+                
+                    <div class="flex flex-wrap gap-2 items-center w-full sm:w-auto">
                         <input type="text" id="searchInput" placeholder="Cari nama kendaraan..."
-                            class="p-2 border rounded-md mr-2" onkeyup="searchByCarName()"> <label for="sort"
-                            class="mr-2 font-semibold">Sort by</label>
-                        <select name="sort" id="sort" class="p-2 border rounded-md cursor-pointer">
+                            class="p-2 border rounded-md w-full sm:w-auto" onkeyup="searchByCarName()">
+                
+                        <label for="sort" class="font-semibold">Sort by</label>
+                        <select name="sort" id="sort" class="p-2 border rounded-md cursor-pointer w-full sm:w-auto">
                             <option value="terbaru">Terbaru</option>
                             <option value="terlama">Terlama</option>
                         </select>
                     </div>
-                    <!-- Popup (Modal) -->
-                    <div id="popupPinjam"
-                        class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
-                        <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full max-h-[90vh] overflow-y-auto">
-                            <h2 class="text-xl font-semibold mb-4">Tambah Kendaraan</h2>
-
-
-                            <script>
-                                document.getElementById('searchInput').addEventListener('input', function () {
-                                    const query = this.value.toLowerCase();
-                                    const cards = document.querySelectorAll('#cardContainer .card');
-
-                                    cards.forEach(card => {
-                                        const button = card.querySelector('button.openModal');
-                                        if (button && button.textContent.toLowerCase().includes(query)) {
-                                            card.style.display = '';
-                                        } else {
-                                            card.style.display = 'none';
-                                        }
-                                    });
-                                });
-                            </script>
-
-                            <form id="popupFormPinjam">
-                                <div class="mb-4">
-                                    <label for="name" class="block text-sm font-medium">Merk</label>
-                                    <input type="text" id="name" name="name" required
-                                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="name" class="block text-sm font-medium">Seri</label>
-                                    <input type="text" id="name" name="name" required
-                                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="file" class="block text-sm font-medium">Gambar Kendaraan</label>
-                                    <input type="file" id="file" name="file" required
-                                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="tujuan" class="block text-sm font-medium">Detail Kendaraan</label>
-                                    <textarea id="myTextarea"
-                                        class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                                        rows="5"></textarea>
-
-                                    <script>
-                                        document.getElementById('myTextarea').value =
-                                            'Kapasitas Penumpang: - \n\n' +
-                                            'Muatan Maksimal: -\n\n' +
-                                            'Kapasitas Mesin: \n\n ' +
-                                            'Merk: Toyota Avanza \n\n' +
-                                            'Tahun: -\n\n' +
-                                            'Bahan Bakar: Bensin\n\n' +
-                                            'Transmisi: -\n\n' +
-                                            'Dimensi (PxLxT): -\n\n';
-                                    </script>
-                                </div>
-
-                                <div class="flex justify-end space-x-2">
-                                    <button type="button" id="closePopupPinjam"
-                                        class="bg-gray-300 text-black px-4 py-2 rounded-md">Cancel</button>
-                                    <button type="submit"
-                                        class="bg-green-500 text-white px-4 py-2 rounded-md">Tambahkan</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
                 </div>
+                
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-5 font-semibold" id="cardContainer">
 

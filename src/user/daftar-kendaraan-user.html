@@ -164,15 +164,19 @@
                     Negeri Batam.
                 </p>
 
-                <div class="flex items-center ml-auto w-fit mt-5">
-                    <input type="text" id="searchInput" placeholder="Cari nama kendaraan..."
-                        class="p-2 border rounded-md mr-2" onkeyup="searchByCarName()"> <label for="sort"
-                        class="mr-2 font-semibold">Sort by</label>
-                    <select name="sort" id="sort" class="p-2 border rounded-md cursor-pointer">
-                        <option value="terbaru">Terbaru</option>
-                        <option value="terlama">Terlama</option>
-                    </select>
+                <div class="flex flex-wrap gap-2 mt-10 items-center">
+                    <div class="flex flex-wrap gap-2 items-center w-full sm:w-auto ml-auto">
+                        <input type="text" id="searchInput" placeholder="Cari nama kendaraan..."
+                            class="p-2 border rounded-md w-full sm:w-auto" onkeyup="searchByCarName()">
+                
+                        <label for="sort" class="font-semibold">Sort by</label>
+                        <select name="sort" id="sort" class="p-2 border rounded-md cursor-pointer w-full sm:w-auto">
+                            <option value="terbaru">Terbaru</option>
+                            <option value="terlama">Terlama</option>
+                        </select>
+                    </div>
                 </div>
+                
 
                 <script>
                     document.getElementById('searchInput').addEventListener('input', function () {
