@@ -7,35 +7,110 @@
     <title>Dashboard | Admin</title>
     <link rel="stylesheet" href="output.css">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script>
+        function toggleMenu() {
+            document.getElementById("mobile-menu").classList.toggle("hidden");
+        }
+    </script>
 </head>
 
-<body class="bg-slate-50 font-poppins px-5">
-    <!-- Navbar -->
-     <nav class="flex justify-between py-4">
-        <div class="w-52 overflow-hidden relative right-3">
-            <img src="assets/logo.png" alt="" class="w-full">
-        </div>
+<body class="bg-slate-50 font-poppins px-5 mb-20">
 
-        <ul class="flex items-center gap-5 font-semibold">
+    <div class="max-w-7xl m-auto">
+        <!-- Navbar -->
+        <nav class="flex justify-between py-4 items-center">
+            <div class="w-32 sm:w-52">
+                <img src="assets/logo.png" alt="Logo" class="w-full">
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden" onclick="toggleMenu()">
+                <ion-icon name="menu" class="text-3xl"></ion-icon>
+            </button>
+
+            <ul class="hidden md:flex items-center gap-5 font-semibold">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Case Study</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact</a></li>
+                <a href="#" class="px-7 py-2 rounded-xl border-2 border-primary2">Sign In</a>
+            </ul>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <ul id="mobile-menu" class="hidden flex flex-col gap-3 font-semibold mt-3 bg-white shadow-md p-5 rounded-lg md:hidden">
             <li><a href="#">Home</a></li>
-            <li><a href="#">About US</a></li>
             <li><a href="#">Services</a></li>
+            <li><a href="#">Case Study</a></li>
+            <li><a href="#">About us</a></li>
             <li><a href="#">Contact</a></li>
-            <a href="#" class="px-6 py-2 rounded-md border-2 border-primary2">Sign In</a>
+            <a href="#" class="px-7 py-2 rounded-xl border-2 border-primary2 text-center">Sign In</a>
         </ul>
-     </nav>
 
-     <div class="flex justify-between mt-10">
-        <div class="flex flex-col gap-5">
-            <h1 class="text-xl font-semibold">Butuh kendaraan dinas? semua menjadi mudah di Pinjam.</h1>
-            <p>Pinjam merupakan aplikasi berbasis web yang memiliki visi memudahkan karyawan Politeknik Negeri Batam</p>
-            <a href="#" class="px-6 py-2 rounded-md border-2 border-primary2 w-fit">Move with us</a>
+        <!-- Hero Section -->
+        <div class="flex flex-col md:flex-row justify-between mt-10">
+            <div class="flex flex-col gap-5 md:w-2/5 w-full">
+                <h1 class="text-xl font-semibold">Butuh kendaraan dinas? Semua menjadi mudah di Pinjam.</h1>
+                <p>Pinjam merupakan aplikasi berbasis web yang memiliki visi memudahkan karyawan Politeknik Negeri Batam.</p>
+                <a href="#" class="px-6 py-2 rounded-x w-fit border-2 border-primary2 font-semibold text-white bg-primary2">Move with us</a>
+            </div>
+            <img src="assets/hero-image.png" alt="Hero Image" class="max-w-full md:w-1/2">
         </div>
 
-        <img src="assets/megaphonesosmed.jpg" alt="">
+        <!-- Services Section -->
+        <div class="flex flex-col md:flex-row justify-between w-full md:w-3/5 gap-5 mt-20">
+            <h1 class="font-semibold bg-primary1 px-2 py-1 h-fit text-2xl">Services</h1>
+            <p class="text-sm text-slate-500 flex items-center">Lorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, dolores!dolor sit amet consectetur adipisicing elit. Maxime dolore non unde.</p>
+        </div>
 
-     </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-12 mt-10">
+            <div class="flex flex-col sm:flex-row justify-between border-4 rounded-xl p-8 gap-4 border-primary2">
+                <div class="flex flex-col justify-between gap-5">
+                    <h1 class="bg-primary1 text-lg font-bold p-1 rounded-sm">Pinjam Cepat: Pinjam kendaraan dengan satu ketikan.</h1>
+                    <a href="#" class="py-1 flex items-center space-x-1">
+                        <ion-icon name="arrow-dropright-circle" class="text-4xl text-primary2"></ion-icon>
+                        <span class="font-semibold text-lg">Learn More</span>
+                    </a>
+                </div>
+                <img src="assets/pinjam-cepat.png" alt="Pinjam Cepat" class="w-32 sm:w-48">
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-between border-4 rounded-xl p-8 gap-4 border-primary2 bg-primary2 text-white">
+                <div class="flex flex-col justify-between gap-5">
+                    <h1 class="bg-white text-lg text-black font-bold p-1 rounded-sm">Jadwal Pasti: Jadwal Peminjaman terstruktur dan sistematis.</h1>
+                    <a href="#" class="py-1 flex items-center space-x-1">
+                        <ion-icon name="arrow-dropright-circle" class="text-4xl text-white"></ion-icon>
+                        <span class="font-semibold text-lg">Learn More</span>
+                    </a>
+                </div>
+                <img src="assets/jadwal-pasti.png" alt="Jadwal Pasti" class="w-32 sm:w-48">
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-between border-4 rounded-xl p-8 gap-4 border-primary2 bg-primary2 text-white">
+                <div class="flex flex-col justify-between gap-5">
+                    <h1 class="bg-white text-lg text-black font-bold p-1 rounded-sm">Keamanan Terjaga: Keamanan data anda prioritas utama kami.</h1>
+                    <a href="#" class="py-1 flex items-center space-x-1">
+                        <ion-icon name="arrow-dropright-circle" class="text-4xl text-white"></ion-icon>
+                        <span class="font-semibold text-lg">Learn More</span>
+                    </a>
+                </div>
+                <img src="assets/secure-data.png" alt="Keamanan Terjaga" class="w-32 sm:w-48">
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-between border-4 rounded-xl p-8 gap-4 border-primary2">
+                <div class="flex flex-col justify-between gap-5">
+                    <h1 class="bg-primary1 text-lg font-bold p-1 rounded-sm">Perawatan Kendaraan: Pengecekan Rutin Merupakan SOP kami.</h1>
+                    <a href="#" class="py-1 flex items-center space-x-1">
+                        <ion-icon name="arrow-dropright-circle" class="text-4xl text-primary2"></ion-icon>
+                        <span class="font-semibold text-lg">Learn More</span>
+                    </a>
+                </div>
+                <img src="assets/car-services.png" alt="Perawatan Kendaraan" class="w-32 sm:w-48">
+            </div>
+        </div>
+    </div>
+
 </body>
-
 
 </html>
