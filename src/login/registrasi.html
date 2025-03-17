@@ -44,28 +44,35 @@
                     <input type="text" id="nip" name="nip" required maxlength="16"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                 </div>
-                <div class="mb-4">
-                    <label for="nip" class="block text-sm font-medium">Role</label>
-                    <input type="text" id="nip" name="nip" required maxlength="16"
-                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-                </div>
                 <div class="flex flex-col w-full mb-4">
                     <label for="depart"
-                        class="block text-sm font-medium  focus:ring-2 focus:ring-blue-400">Departemen</label>
+                        class="block text-sm font-medium  focus:ring-2 focus:ring-blue-400">Role</label>
 
                     <select name="depart" id="sort"
                         class="p-2 border rounded-md w-full  focus:ring-2 focus:ring-blue-400">
-                        <option value="poltek">Informatika</option>
-                        <option value="saab">Mesin</option>
-                        <option value="mercedes">Manajemen Bisnis</option>
+                        <option value="TRPL">Teknik Rekayasa Perangkat Lunak</option>
+                        <option value="MB">Manajemen Bisnis</option>
+                        <option value="TI">Teknik Informatika</option>
                     </select>
                 </div>
+
+                <div class="flex flex-col w-full mb-4">
+                    <label for="role"
+                        class="block text-sm font-medium  focus:ring-2 focus:ring-blue-400">Role</label>
+
+                    <select name="role" id="sort"
+                        class="p-2 border rounded-md w-full  focus:ring-2 focus:ring-blue-400">
+                        <option value="Staff">Staff</option>
+                        <option value="Admin">Admin</option>
+                    </select>
+                </div>
+
                 <div class="mb-4">
                     <label for="pass" class="block text-sm font-medium">Password</label>
                     <input type="password" id="pass" name="pass" required
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                 </div>
-                
+
                 <a href="../admin/index.html" class="bg-primary2 mt-2 rounded-md font-bold p-2 text-center text-white hover:opacity-80">Masuk</a>
 
                 <p class="text-slate-700 text-center text-sm mt-3">Sudah memiliki akun? silahkan login <a href="index.html" class="text-blue-500 font-semibold">disini</a>
