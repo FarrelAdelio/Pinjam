@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </head>
 
-<body class="bg-slate-200 font-poppins">
+<body class="bg-slate-200">
     <div class="flex">
         <!-- Sidebar -->
         <div id="sidebar"
@@ -296,464 +296,150 @@
 
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-5 font-semibold" id="cardContainer">
-
                     <!-- Card 1 -->
-                    <div class="card h-64 rounded-xl flex flex-col shadow-sm justify-between relative group overflow-hidden"
-                        style="background-image: url(../assets/avanza\ \(4\).jpg); background-size: cover; background-position: center;">
+                    <div class="card h-64 rounded-xl flex flex-col shadow-sm justify-between relative group overflow-hidden cursor-pointer"
+                        style="background-image: url(../assets/avanza\ \(4\).jpg); background-size: cover; background-position: center;"
+                        onclick="openModal('modal1')">
                         <div
                             class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300">
-                        </div>
-                        <div class="flex gap-2 mt-auto mb-2 mx-2 justify-between opacity-90">
-                            <div class="flex flex-col gap-3">
-                                <button
-                                    class="bg-white w-fit px-4 py-2 rounded-md font-semibold shadow relative z-10 openModal"
-                                    data-modal="modal1">
-                                    Avanza 1
-                                </button>
-
-                                <button id="openPopupPinjam1"
-                                    class="bg-green-500 text-white px-4 py-2 rounded-md font-semibold shadow relative z-10">
-                                    Pinjam Kendaraan
-                                </button>
-                            </div>
-
-                            <select name="depart" id="sort"
-                                class="p-2 border rounded-md md:w-24 xl:w-32 z-20 h-fit focus:ring-2 focus:ring-blue-400 block mt-auto">
-                                <option value="poltek">Available</option>
-                                <option value="saab">Perbaikan</option>
-                                <option value="saab">Digunakan</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="card h-64 rounded-xl flex flex-col shadow-sm justify-between relative group overflow-hidden"
-                        style="background-image: url(../assets/avanza\ \(3\).jpg); background-size: cover; background-position: center;">
-                        <div
-                            class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300">
-                        </div>
-                        <div class="flex gap-2 mt-auto mb-2 mx-2 justify-between opacity-90">
-                            <div class="flex flex-col gap-3">
-                                <button
-                                    class="bg-white w-fit px-4 py-2 rounded-md font-semibold shadow relative z-10 openModal"
-                                    data-modal="modal1">
-                                    Avanza 2
-                                </button>
-
-                                <button id="openPopupPinjam2" disabled
-                                    class="bg-red-500 text-white px-4 py-2 rounded-md font-semibold shadow relative z-10">
-                                    Pinjam Kendaraan
-                                </button>
-                            </div>
-
-                            <select name="depart" id="sort"
-                                class="p-2 border rounded-md md:w-24 xl:w-32 z-20 h-fit focus:ring-2 focus:ring-blue-400 block mt-auto">
-                                <option value="poltek">Available</option>
-                                <option value="saab" selected>Perbaikan</option>
-                                <option value="saab">Digunakan</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="card h-64 rounded-xl flex flex-col shadow-sm justify-between relative group overflow-hidden"
-                        style="background-image: url(../assets/avanza\ \(6\).jpg); background-size: cover; background-position: center;">
-                        <div
-                            class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300">
-                        </div>
-                        <div class="flex gap-2 mt-auto mb-2 mx-2 justify-between opacity-90">
-                            <div class="flex flex-col gap-3">
-                                <button
-                                    class="bg-white w-fit px-4 py-2 rounded-md font-semibold shadow relative z-10 openModal"
-                                    data-modal="modal1">
-                                    Avanza 3
-                                </button>
-
-                                <button id="openPopupPinjam3" disabled
-                                    class="bg-red-500 text-white px-4 py-2 rounded-md font-semibold shadow relative z-10">
-                                    Pinjam Kendaraan
-                                </button>
-                            </div>
-
-                            <select name="depart" id="sort"
-                                class="p-2 border rounded-md md:w-24 xl:w-32 z-20 h-fit focus:ring-2 focus:ring-blue-400 block mt-auto">
-                                <option value="poltek">Available</option>
-                                <option value="saab">Perbaikan</option>
-                                <option value="saab" selected>Digunakan</option>
-                            </select>
                         </div>
                     </div>
 
                     <!-- Modal 1 -->
-                    <div id="popupPinjam1"
-                        class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
-                        <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full max-h-[90vh] overflow-y-auto">
-                            <h2 class="text-xl font-semibold mb-4">Form: Pinjam Kendaraan 1</h2>
-                            <form id="popupFormPinjam1" class="font-normal">
-                                <div class="mb-4">
-                                    <label for="name1" class="block font-semibold text-sm">Merk</label>
-                                    <input type="text" id="name1" name="name1" required value="Avanza" readonly
-                                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-                                </div>
-                                <div class="mb-4">
-                                    <label for="name1" class="block font-semibold text-sm">Seri</label>
-                                    <input type="text" id="name1" name="name1" required value="Avanza 111" readonly
-                                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-                                </div>
-                                <div class="mb-4">
-                                    <label for="email" class="block font-semibold text-sm">Estimasi</label>
-                                    <div class="flex flex-col gap-2">
-                                        <input type="datetime-local" id="email" name="email" required
-                                            class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 w-full">
+                    <div id="modal1"
+                        class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden z-50 p-4">
+                        <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+                            <div class="flex gap-2 mb-5">
+                                <button class="mt-4 bg-yellow-300 text-white p-2 rounded w-fit"><ion-icon name="brush"
+                                        class="text-lg flex items-center self-center"></ion-icon></button>
+                                <button class="mt-4 bg-red-500 text-white p-2 rounded w-fit"><ion-icon name="trash"
+                                        class="text-lg flex items-center self-center"></ion-icon></button>
+                            </div>
+                            <h1 class="text-xl font-semibold mb-2">Toyota</h1>
+                            <h2 class="text-base font-normal text-slate-500 mb-4">Toyota TDR3000</h2>
 
-                                        <input type="datetime-local" id="email" name="email" required
-                                            class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 w-full">
-                                    </div>
-                                </div>
-                                <div class="mb4">
-                                    <label for="tujuan" class="block text-sm font-medium">Tujuan Peminjaman</label>
-                                    <textarea name="" id=""
-                                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
-                                </div>
+                            <ul class="font-normal">
+                                <li><b>Kapasitas Penumpang</b>: 7 orang</li>
+                                <li><b>Muatan Maksima</b>: ± 500 kg (termasuk penumpang dan barang)</li>
+                                <li><b>Kapasitas Mesin</b>: 1.300 cc – 1.500 cc</li>
+                                <li><b>Bahan Bakar</b>: Bensin</li>
+                                <li><b>Transmisi</b>: Manual / Auto (CVT)</li>
+                                <li><b>Sistem PenggeraK</b>: FWD (Front-Wheel Drive)</li>
+                                <li><b>Dimensi (PxLxT)</b>: ± 4.395 mm x 1.730 mm x 1.665 mm</li>
+                            </ul>
+                            <div class="flex justify-between">
+                                <a href="form-pinjam.html"
+                                    class="mt-4 bg-green-500 text-white px-4 py-2 rounded w-fit">Pinjam</a>
+                                <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded w-fit"
+                                    onclick="closeModal('modal1')">Tutup</button>
+                            </div>
+                        </div>
+                    </div>
 
-                                <div class="flex justify-end space-x-2">
-                                    <button type="button" id="closePopupPinjam1"
-                                        class="bg-gray-300 text-black px-4 py-2 rounded-md">Cancel</button>
-                                    <button type="submit"
-                                        class="bg-green-500 text-white px-4 py-2 rounded-md">Submit</button>
-                                </div>
-                            </form>
+                    <!-- Card 2 -->
+                    <div class="card h-64 rounded-xl flex flex-col shadow-sm justify-between relative group overflow-hidden cursor-pointer"
+                        style="background-image: url(../assets/avanza\ \(3\).jpg); background-size: cover; background-position: center;"
+                        onclick="openModal('modal2')">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300">
                         </div>
                     </div>
 
                     <!-- Modal 2 -->
-                    <div id="popupPinjam2"
-                        class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
-                        <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full max-h-[90vh] overflow-y-auto">
-                            <h2 class="text-xl font-semibold mb-4">Form: Pinjam Kendaraan 1</h2>
-                            <form id="popupFormPinjam2" class="font-normal">
-                                <div class="mb-4">
-                                    <label for="name1" class="block font-semibold text-sm">Merk</label>
-                                    <input type="text" id="name1" name="name1" required value="Avanza" readonly
-                                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-                                </div>
-                                <div class="mb-4">
-                                    <label for="name1" class="block font-semibold text-sm">Seri</label>
-                                    <input type="text" id="name1" name="name1" required value="Avanza 222" readonly
-                                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-                                </div>
-                                <div class="mb-4">
-                                    <label for="email" class="block font-semibold text-sm">Estimasi</label>
-                                    <div class="flex flex-col gap-2">
-                                        <input type="datetime-local" id="email" name="email" required
-                                            class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 w-full">
-
-                                        <input type="datetime-local" id="email" name="email" required
-                                            class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 w-full">
-                                    </div>
-                                </div>
-                                <div class="mb4">
-                                    <label for="tujuan" class="block text-sm font-medium">Tujuan Peminjaman</label>
-                                    <textarea name="" id=""
-                                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
-                                </div>
-
-                                <div class="flex justify-end space-x-2">
-                                    <button type="button" id="closePopupPinjam2"
-                                        class="bg-gray-300 text-black px-4 py-2 rounded-md">Cancel</button>
-                                    <button type="submit"
-                                        class="bg-green-500 text-white px-4 py-2 rounded-md">Submit</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <!-- Modal 3 -->
-                    <div id="popupPinjam3"
-                        class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
-                        <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full max-h-[90vh] overflow-y-auto">
-                            <h2 class="text-xl font-semibold mb-4">Form: Pinjam Kendaraan 1</h2>
-                            <form id="popupFormPinjam3" class="font-normal">
-                                <div class="mb-4">
-                                    <label for="name1" class="block font-semibold text-sm">Merk</label>
-                                    <input type="text" id="name1" name="name1" required value="Avanza" readonly
-                                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-                                </div>
-                                <div class="mb-4">
-                                    <label for="name1" class="block font-semibold text-sm">Seri</label>
-                                    <input type="text" id="name1" name="name1" required value="Avanza 333" readonly
-                                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-                                </div>
-                                <div class="mb-4">
-                                    <label for="email" class="block font-semibold text-sm">Estimasi</label>
-                                    <div class="flex flex-col gap-2">
-                                        <input type="datetime-local" id="email" name="email" required
-                                            class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 w-full">
-
-                                        <input type="datetime-local" id="email" name="email" required
-                                            class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 w-full">
-                                    </div>
-                                </div>
-                                <div class="mb4">
-                                    <label for="tujuan" class="block text-sm font-medium">Tujuan Peminjaman</label>
-                                    <textarea name="" id=""
-                                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
-                                </div>
-
-                                <div class="flex justify-end space-x-2">
-                                    <button type="button" id="closePopupPinjam3"
-                                        class="bg-gray-300 text-black px-4 py-2 rounded-md">Cancel</button>
-                                    <button type="submit"
-                                        class="bg-green-500 text-white px-4 py-2 rounded-md">Submit</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <script>
-                        document.addEventListener("DOMContentLoaded", function () {
-                            // Array untuk mengatur semua modal
-                            const modals = [
-                                { buttonId: "openPopupPinjam1", modalId: "popupPinjam1", closeId: "closePopupPinjam1" },
-                                { buttonId: "openPopupPinjam2", modalId: "popupPinjam2", closeId: "closePopupPinjam2" },
-                                { buttonId: "openPopupPinjam3", modalId: "popupPinjam3", closeId: "closePopupPinjam3" }
-                            ];
-
-                            modals.forEach(({ buttonId, modalId, closeId }) => {
-                                const openButton = document.getElementById(buttonId);
-                                const modal = document.getElementById(modalId);
-                                const closeButton = document.getElementById(closeId);
-
-                                if (openButton && modal && closeButton) {
-                                    openButton.addEventListener("click", () => {
-                                        modal.classList.remove("hidden");
-                                    });
-
-                                    closeButton.addEventListener("click", () => {
-                                        modal.classList.add("hidden");
-                                    });
-
-                                    // Tutup modal saat klik di luar
-                                    modal.addEventListener("click", (event) => {
-                                        if (event.target === modal) {
-                                            modal.classList.add("hidden");
-                                        }
-                                    });
-                                }
-                            });
-                        });
-                    </script>
-
-                    <!-- Modal Template -->
-                    <div id="modal1"
-                        class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                        <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg">
-                            <h2 class="text-xl font-semibold mb-4">Avanza Pro Max</h2>
-                            <ul class="normal-nums text-left">
-                                <li><b>Kapasitas Penumpang</b>: 7 orang</li>
-                                <li><b>Muatan Maksimal</b>: ± 500 kg (termasuk penumpang dan barang)</li>
-                                <li><b>Kapasitas Mesin</b>: 1.300 cc – 1.500 cc</li>
-                                <li><b>Bahan Bakar</b>: Bensin</li>
-                                <li><b>Kapasitas Tangki</b>: 43 liter</li>
-                                <li><b>Transmisi</b>: Manual / Otomatis (CVT)</li>
-                                <li><b>Sistem Penggerak</b>: FWD (Front-Wheel Drive)</li>
-                                <li><b>Dimensi (PxLxT)</b>: ± 4.395 mm x 1.730 mm x 1.665 mm</li>
-                            </ul>
-                            <button
-                                class="mt-4 px-4 py-2 bg-red-500 text-white rounded-md closeModal flex items-center mx-auto">Tutup</button>
-                        </div>
-                    </div>
-
                     <div id="modal2"
-                        class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                        <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg">
-                            <h2 class="text-xl font-semibold mb-4">Avanza Pro Max</h2>
-                            <ul class="normal-nums text-left">
+                        class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden z-50 p-4">
+                        <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+                            <div class="flex gap-2 mb-5">
+                                <button class="mt-4 bg-yellow-300 text-white p-2 rounded w-fit"><ion-icon name="brush"
+                                        class="text-lg flex items-center self-center"></ion-icon></button>
+                                <button class="mt-4 bg-red-500 text-white p-2 rounded w-fit"><ion-icon name="trash"
+                                        class="text-lg flex items-center self-center"></ion-icon></button>
+                            </div>
+                            <h2 class="text-xl font-semibold mb-2">Toyota Pro</h2>
+                            <h2 class="text-base font-normal text-slate-500 mb-4">Toyota GG1</h2>
+
+                            <ul class="font-normal">
                                 <li><b>Kapasitas Penumpang</b>: 7 orang</li>
-                                <li><b>Muatan Maksimal</b>: ± 500 kg (termasuk penumpang dan barang)</li>
+                                <li><b>Muatan Maksima</b>: ± 500 kg (termasuk penumpang dan barang)</li>
                                 <li><b>Kapasitas Mesin</b>: 1.300 cc – 1.500 cc</li>
                                 <li><b>Bahan Bakar</b>: Bensin</li>
-                                <li><b>Kapasitas Tangki</b>: 43 liter</li>
-                                <li><b>Transmisi</b>: Manual / Otomatis (CVT)</li>
-                                <li><b>Sistem Penggerak</b>: FWD (Front-Wheel Drive)</li>
+                                <li><b>Transmisi</b>: Manual / Auto (CVT)</li>
+                                <li><b>Sistem PenggeraK</b>: FWD (Front-Wheel Drive)</li>
                                 <li><b>Dimensi (PxLxT)</b>: ± 4.395 mm x 1.730 mm x 1.665 mm</li>
                             </ul>
-                            <button
-                                class="mt-4 px-4 py-2 bg-red-500 text-white rounded-md closeModal flex items-center mx-auto">Tutup</button>
+                            <div class="flex justify-between">
+                                <a href="form-pinjam.html"
+                                    class="mt-4 bg-green-500 text-white px-4 py-2 rounded w-fit">Pinjam</a>
+                                <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded w-fit"
+                                    onclick="closeModal('modal2')">Tutup</button>
+                            </div>
                         </div>
                     </div>
-
-                    <div id="modal3"
-                        class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                        <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg">
-                            <h2 class="text-xl font-semibold mb-4">Avanza Pro Max</h2>
-                            <ul class="normal-nums text-left">
-                                <li><b>Kapasitas Penumpang</b>: 7 orang</li>
-                                <li><b>Muatan Maksimal</b>: ± 500 kg (termasuk penumpang dan barang)</li>
-                                <li><b>Kapasitas Mesin</b>: 1.300 cc – 1.500 cc</li>
-                                <li><b>Bahan Bakar</b>: Bensin</li>
-                                <li><b>Kapasitas Tangki</b>: 43 liter</li>
-                                <li><b>Transmisi</b>: Manual / Otomatis (CVT)</li>
-                                <li><b>Sistem Penggerak</b>: FWD (Front-Wheel Drive)</li>
-                                <li><b>Dimensi (PxLxT)</b>: ± 4.395 mm x 1.730 mm x 1.665 mm</li>
-                            </ul>
-                            <button
-                                class="mt-4 px-4 py-2 bg-red-500 text-white rounded-md closeModal flex items-center mx-auto">Tutup</button>
-                        </div>
-                    </div>
-
-                    <div id="modal4"
-                        class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                        <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg">
-                            <h2 class="text-xl font-semibold mb-4">Avanza Pro Max</h2>
-                            <ul class="normal-nums text-left">
-                                <li><b>Kapasitas Penumpang</b>: 7 orang</li>
-                                <li><b>Muatan Maksimal</b>: ± 500 kg (termasuk penumpang dan barang)</li>
-                                <li><b>Kapasitas Mesin</b>: 1.300 cc – 1.500 cc</li>
-                                <li><b>Bahan Bakar</b>: Bensin</li>
-                                <li><b>Kapasitas Tangki</b>: 43 liter</li>
-                                <li><b>Transmisi</b>: Manual / Otomatis (CVT)</li>
-                                <li><b>Sistem Penggerak</b>: FWD (Front-Wheel Drive)</li>
-                                <li><b>Dimensi (PxLxT)</b>: ± 4.395 mm x 1.730 mm x 1.665 mm</li>
-                            </ul>
-                            <button
-                                class="mt-4 px-4 py-2 bg-red-500 text-white rounded-md closeModal flex items-center mx-auto">Tutup</button>
-                        </div>
-                    </div>
-
-                    <div id="modal5"
-                        class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                        <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg">
-                            <h2 class="text-xl font-semibold mb-4">Avanza Pro Max</h2>
-                            <ul class="normal-nums text-left">
-                                <li><b>Kapasitas Penumpang</b>: 7 orang</li>
-                                <li><b>Muatan Maksimal</b>: ± 500 kg (termasuk penumpang dan barang)</li>
-                                <li><b>Kapasitas Mesin</b>: 1.300 cc – 1.500 cc</li>
-                                <li><b>Bahan Bakar</b>: Bensin</li>
-                                <li><b>Kapasitas Tangki</b>: 43 liter</li>
-                                <li><b>Transmisi</b>: Manual / Otomatis (CVT)</li>
-                                <li><b>Sistem Penggerak</b>: FWD (Front-Wheel Drive)</li>
-                                <li><b>Dimensi (PxLxT)</b>: ± 4.395 mm x 1.730 mm x 1.665 mm</li>
-                            </ul>
-                            <button
-                                class="mt-4 px-4 py-2 bg-red-500 text-white rounded-md closeModal flex items-center mx-auto">Tutup</button>
-                        </div>
-                    </div>
-
-                    <div id="modal6"
-                        class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                        <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg">
-                            <h2 class="text-xl font-semibold mb-4">Beat 1</h2>
-                            <ul class="normal-nums text-left">
-                                <li><b>Kapasitas Penumpang</b>: 7 orang</li>
-                                <li><b>Muatan Maksimal</b>: ± 500 kg (termasuk penumpang dan barang)</li>
-                                <li><b>Kapasitas Mesin</b>: 1.300 cc – 1.500 cc</li>
-                                <li><b>Bahan Bakar</b>: Bensin</li>
-                                <li><b>Kapasitas Tangki</b>: 43 liter</li>
-                                <li><b>Transmisi</b>: Manual / Otomatis (CVT)</li>
-                                <li><b>Sistem Penggerak</b>: FWD (Front-Wheel Drive)</li>
-                                <li><b>Dimensi (PxLxT)</b>: ± 4.395 mm x 1.730 mm x 1.665 mm</li>
-                            </ul>
-                            <button
-                                class="mt-4 px-4 py-2 bg-red-500 text-white rounded-md closeModal flex items-center mx-auto">Tutup</button>
-                        </div>
-                    </div>
-
-                    <div id="modal7"
-                        class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                        <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg">
-                            <h2 class="text-xl font-semibold mb-4">Beat 2</h2>
-                            <ul class="normal-nums text-left">
-                                <li><b>Kapasitas Penumpang</b>: 7 orang</li>
-                                <li><b>Muatan Maksimal</b>: ± 500 kg (termasuk penumpang dan barang)</li>
-                                <li><b>Kapasitas Mesin</b>: 1.300 cc – 1.500 cc</li>
-                                <li><b>Bahan Bakar</b>: Bensin</li>
-                                <li><b>Kapasitas Tangki</b>: 43 liter</li>
-                                <li><b>Transmisi</b>: Manual / Otomatis (CVT)</li>
-                                <li><b>Sistem Penggerak</b>: FWD (Front-Wheel Drive)</li>
-                                <li><b>Dimensi (PxLxT)</b>: ± 4.395 mm x 1.730 mm x 1.665 mm</li>
-                            </ul>
-                            <button
-                                class="mt-4 px-4 py-2 bg-red-500 text-white rounded-md closeModal flex items-center mx-auto">Tutup</button>
-                        </div>
-                    </div>
-
-                    <script>
-                        document.addEventListener('DOMContentLoaded', () => {
-                            document.querySelectorAll('.openModal').forEach(button => {
-                                button.addEventListener('click', () => {
-                                    const modalId = button.getAttribute('data-modal');
-                                    document.getElementById(modalId).classList.remove('hidden');
-                                });
-                            });
-
-                            document.querySelectorAll('.closeModal').forEach(button => {
-                                button.addEventListener('click', () => {
-                                    button.closest('.modal').classList.add('hidden');
-                                });
-                            });
-                        });
-
-                    </script>
-
                 </div>
 
+                <script>
+                    function openModal(modalId) {
+                        document.getElementById(modalId).classList.remove('hidden');
+                    }
 
-
+                    function closeModal(modalId) {
+                        document.getElementById(modalId).classList.add('hidden');
+                    }
+                </script>
             </div>
-        </div>
 
-        <script>
-            // Sidebar
-            const sidebar = document.getElementById('sidebar');
-            const openSidebar = document.getElementById('openSidebar');
-            const closeSidebar = document.getElementById('closeSidebar');
+            <script>
+                // Sidebar
+                const sidebar = document.getElementById('sidebar');
+                const openSidebar = document.getElementById('openSidebar');
+                const closeSidebar = document.getElementById('closeSidebar');
 
-            openSidebar.addEventListener('click', () => {
-                sidebar.classList.remove('-translate-x-full');
-            });
-
-            closeSidebar.addEventListener('click', () => {
-                sidebar.classList.add('-translate-x-full');
-            });
-
-            // Popup Timeline Peminjaman Detail
-            const openDetail1 = document.getElementById('openPopupDetail1');
-            const closeDetail1 = document.getElementById('closePopupDetail1');
-            const popupDetail1 = document.getElementById('popupDetail1');
-
-            if (openDetail1 && closeDetail1 && popupDetail1) {
-                openDetail1.addEventListener('click', () => {
-                    popupDetail1.classList.remove('hidden'); // ✅ Perbaikan di sini
+                openSidebar.addEventListener('click', () => {
+                    sidebar.classList.remove('-translate-x-full');
                 });
 
-                closeDetail1.addEventListener('click', () => {
-                    popupDetail1.classList.add('hidden'); // ✅ Perbaikan di sini
+                closeSidebar.addEventListener('click', () => {
+                    sidebar.classList.add('-translate-x-full');
                 });
 
-                document.getElementById('popupFormDetail1').addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    alert('Form submitted!');
-                    popupDetail1.classList.add('hidden'); // ✅ Perbaikan di sini
-                });
-            }
+                // Popup Timeline Peminjaman Detail
+                const openDetail1 = document.getElementById('openPopupDetail1');
+                const closeDetail1 = document.getElementById('closePopupDetail1');
+                const popupDetail1 = document.getElementById('popupDetail1');
 
-            // Popup Profile
-            const openPopupProfile = document.getElementById('openPopupProfile');
-            const closePopupProfile = document.getElementById('closePopupProfile');
-            const popupProfile = document.getElementById('popupProfile');
+                if (openDetail1 && closeDetail1 && popupDetail1) {
+                    openDetail1.addEventListener('click', () => {
+                        popupDetail1.classList.remove('hidden'); // ✅ Perbaikan di sini
+                    });
 
-            if (openPopupProfile && closePopupProfile && popupProfile) {
-                openPopupProfile.addEventListener('click', () => {
-                    popupProfile.classList.remove('hidden');
-                });
+                    closeDetail1.addEventListener('click', () => {
+                        popupDetail1.classList.add('hidden'); // ✅ Perbaikan di sini
+                    });
 
-                closePopupProfile.addEventListener('click', () => {
-                    popupProfile.classList.add('hidden');
-                });
-            }
+                    document.getElementById('popupFormDetail1').addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        alert('Form submitted!');
+                        popupDetail1.classList.add('hidden'); // ✅ Perbaikan di sini
+                    });
+                }
+
+                // Popup Profile
+                const openPopupProfile = document.getElementById('openPopupProfile');
+                const closePopupProfile = document.getElementById('closePopupProfile');
+                const popupProfile = document.getElementById('popupProfile');
+
+                if (openPopupProfile && closePopupProfile && popupProfile) {
+                    openPopupProfile.addEventListener('click', () => {
+                        popupProfile.classList.remove('hidden');
+                    });
+
+                    closePopupProfile.addEventListener('click', () => {
+                        popupProfile.classList.add('hidden');
+                    });
+                }
 
 
-        </script>
+            </script>
 </body>
 
 
