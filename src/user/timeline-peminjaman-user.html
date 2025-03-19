@@ -30,10 +30,11 @@
                         class="flex items-center"><ion-icon name="car" class="text-2xl pr-2"></ion-icon>Pinjam
                         Kendaraan</a></li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="users.html"
-                        class="flex items-center"><ion-icon name="person"
-                            class="text-2xl pr-2"></ion-icon>Users</a></li>
-                <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="#" class="flex items-center"><ion-icon
-                            name="log-out" class="text-2xl pr-2"></ion-icon>Keluar</a></li>
+                        class="flex items-center"><ion-icon name="person" class="text-2xl pr-2"></ion-icon>Users</a>
+                </li>
+                <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="../index.html"
+                        class="flex items-center"><ion-icon name="log-out" class="text-2xl pr-2"></ion-icon>Keluar</a>
+                </li>
             </ul>
         </div>
 
@@ -69,7 +70,7 @@
                                 <input type="file" id="foto-profile" name="foto-profile" required
                                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                             </div>
-                            
+
                             <div class="mb-4">
                                 <label for="name" class="block text-sm font-medium">Nama</label>
                                 <input type="text" id="name" name="name" required
@@ -138,7 +139,7 @@
                             <div class="flex flex-col w-full mb-4">
                                 <label for="depart"
                                     class="block text-sm font-medium  focus:ring-2 focus:ring-blue-400">Prodi</label>
-            
+
 
                                 <select name="depart" id="sort" disabled
                                     class="p-2 border rounded-md w-full  focus:ring-2 focus:ring-blue-400">
@@ -169,24 +170,26 @@
             <div class="relative overflow-x-auto shadow-md rounded-lg mt-8">
 
                 <div class="flex justify-between whitespace-nowrap gap-2">
-                    <a href="pinjam-kendaraan-user.html" class="bg-blue-500 text-white w-fit h-fit px-2 py-2 rounded-md">Pinjam
+                    <a href="pinjam-kendaraan-user.html"
+                        class="bg-blue-500 text-white w-fit h-fit px-2 py-2 rounded-md">Pinjam
                         Sekarang</a>
 
                     <div class="flex mb-2 items-center ml-auto w-fit">
-                        <input type="text" id="search" placeholder="Cari..." class="p-2 border rounded-md mr-2" onkeyup="searchTable()">
-                    
+                        <input type="text" id="search" placeholder="Cari..." class="p-2 border rounded-md mr-2"
+                            onkeyup="searchTable()">
+
                         <label for="sort" class="mr-2 font-semibold">Sort by</label>
                         <select name="sort" id="sort" class="p-2 border rounded-md cursor-pointer">
                             <option value="terbaru">Terbaru</option>
                             <option value="terlama">Terlama</option>
                         </select>
                     </div>
-                    
+
                     <script>
                         function searchTable() {
                             const input = document.getElementById('search').value.toLowerCase();
                             const rows = document.querySelectorAll('tbody tr');
-                    
+
                             rows.forEach(row => {
                                 const text = row.textContent.toLowerCase();
                                 row.style.display = text.includes(input) ? '' : 'none';
@@ -203,9 +206,9 @@
                             <th scope="col" class="px-4 py-3">Seri</th>
                             <th scope="col" class="px-4 py-3">Kategori</th>
                             <th scope="col" class="px-4 py-3">Peminjam</th>
-                            <th scope="col" class="px-4 py-3">Status</th>
                             <th scope="col" class="px-4 py-3">Dipinjam</th>
                             <th scope="col" class="px-4 py-3">Estimasi di Kembalikan</th>
+                            <th scope="col" class="px-4 py-3">Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -326,19 +329,19 @@
 
 
         // Ambil elemen yang dibutuhkan
-const openPopupProfile = document.getElementById('openPopupProfile');
-const closePopupProfile = document.getElementById('closePopupProfile');
-const popupProfile = document.getElementById('popupProfile');
+        const openPopupProfile = document.getElementById('openPopupProfile');
+        const closePopupProfile = document.getElementById('closePopupProfile');
+        const popupProfile = document.getElementById('popupProfile');
 
-// Buka popup profile
-openPopupProfile.addEventListener('click', () => {
-    popupProfile.classList.remove('hidden');
-});
+        // Buka popup profile
+        openPopupProfile.addEventListener('click', () => {
+            popupProfile.classList.remove('hidden');
+        });
 
-// Tutup popup profile
-closePopupProfile.addEventListener('click', () => {
-    popupProfile.classList.add('hidden');
-});
+        // Tutup popup profile
+        closePopupProfile.addEventListener('click', () => {
+            popupProfile.classList.add('hidden');
+        });
 
 
 
