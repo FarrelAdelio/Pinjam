@@ -11,7 +11,8 @@
         poppins: "Poppins"
       },
       width: {
-        imageLogin: "360px"
+        imageLogin: "360px",
+        70: "70%"
       }
     },
   },

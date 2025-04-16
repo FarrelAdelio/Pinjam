@@ -52,9 +52,8 @@
             <button id="openSidebar" class="md:hidden text-2xl mb-4">☰</button>
 
             <!-- Navbar -->
-            <div class="flex justify-between gap-1">
-                <h1 class="font-poppins font-bold text-xl sm:text-2xl flex items-center">Daftar Permohonan Verifikasi
-                    Akun</h1>
+            <div class="flex justify-between">
+                <h1 class="font-poppins font-bold text-xl sm:text-2xl flex items-center">Peminjaman Saya</h1>
 
                 <button class="flex w-fit gap-3" id="openPopupProfile">
                     <div class="flex flex-col text-sm">
@@ -74,12 +73,6 @@
                         <h2 class="text-xl font-semibold mb-4">Form: Data Diri</h2>
 
                         <form id="popupFormProfile">
-                            <div class="mb-4">
-                                <label for="foto-profile" class="block text-sm font-medium">Foto Profile</label>
-                                <input type="file" id="foto-profile" name="foto-profile" required
-                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-                            </div>
-
                             <div class="mb-4">
                                 <label for="name" class="block text-sm font-medium">Nama</label>
                                 <input type="text" id="name" name="name" required
@@ -168,83 +161,90 @@
                     </div>
                 </div>
 
-
             </div>
 
             <!-- Konten Utama -->
-            <div class="relative overflow-x-auto shadow-md rounded-lg mt-8">
-                <div class="flex mb-2 items-center ml-auto w-fit">
-                    <!-- Input Pencarian -->
-                    <input type="text" id="search" placeholder="Cari..." class="p-2 border rounded-md mr-2"
-                        onkeyup="searchTable()">
 
-                    <label for="sort" class="mr-2 font-semibold">Sort by</label>
-                    <select name="sort" id="sort" class="p-2 border rounded-md cursor-pointer">
-                        <option value="terbaru">Terbaru</option>
-                        <option value="terlama">Terlama</option>
-                    </select>
+
+
+            <!-- TIMELINE -->
+            <div class="relative overflow-x-auto rounded-lg mt-8">
+
+                <div class="flex justify-between whitespace-nowrap gap-2">
+                    <div class="flex mb-2 items-center ml-auto w-fit">
+                        <input type="text" id="search" placeholder="Cari..." class="p-2 border rounded-md mr-2"
+                            onkeyup="searchTable()">
+
+                        <label for="sort" class="mr-2 font-semibold">Sort by</label>
+                        <select name="sort" id="sort" class="p-2 border rounded-md cursor-pointer">
+                            <option value="terbaru">Terbaru</option>
+                            <option value="terlama">Terlama</option>
+                        </select>
+                    </div>
+
+                    <script>
+                        function searchTable() {
+                            const input = document.getElementById('search').value.toLowerCase();
+                            const rows = document.querySelectorAll('tbody tr');
+
+                            rows.forEach(row => {
+                                const text = row.textContent.toLowerCase();
+                                row.style.display = text.includes(input) ? '' : 'none';
+                            });
+                        }
+                    </script>
                 </div>
 
-                <script>
-                    // Fungsi Pencarian di Tabel
-                    function searchTable() {
-                        const input = document.getElementById('search').value.toLowerCase();
-                        const rows = document.querySelectorAll('tbody tr');
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 font-poppins">
+                    <!-- Card 1 -->
+                    <div class="flex flex-col bg-white rounded-xl w-full h-fit overflow-hidden">
+                        <img src="../assets/avanza (2).jpg" alt="" class="w-full">
+                        <div class="flex flex-col p-2 gap-1 text-sm">
+                            <b>Toyota</b>
+                            <p>Toyota TDR3000</p>
+                            <p>01/23/2025 07:40 PM - 01/23/2025 07:40 PM</p>
+                            <p>Pinjam bentar lek ke RS yak.</p>
+                            <div class="flex gap-2">
+                                <p class="py-2">Status : <b class="bg-yellow-400 p-2 rounded-xl">Menunggu Persetujuan</b></p>
+                                <a href="form-pengembalian.html" class="bg-green-400 p-2 font-bold rounded-xl hidden">Pengembalian</a>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Card 2 -->
+                    <div class="flex flex-col bg-white rounded-xl w-full h-fit overflow-hidden">
+                        <img src="../assets/avanza (4).jpg" alt="" class="w-full">
+                        <div class="flex flex-col p-2 gap-1 text-sm">
+                            <b>Toyota</b>
+                            <p>Toyota TDR3000</p>
+                            <p>01/23/2025 07:40 PM - 01/23/2025 07:40 PM</p>
+                            <p>Pinjam bentar lek ke RS yak.</p>
+                            <div class="flex gap-2">
+                                <p class="py-2">Status : <b class="bg-green-400 p-2 rounded-xl">Di Setujui</b></p>
+                                <button class="bg-green-400 p-2 font-bold rounded-xl">Pengembalian</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Card 3 -->
+                    <div class="flex flex-col bg-white rounded-xl w-full h-fit overflow-hidden">
+                        <img src="../assets/avanza (5).jpg" alt="" class="w-full">
+                        <div class="flex flex-col p-2 gap-1 text-sm">
+                            <b>Toyota</b>
+                            <p>Toyota TDR3000</p>
+                            <p>01/23/2025 07:40 PM - 01/23/2025 07:40 PM</p>
+                            <p>Pinjam bentar lek ke RS yak.</p>
+                            <div class="flex gap-2">
+                                <p class="py-2">Status : <b class="bg-green-400 p-2 rounded-xl">Sudah di kembalikan</b></p>
+                                <button class="bg-green-400 p-2 font-bold rounded-xl hidden">Pengembalian</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
 
-                        rows.forEach(row => {
-                            const text = row.textContent.toLowerCase();
-                            row.style.display = text.includes(input) ? '' : 'none';
-                        });
-                    }
-                </script>
-                <table class="min-w-[700px] w-full text-sm text-left rtl:text-right text-primary2">
-                    <thead class="text-xs text-gray-700 uppercase bg-white">
-                        <tr>
-                            <th scope="col" class="px-4 py-3">Nama Pengguna</th>
-                            <th scope="col" class="px-4 py-3">Email</th>
-                            <th scope="col" class="px-4 py-3">NIP</th>
-                            <th scope="col" class="px-4 py-3">No Whatsapp</th>
-                            <th scope="col" class="px-4 py-3">KTP</th>
-                            <th scope="col" class="px-4 py-3">ROLE</th>
-                            <th scope="col" class="px-4 py-3">PRODI</th>
-                            <th scope="col" class="px-4 py-3">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="bg-white border-b border-gray-200">
-                            <th scope="row" class="px-4 py-4 font-medium text-primary2 whitespace-nowrap">Farrel Adelio
-                                Asman</th>
-                            <td class="px-4 py-4">farreladelioasman@gmail.com</td>
-                            <td class="px-4 py-4">123456789123</td>
-                            <td class="px-4 py-4">089686968886</td>
-                            <td class="px-4 py-4"><img src="" alt="">*gambar</td>
-                            <td class="px-4 py-4">Admin</td>
-                            <td class="px-4 py-4">Teknik Rekayasa Perangkat Lunak</td>
-                            <td class="px-4 py-4 space-x-2 flex whitespace-nowrap">
-                                <a href="#"
-                                    class="rounded-md hover:opacity-85 bg-green-500 flex p-2 font-semibold text-white">Accept</a>
-                                <a href="#"
-                                    class="rounded-md hover:opacity-85 bg-red-500 flex p-2 font-semibold text-white">Reject</a>
-                            </td>
-                        </tr>
-                        <tr class="bg-white border-b border-gray-200">
-                            <th scope="row" class="px-4 py-4 font-medium text-primary2 whitespace-nowrap">Athiyyah</th>
-                            <td class="px-4 py-4">athiyyah@gmail.com</td>
-                            <td class="px-4 py-4">92743127401</td>
-                            <td class="px-4 py-4">089686968886</td>
-                            <td class="px-4 py-4"><img src="" alt="">*gambar</td>
-                            <td class="px-4 py-4">Staff</td>
-                            <td class="px-4 py-4">Manajemen Bisnis</td>
-                            <td class="px-4 py-4 space-x-2 flex whitespace-nowrap">
-                                <a href="#"
-                                    class="rounded-md hover:opacity-85 bg-green-500 flex p-2 font-semibold text-white">Accept</a>
-                                <a href="#"
-                                    class="rounded-md hover:opacity-85 bg-red-500 flex p-2 font-semibold text-white">Reject</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
+
         </div>
     </div>
 
@@ -261,11 +261,11 @@
             sidebar.classList.add('-translate-x-full');
         });
 
-        // popup Profile
+        // popup Pinjjam
 
-        const openPopup = document.getElementById('openPopupProfile');
-        const closePopup = document.getElementById('closePopupProfile');
-        const popup = document.getElementById('popupProfile');
+        const openPopup = document.getElementById('openPopupPinjam');
+        const closePopup = document.getElementById('closePopupPinjam');
+        const popup = document.getElementById('popupPinjam');
 
         // Buka popup
         openPopup.addEventListener('click', () => {
@@ -278,11 +278,30 @@
         });
 
         // Submit form
-        document.getElementById('popupForm').addEventListener('submit', (e) => {
+        document.getElementById('popupFormPinjam').addEventListener('submit', (e) => {
             e.preventDefault();
             alert('Form submitted!');
             popup.classList.add('hidden');
         });
+
+
+        // Ambil elemen yang dibutuhkan
+        const openPopupProfile = document.getElementById('openPopupProfile');
+        const closePopupProfile = document.getElementById('closePopupProfile');
+        const popupProfile = document.getElementById('popupProfile');
+
+        // Buka popup profile
+        openPopupProfile.addEventListener('click', () => {
+            popupProfile.classList.remove('hidden');
+        });
+
+        // Tutup popup profile
+        closePopupProfile.addEventListener('click', () => {
+            popupProfile.classList.add('hidden');
+        });
+
+
+
     </script>
 </body>
 
