@@ -25,12 +25,13 @@
                 </li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="timeline-peminjaman.html"
                         class="flex items-center"><ion-icon name="calendar" class="text-2xl pr-2"></ion-icon>Timeline
-                        Peminjaman</a></li>
+                    </a></li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="pinjam-kendaraan.html"
                         class="flex items-center"><ion-icon name="car" class="text-2xl pr-2"></ion-icon>Pinjam
                         Kendaraan</a></li>
-                <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="pinjam-kendaraan.html"
-                        class="flex items-center"><ion-icon name="car" class="text-2xl pr-2"></ion-icon>Peminjaman Saya</a></li>
+                <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="peminjaman-saya.html"
+                        class="flex items-center"><ion-icon name="car" class="text-2xl pr-2"></ion-icon>Peminjaman
+                        Saya</a></li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="daftar-permohonan.html"
                         class="flex items-center"><ion-icon name="megaphone" class="text-2xl pr-2"></ion-icon>Daftar
                         Permohonan</a></li>
@@ -195,55 +196,77 @@
                     </script>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 font-poppins">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 font-poppins">
                     <!-- Card 1 -->
-                    <div class="flex flex-col bg-white rounded-xl w-full h-fit overflow-hidden">
+                    <div class="flex flex-col bg-white rounded-xl w-full overflow-hidden">
                         <img src="../assets/avanza (2).jpg" alt="" class="w-full">
                         <div class="flex flex-col p-2 gap-1 text-sm">
                             <b>Toyota</b>
                             <p>Toyota TDR3000</p>
                             <p>01/23/2025 07:40 PM - 01/23/2025 07:40 PM</p>
                             <p>Pinjam bentar lek ke RS yak.</p>
-                            <div class="flex gap-2">
-                                <p class="py-2">Status : <b class="bg-yellow-400 p-2 rounded-xl">Menunggu Persetujuan</b></p>
-                                <a href="form-pengembalian.html" class="bg-green-400 p-2 font-bold rounded-xl hidden">Pengembalian</a>
-                            </div>
+                            <div class="flex flex-wrap items-center gap-2 py-2 font-poppins text-sm whitespace-nowrap">
+                                <p class="flex items-center gap-1">
+                                  Status: 
+                                  <span class="bg-yellow-300 text-yellow-900 px-3 py-2 rounded-md font-semibold">
+                                    Menunggu Persetujuan
+                                  </span>
+                                </p>
+                                <a href="form-pengembalian.html" 
+                                   class="bg-green-500 hover:bg-green-600 px-3 py-2 rounded-md font-semibold transition-all duration-200 hidden">
+                                  Pengembalian
+                                </a>
+                              </div>
                         </div>
                     </div>
                 
                     <!-- Card 2 -->
-                    <div class="flex flex-col bg-white rounded-xl w-full h-fit overflow-hidden">
+                    <div class="flex flex-col bg-white rounded-xl w-full overflow-hidden">
                         <img src="../assets/avanza (4).jpg" alt="" class="w-full">
                         <div class="flex flex-col p-2 gap-1 text-sm">
                             <b>Toyota</b>
                             <p>Toyota TDR3000</p>
                             <p>01/23/2025 07:40 PM - 01/23/2025 07:40 PM</p>
                             <p>Pinjam bentar lek ke RS yak.</p>
-                            <div class="flex gap-2">
-                                <p class="py-2">Status : <b class="bg-green-400 p-2 rounded-xl">Di Setujui</b></p>
-                                <button class="bg-green-400 p-2 font-bold rounded-xl">Pengembalian</button>
-                            </div>
+                            <div class="flex flex-wrap items-center gap-2 py-2 font-poppins text-sm whitespace-nowrap">
+                                <p class="flex items-center gap-1">
+                                  Status: 
+                                  <span class="bg-green-400 px-3 py-2 rounded-md font-semibold">
+                                    Di setujui
+                                  </span>
+                                </p>
+                                <a href="form-pengembalian.html" 
+                                   class="bg-green-400 hover:bg-green-600 px-3 py-2 rounded-md font-semibold transition-all duration-200">
+                                  Form Pengembalian
+                                </a>
+                              </div>
                         </div>
                     </div>
                 
                     <!-- Card 3 -->
-                    <div class="flex flex-col bg-white rounded-xl w-full h-fit overflow-hidden">
+                    <div class="flex flex-col bg-white rounded-xl w-full overflow-hidden">
                         <img src="../assets/avanza (5).jpg" alt="" class="w-full">
                         <div class="flex flex-col p-2 gap-1 text-sm">
                             <b>Toyota</b>
                             <p>Toyota TDR3000</p>
                             <p>01/23/2025 07:40 PM - 01/23/2025 07:40 PM</p>
                             <p>Pinjam bentar lek ke RS yak.</p>
-                            <div class="flex gap-2">
-                                <p class="py-2">Status : <b class="bg-green-400 p-2 rounded-xl">Sudah di kembalikan</b></p>
-                                <button class="bg-green-400 p-2 font-bold rounded-xl hidden">Pengembalian</button>
-                            </div>
+                            <div class="flex flex-wrap items-center gap-2 py-2 font-poppins text-sm whitespace-nowrap">
+                                <p class="flex items-center gap-1">
+                                  Status: 
+                                  <span class="bg-green-400 px-3 py-2 rounded-md font-semibold">
+                                    Selesai
+                                  </span>
+                                </p>
+                                <a href="form-pengembalian.html" 
+                                   class="bg-green-500 hover:bg-green-600 px-3 py-2 rounded-md font-semibold transition-all duration-200 hidden">
+                                  Pengembalian
+                                </a>
+                              </div>
                         </div>
                     </div>
                 </div>
                 
-
-            </div>
 
         </div>
     </div>
