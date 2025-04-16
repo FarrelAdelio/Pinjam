@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Timeline Peminjaman</title>
+    <title>Dashboard | Admin</title>
     <link rel="stylesheet" href="../output.css">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </head>
@@ -48,12 +48,12 @@
 
             <!-- Navbar -->
             <div class="flex justify-between">
-                <h1 class="font-poppins font-bold text-xl sm:text-2xl flex items-center ">Timeline Peminjaman</h1>
+                <h1 class="font-poppins font-bold text-xl sm:text-2xl flex items-center">Peminjaman Saya</h1>
 
                 <button class="flex w-fit gap-3" id="openPopupProfile">
                     <div class="flex flex-col text-sm">
                         <h1>Hey, <b>Farrel</b>.</h1>
-                        <p class="text-left">Staff</p>
+                        <p class="text-left">Admin</p>
                     </div>
                     <div class="flex">
                         <div class="w-9 h-9 overflow-hidden rounded-full my-auto bg-center bg-cover shadow-sm"
@@ -68,12 +68,6 @@
                         <h2 class="text-xl font-semibold mb-4">Form: Data Diri</h2>
 
                         <form id="popupFormProfile">
-                            <div class="mb-4">
-                                <label for="foto-profile" class="block text-sm font-medium">Foto Profile</label>
-                                <input type="file" id="foto-profile" name="foto-profile" required
-                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-                            </div>
-
                             <div class="mb-4">
                                 <label for="name" class="block text-sm font-medium">Nama</label>
                                 <input type="text" id="name" name="name" required
@@ -143,8 +137,7 @@
                                 <label for="depart"
                                     class="block text-sm font-medium  focus:ring-2 focus:ring-blue-400">Prodi</label>
 
-
-                                <select name="depart" id="sort" disabled
+                                <select name="depart" id="sort"
                                     class="p-2 border rounded-md w-full  focus:ring-2 focus:ring-blue-400">
                                     <option value="TRPL">Teknik Rekayasa Perangkat Lunak</option>
                                     <option value="MB">Manajemen Bisnis</option>
@@ -170,13 +163,9 @@
 
 
             <!-- TIMELINE -->
-            <div class="relative overflow-x-auto shadow-md rounded-lg mt-8">
+            <div class="relative overflow-x-auto rounded-lg mt-8">
 
                 <div class="flex justify-between whitespace-nowrap gap-2">
-                    <a href="pinjam-kendaraan-user.html"
-                        class="bg-blue-500 text-white w-fit h-fit px-2 py-2 rounded-md">Pinjam
-                        Sekarang</a>
-
                     <div class="flex mb-2 items-center ml-auto w-fit">
                         <input type="text" id="search" placeholder="Cari..." class="p-2 border rounded-md mr-2"
                             onkeyup="searchTable()">
@@ -201,95 +190,77 @@
                     </script>
                 </div>
 
-                <table class="min-w-[700px] w-full text-sm text-left rtl:text-right text-primary2">
-                    <thead class="text-xs text-gray-700 uppercase bg-white">
-                        <tr>
-                            <th scope="col" class="px-4 py-3">Plat Nomor</th>
-                            <th scope="col" class="px-4 py-3">Merk</th>
-                            <th scope="col" class="px-4 py-3">Seri</th>
-                            <th scope="col" class="px-4 py-3">Kategori</th>
-                            <th scope="col" class="px-4 py-3">Peminjam</th>
-                            <th scope="col" class="px-4 py-3">Dipinjam</th>
-                            <th scope="col" class="px-4 py-3">Estimasi di Kembalikan</th>
-                            <th scope="col" class="px-4 py-3">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="bg-white border-b border-gray-200">
-                            <th scope="row" class="px-4 py-4 font-medium text-primary2">BP1234</th>
-                            <td class="px-4 py-4">Avanza</td>
-                            <td class="px-4 py-4">Avanza 1</td>
-                            <td class="px-4 py-4">Mobil</td>
-                            <td class="px-4 py-4">Dadang</td>
-                            <td class="px-4 py-4">01/23/2025 07:40 PM</td>
-                            <td class="px-4 py-4">01/24/2025 07:40 PM</td>
-                            <td class="px-4 py-4">
-                                <p class="bg-yellow-100 rounded-full w-fit px-2 font-semibold">Digunakan</p>
-                            </td>
-                        </tr>
-                        <tr class="bg-white border-b border-gray-200">
-                            <th scope="row" class="px-4 py-4 font-medium text-primary2">BP1234</th>
-                            <td class="px-4 py-4">Avanza</td>
-                            <td class="px-4 py-4">Avanza 2</td>
-                            <td class="px-4 py-4">Mobil</td>
-                            <td class="px-4 py-4">Dudung</td>
-                            <td class="px-4 py-4">01/23/2025 07:40 PM</td>
-                            <td class="px-4 py-4">01/24/2025 07:40 PM</td>
-                            <td class="px-4 py-4">
-                                <p class="bg-red-400 rounded-full w-fit px-2 font-semibold">Perbaikan</p>
-                            </td>
-                        </tr>
-                        <tr class="bg-white border-b border-gray-200">
-                            <th scope="row" class="px-4 py-4 font-medium text-primary2">BP1234</th>
-                            <td class="px-4 py-4">Avanza</td>
-                            <td class="px-4 py-4">Avanza 3</td>
-                            <td class="px-4 py-4">Mobil</td>
-                            <td class="px-4 py-4">Diding</td>
-                            <td class="px-4 py-4">01/23/2025 07:40 PM</td>
-                            <td class="px-4 py-4">01/24/2025 07:40 PM</td>
-                            <td class="px-4 py-4">
-                                <p class="bg-green-300 rounded-full w-fit px-2 font-semibold">Done</p>
-                            </td>
-                        </tr>
-                        <tr class="bg-white border-b border-gray-200">
-                            <th scope="row" class="px-4 py-4 font-medium text-primary2">BP1234</th>
-                            <td class="px-4 py-4">Avanza</td>
-                            <td class="px-4 py-4">Avanza 3</td>
-                            <td class="px-4 py-4">Mobil</td>
-                            <td class="px-4 py-4">Diding</td>
-                            <td class="px-4 py-4">01/23/2025 07:40 PM</td>
-                            <td class="px-4 py-4">01/24/2025 07:40 PM</td>
-                            <td class="px-4 py-4">
-                                <p class="bg-green-300 rounded-full w-fit px-2 font-semibold">Done</p>
-                            </td>
-                        </tr>
-                        <tr class="bg-white border-b border-gray-200">
-                            <th scope="row" class="px-4 py-4 font-medium text-primary2">BP1234</th>
-                            <td class="px-4 py-4">Avanza</td>
-                            <td class="px-4 py-4">Avanza 3</td>
-                            <td class="px-4 py-4">Mobil</td>
-                            <td class="px-4 py-4">Diding</td>
-                            <td class="px-4 py-4">01/23/2025 07:40 PM</td>
-                            <td class="px-4 py-4">01/24/2025 07:40 PM</td>
-                            <td class="px-4 py-4">
-                                <p class="bg-green-300 rounded-full w-fit px-2 font-semibold">Done</p>
-                            </td>
-                        </tr>
-                        <tr class="bg-white border-b border-gray-200">
-                            <th scope="row" class="px-4 py-4 font-medium text-primary2">BP1234</th>
-                            <td class="px-4 py-4">Avanza</td>
-                            <td class="px-4 py-4">Avanza 3</td>
-                            <td class="px-4 py-4">Mobil</td>
-                            <td class="px-4 py-4">Diding</td>
-                            <td class="px-4 py-4">01/23/2025 07:40 PM</td>
-                            <td class="px-4 py-4">01/24/2025 07:40 PM</td>
-                            <td class="px-4 py-4">
-                                <p class="bg-green-300 rounded-full w-fit px-2 font-semibold">Done</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 font-poppins">
+                    <!-- Card 1 -->
+                    <div class="flex flex-col bg-white rounded-xl w-full overflow-hidden">
+                        <img src="../assets/avanza (2).jpg" alt="" class="w-full">
+                        <div class="flex flex-col p-2 gap-1 text-sm">
+                            <b>Toyota</b>
+                            <p>Toyota TDR3000</p>
+                            <p>01/23/2025 07:40 PM - 01/23/2025 07:40 PM</p>
+                            <p>Pinjam bentar lek ke RS yak.</p>
+                            <div class="flex flex-wrap items-center gap-2 py-2 font-poppins text-sm whitespace-nowrap">
+                                <p class="flex items-center gap-1">
+                                  Status: 
+                                  <span class="bg-yellow-300 text-yellow-900 px-3 py-2 rounded-md font-semibold">
+                                    Menunggu Persetujuan
+                                  </span>
+                                </p>
+                                <a href="form-pengembalian.html" 
+                                   class="bg-green-500 hover:bg-green-600 px-3 py-2 rounded-md font-semibold transition-all duration-200 hidden">
+                                  Pengembalian
+                                </a>
+                              </div>
+                        </div>
+                    </div>
+                
+                    <!-- Card 2 -->
+                    <div class="flex flex-col bg-white rounded-xl w-full overflow-hidden">
+                        <img src="../assets/avanza (4).jpg" alt="" class="w-full">
+                        <div class="flex flex-col p-2 gap-1 text-sm">
+                            <b>Toyota</b>
+                            <p>Toyota TDR3000</p>
+                            <p>01/23/2025 07:40 PM - 01/23/2025 07:40 PM</p>
+                            <p>Pinjam bentar lek ke RS yak.</p>
+                            <div class="flex flex-wrap items-center gap-2 py-2 font-poppins text-sm whitespace-nowrap">
+                                <p class="flex items-center gap-1">
+                                  Status: 
+                                  <span class="bg-green-400 px-3 py-2 rounded-md font-semibold">
+                                    Di setujui
+                                  </span>
+                                </p>
+                                <a href="form-pengembalian.html" 
+                                   class="bg-green-400 hover:bg-green-600 px-3 py-2 rounded-md font-semibold transition-all duration-200">
+                                  Form Pengembalian
+                                </a>
+                              </div>
+                        </div>
+                    </div>
+                
+                    <!-- Card 3 -->
+                    <div class="flex flex-col bg-white rounded-xl w-full overflow-hidden">
+                        <img src="../assets/avanza (5).jpg" alt="" class="w-full">
+                        <div class="flex flex-col p-2 gap-1 text-sm">
+                            <b>Toyota</b>
+                            <p>Toyota TDR3000</p>
+                            <p>01/23/2025 07:40 PM - 01/23/2025 07:40 PM</p>
+                            <p>Pinjam bentar lek ke RS yak.</p>
+                            <div class="flex flex-wrap items-center gap-2 py-2 font-poppins text-sm whitespace-nowrap">
+                                <p class="flex items-center gap-1">
+                                  Status: 
+                                  <span class="bg-green-400 px-3 py-2 rounded-md font-semibold">
+                                    Selesai
+                                  </span>
+                                </p>
+                                <a href="form-pengembalian.html" 
+                                   class="bg-green-500 hover:bg-green-600 px-3 py-2 rounded-md font-semibold transition-all duration-200 hidden">
+                                  Pengembalian
+                                </a>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                
 
         </div>
     </div>
