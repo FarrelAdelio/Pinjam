@@ -35,6 +35,8 @@
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="daftar-permohonan.html"
                         class="flex items-center"><ion-icon name="megaphone" class="text-2xl pr-2"></ion-icon>Daftar
                         Permohonan</a></li>
+                <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="pengembalian-kendaraan.html"
+                        class="flex items-center"><ion-icon name="megaphone" class="text-2xl pr-2"></ion-icon>Pengembalian Kendaraan</a></li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="users.html"
                         class="flex items-center"><ion-icon name="person" class="text-2xl pr-2"></ion-icon>Users</a>
                 </li>
@@ -201,53 +203,88 @@
                     }
                 </script>
 
-                <table class="min-w-[700px] w-full text-sm text-left rtl:text-right text-primary2">
-                    <thead class="text-xs text-gray-700 uppercase bg-white">
-                        <tr>
-                            <th scope="col" class="px-4 py-3">Nama</th>
-                            <th scope="col" class="px-4 py-3">No Whatsapp</th>
-                            <th scope="col" class="px-4 py-3">Merk</th>
-                            <th scope="col" class="px-4 py-3">Seri</th>
-                            <th scope="col" class="px-4 py-3">Di Pinjamkan</th>
-                            <th scope="col" class="px-4 py-3">Estimasi di Kembalikan</th>
-                            <th scope="col" class="px-4 py-3">Tujuan Peminjaman</th>
-                            <th scope="col" class="px-4 py-3">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="bg-white border-b border-gray-200">
-                            <th scope="row" class="px-4 py-4 font-medium text-primary2 whitespace-nowrap">Farrel Adelio
-                                Asman</th>
-                            <td class="px-4 py-4">089686968886</td>
-                            <td class="px-4 py-4">Honda</td>
-                            <td class="px-4 py-4">Honda Civic 2017</td>
-                            <td class="px-4 py-4">01/23/2025 07:40 PM</td>
-                            <td class="px-4 py-4">01/24/2025 07:40 PM</td>
-                            <td class="px-4 py-4">Menjenguk mahasiswa yang sedang rawat inap</td>
-                            <td class="px-4 py-4 space-x-2 flex whitespace-nowrap">
-                                <a href="#"
-                                    class="rounded-md hover:opacity-85 bg-green-500 flex p-2 font-semibold text-white">Accept</a>
-                                <a href="#"
-                                    class="rounded-md hover:opacity-85 bg-red-500 flex p-2 font-semibold text-white">Reject</a>
-                            </td>
-                        </tr>
-                        <tr class="bg-white border-b border-gray-200">
-                            <th scope="row" class="px-4 py-4 font-medium text-primary2 whitespace-nowrap">Zoro</th>
-                            <td class="px-4 py-4">0987654321</td>
-                            <td class="px-4 py-4">Toyota</td>
-                            <td class="px-4 py-4">Pajero Pro Max</td>
-                            <td class="px-4 py-4">02/23/2025 07:40 PM</td>
-                            <td class="px-4 py-4">02/24/2025 07:40 PM</td>
-                            <td class="px-4 py-4">Menjenguk mahasiswa yang sedang rawat inap</td>
-                            <td class="px-4 py-4 space-x-2 flex whitespace-nowrap">
-                                <a href="#"
-                                    class="rounded-md hover:opacity-85 bg-green-500 flex p-2 font-semibold text-white">Accept</a>
-                                <a href="#"
-                                    class="rounded-md hover:opacity-85 bg-red-500 flex p-2 font-semibold text-white">Reject</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+<table class="min-w-[700px] w-full text-sm text-left rtl:text-right text-primary2">
+    <thead class="text-xs text-gray-700 uppercase bg-white">
+        <tr>
+            <th scope="col" class="px-4 py-3">Nama</th>
+            <th scope="col" class="px-4 py-3">No Whatsapp</th>
+            <th scope="col" class="px-4 py-3">Merk</th>
+            <th scope="col" class="px-4 py-3">Seri</th>
+            <th scope="col" class="px-4 py-3">Di Pinjamkan</th>
+            <th scope="col" class="px-4 py-3">Estimasi di Kembalikan</th>
+            <th scope="col" class="px-4 py-3">Tujuan Peminjaman</th>
+            <th scope="col" class="px-4 py-3">Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="bg-white border-b border-gray-200">
+            <th scope="row" class="px-4 py-4 font-medium text-primary2 whitespace-nowrap">Farrel Adelio Asman</th>
+            <td class="px-4 py-4">089686968886</td>
+            <td class="px-4 py-4">Honda</td>
+            <td class="px-4 py-4">Honda Civic 2017</td>
+            <td class="px-4 py-4">01/23/2025 07:40 PM</td>
+            <td class="px-4 py-4">01/24/2025 07:40 PM</td>
+            <td class="px-4 py-4">Menjenguk mahasiswa yang sedang rawat inap</td>
+            <td class="px-4 py-4 space-x-2 flex whitespace-nowrap">
+                <a href="#" class="rounded-md hover:opacity-85 bg-green-500 flex p-2 font-semibold text-white">Accept</a>
+                <a href="#" class="rounded-md hover:opacity-85 bg-red-500 flex p-2 font-semibold text-white">Reject</a>
+            </td>
+        </tr>
+        <tr class="bg-white border-b border-gray-200">
+            <th scope="row" class="px-4 py-4 font-medium text-primary2 whitespace-nowrap">Zoro</th>
+            <td class="px-4 py-4">0987654321</td>
+            <td class="px-4 py-4">Toyota</td>
+            <td class="px-4 py-4">Pajero Pro Max</td>
+            <td class="px-4 py-4">02/23/2025 07:40 PM</td>
+            <td class="px-4 py-4">02/24/2025 07:40 PM</td>
+            <td class="px-4 py-4">Menjenguk mahasiswa yang sedang rawat inap</td>
+            <td class="px-4 py-4 space-x-2 flex whitespace-nowrap">
+                <a href="#" class="rounded-md hover:opacity-85 bg-green-500 flex p-2 font-semibold text-white">Accept</a>
+                <a href="#" class="rounded-md hover:opacity-85 bg-red-500 flex p-2 font-semibold text-white">Reject</a>
+            </td>
+        </tr>
+        <tr class="bg-white border-b border-gray-200">
+            <th scope="row" class="px-4 py-4 font-medium text-primary2 whitespace-nowrap">Lisa Wirawan</th>
+            <td class="px-4 py-4">082123456789</td>
+            <td class="px-4 py-4">BMW</td>
+            <td class="px-4 py-4">BMW X7</td>
+            <td class="px-4 py-4">03/01/2025 10:00 AM</td>
+            <td class="px-4 py-4">03/02/2025 10:00 AM</td>
+            <td class="px-4 py-4">Perjalanan bisnis ke Jakarta</td>
+            <td class="px-4 py-4 space-x-2 flex whitespace-nowrap">
+                <a href="#" class="rounded-md hover:opacity-85 bg-green-500 flex p-2 font-semibold text-white">Accept</a>
+                <a href="#" class="rounded-md hover:opacity-85 bg-red-500 flex p-2 font-semibold text-white">Reject</a>
+            </td>
+        </tr>
+        <tr class="bg-white border-b border-gray-200">
+            <th scope="row" class="px-4 py-4 font-medium text-primary2 whitespace-nowrap">Anton Salim</th>
+            <td class="px-4 py-4">081234567890</td>
+            <td class="px-4 py-4">Mercedes-Benz</td>
+            <td class="px-4 py-4">GLC 300</td>
+            <td class="px-4 py-4">04/15/2025 09:00 AM</td>
+            <td class="px-4 py-4">04/16/2025 09:00 AM</td>
+            <td class="px-4 py-4">Kunjungan keluarga di luar kota</td>
+            <td class="px-4 py-4 space-x-2 flex whitespace-nowrap">
+                <a href="#" class="rounded-md hover:opacity-85 bg-green-500 flex p-2 font-semibold text-white">Accept</a>
+                <a href="#" class="rounded-md hover:opacity-85 bg-red-500 flex p-2 font-semibold text-white">Reject</a>
+            </td>
+        </tr>
+        <tr class="bg-white border-b border-gray-200">
+            <th scope="row" class="px-4 py-4 font-medium text-primary2 whitespace-nowrap">Rudi Hartono</th>
+            <td class="px-4 py-4">085612345678</td>
+            <td class="px-4 py-4">Suzuki</td>
+            <td class="px-4 py-4">Ertiga</td>
+            <td class="px-4 py-4">05/10/2025 08:00 AM</td>
+            <td class="px-4 py-4">05/11/2025 08:00 AM</td>
+            <td class="px-4 py-4">Wisata keluarga</td>
+            <td class="px-4 py-4 space-x-2 flex whitespace-nowrap">
+                <a href="#" class="rounded-md hover:opacity-85 bg-green-500 flex p-2 font-semibold text-white">Accept</a>
+                <a href="#" class="rounded-md hover:opacity-85 bg-red-500 flex p-2 font-semibold text-white">Reject</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 
 
 

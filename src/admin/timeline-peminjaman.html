@@ -35,6 +35,8 @@
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="daftar-permohonan.html"
                         class="flex items-center"><ion-icon name="megaphone" class="text-2xl pr-2"></ion-icon>Daftar
                         Permohonan</a></li>
+                <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="pengembalian-kendaraan.html"
+                        class="flex items-center"><ion-icon name="megaphone" class="text-2xl pr-2"></ion-icon>Pengembalian Kendaraan</a></li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="users.html"
                         class="flex items-center"><ion-icon name="person" class="text-2xl pr-2"></ion-icon>Users</a>
                 </li>
@@ -331,171 +333,143 @@
                     </script>
                 </div>
 
-                <table class="min-w-[700px] w-full text-sm text-left rtl:text-right text-primary2">
+                <table id="pinjamTable" class="min-w-[700px] w-full text-sm text-left rtl:text-right text-primary2">
                     <thead class="text-xs text-gray-700 uppercase bg-white">
-                        <tr>
-                            <th scope="col" class="px-4 py-3">Plat Nomor</th>
-                            <th scope="col" class="px-4 py-3">Merk</th>
-                            <th scope="col" class="px-4 py-3">Seri</th>
-                            <th scope="col" class="px-4 py-3">Kategori</th>
-                            <th scope="col" class="px-4 py-3">Peminjam</th>
-                            <th scope="col" class="px-4 py-3">Dipinjam</th>
-                            <th scope="col" class="px-4 py-3">Estimasi di Kembalikan</th>
-                            <th scope="col" class="px-4 py-3">Status</th>
-                            <th scope="col" class="px-4 py-3">Action</th>
-                        </tr>
+                      <tr>
+                        <th class="px-4 py-3">Plat Nomor</th>
+                        <th class="px-4 py-3">Merk</th>
+                        <th class="px-4 py-3">Seri</th>
+                        <th class="px-4 py-3">Kategori</th>
+                        <th class="px-4 py-3">Peminjam</th>
+                        <th class="px-4 py-3">Dipinjam</th>
+                        <th class="px-4 py-3">Estimasi di Kembalikan</th>
+                        <th class="px-4 py-3">Status</th>
+                        <th class="px-4 py-3">Action</th>
+                      </tr>
                     </thead>
                     <tbody>
-                        <tr class="bg-white border-b border-gray-200">
-                            <th scope="row" class="px-4 py-4 font-medium text-primary2">BP1234</th>
-                            <td class="px-4 py-4">Avanza</td>
-                            <td class="px-4 py-4">Avanza 1</td>
-                            <td class="px-4 py-4">Mobil</td>
-                            <td class="px-4 py-4">Dadang</td>
-                            <td class="px-4 py-4">01/23/2025 07:40 PM</td>
-                            <td class="px-4 py-4">01/24/2025 07:40 PM</td>
-                            <td class="px-4 py-4">
-                                <p class="bg-yellow-100 rounded-full w-fit px-2 font-semibold">Digunakan</p>
-                            </td>
-                            <td class="px-4 py-4 space-x-2 whitespace-nowrap">
-                                <a href="#"
-                                    class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
-                                <a href="#"
-                                    class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
-                            </td>
-                        </tr>
-                        <tr class="bg-white border-b border-gray-200">
-                            <th scope="row" class="px-4 py-4 font-medium text-primary2">BP1234</th>
-                            <td class="px-4 py-4">Avanza</td>
-                            <td class="px-4 py-4">Avanza 2</td>
-                            <td class="px-4 py-4">Mobil</td>
-                            <td class="px-4 py-4">Dudung</td>
-                            <td class="px-4 py-4">01/23/2025 07:40 PM</td>
-                            <td class="px-4 py-4">01/24/2025 07:40 PM</td>
-                            <td class="px-4 py-4">
-                                <p class="bg-yellow-100 rounded-full w-fit px-2 font-semibold">Digunakan</p>
-                            </td>
-                            <td class="px-4 py-4 space-x-2 whitespace-nowrap">
-                                <a href="#"
-                                    class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
-                                <a href="#"
-                                    class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
-                            </td>
-                        </tr>
-                        <tr class="bg-white border-b border-gray-200">
-                            <th scope="row" class="px-4 py-4 font-medium text-primary2">BP1234</th>
-                            <td class="px-4 py-4">Avanza</td>
-                            <td class="px-4 py-4">Avanza 3</td>
-                            <td class="px-4 py-4">Mobil</td>
-                            <td class="px-4 py-4">Diding</td>
-                            <td class="px-4 py-4">01/23/2025 07:40 PM</td>
-                            <td class="px-4 py-4">01/24/2025 07:40 PM</td>
-                            <td class="px-4 py-4">
-                                <p class="bg-green-300 rounded-full w-fit px-2 font-semibold">Done</p>
-                            </td>
-                            <td class="px-4 py-4 space-x-2">
-                                <a href="#"
-                                    class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
-                                <a href="#"
-                                    class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
-                            </td>
-                        </tr>
-                        <tr class="bg-white border-b border-gray-200">
-                            <th scope="row" class="px-4 py-4 font-medium text-primary2">BP1234</th>
-                            <td class="px-4 py-4">Avanza</td>
-                            <td class="px-4 py-4">Avanza 3</td>
-                            <td class="px-4 py-4">Mobil</td>
-                            <td class="px-4 py-4">Diding</td>
-                            <td class="px-4 py-4">01/23/2025 07:40 PM</td>
-                            <td class="px-4 py-4">01/24/2025 07:40 PM</td>
-                            <td class="px-4 py-4">
-                                <p class="bg-green-300 rounded-full w-fit px-2 font-semibold">Done</p>
-                            </td>
-                            <td class="px-4 py-4 space-x-2">
-                                <a href="#"
-                                    class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
-                                <a href="#"
-                                    class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
-                            </td>
-                        </tr>
-                        <tr class="bg-white border-b border-gray-200">
-                            <th scope="row" class="px-4 py-4 font-medium text-primary2">BP1234</th>
-                            <td class="px-4 py-4">Avanza</td>
-                            <td class="px-4 py-4">Avanza 3</td>
-                            <td class="px-4 py-4">Mobil</td>
-                            <td class="px-4 py-4">Diding</td>
-                            <td class="px-4 py-4">01/23/2025 07:40 PM</td>
-                            <td class="px-4 py-4">01/24/2025 07:40 PM</td>
-                            <td class="px-4 py-4">
-                                <p class="bg-green-300 rounded-full w-fit px-2 font-semibold">Done</p>
-                            </td>
-                            <td class="px-4 py-4 space-x-2">
-                                <a href="#"
-                                    class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
-                                <a href="#"
-                                    class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-
-                <div class="relative overflow-x-auto shadow-md rounded-lg mt-8">
-
-                <div class="flex mb-2 items-center ml-auto w-fit">
-                    <input type="text" id="search" placeholder="Cari..." class="p-2 border rounded-md mr-2"
-                        onkeyup="searchTable()">
-
-                    <label for="sort" class="mr-2 font-semibold">Sort by</label>
-                    <select name="sort" id="sort" class="p-2 border rounded-md cursor-pointer">
-                        <option value="terbaru">Terbaru</option>
-                        <option value="terlama">Terlama</option>
-                    </select>
-                </div>
-
-                <script>
-                    function searchTable() {
-                        const input = document.getElementById('search').value.toLowerCase();
-                        const rows = document.querySelectorAll('tbody tr');
-
-                        rows.forEach(row => {
-                            const text = row.textContent.toLowerCase();
-                            row.style.display = text.includes(input) ? '' : 'none';
-                        });
-                    }
-                </script>
-            </div>
-
-            <table class="min-w-[700px] w-full text-sm text-left rtl:text-right text-primary2">
-                <thead class="text-xs text-gray-700 uppercase bg-white">
-                    <tr>
-                        <th scope="col" class="px-4 py-3">Kondisi Ban</th>
-                        <th scope="col" class="px-4 py-3">Kondisi Body</th>
-                        <th scope="col" class="px-4 py-3">Kondisi Mesin</th>
-                        <th scope="col" class="px-4 py-3">BBM Tersasi</th>
-                        <th scope="col" class="px-4 py-3">Lampu / Elektrikal</th>
-                        <th scope="col" class="px-4 py-3">Foto Dokumentasi</th>
-                        <th scope="col" class="px-4 py-3">Pinpoint Lokasi</th>
-                        <th scope="col" class="px-4 py-3">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="bg-white border-b border-gray-200">
-                        <th scope="row" class="px-4 py-4 font-medium text-primary2">Baik</th>
-                        <td class="px-4 py-4">Baik</td>
-                        <td class="px-4 py-4">Tidak Lecet</td>
-                        <td class="px-4 py-4">50%</td>
-                        <td class="px-4 py-4">Baik</td>
-                        <td class="px-4 py-4"><img src="../assets/avanza (2).jpg" alt="" class="w-20 h-20"></td>
-                        <td class="px-4 py-4">-</td>
-                        <td class="px-4 py-4 space-x-2 whitespace-nowrap">
-                            <a href="#" class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
-                            <a href="#" class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
+                      <!-- Telat (Estimasi sudah lewat) -->
+                      <tr class="bg-white border-b border-gray-200 transition-all duration-300">
+                        <th class="px-4 py-4 font-medium text-primary2">BP1234</th>
+                        <td class="px-4 py-4">Avanza</td>
+                        <td class="px-4 py-4">G Type</td>
+                        <td class="px-4 py-4">Mobil</td>
+                        <td class="px-4 py-4">Dadang</td>
+                        <td class="px-4 py-4">04/20/2025 10:00 AM</td>
+                        <td class="px-4 py-4">04/21/2025 10:00 AM</td>
+                        <td class="px-4 py-4">
+                          <p class="bg-yellow-100 rounded-full w-fit px-2 font-semibold">Digunakan</p>
                         </td>
-                    </tr>
-                </tbody>
-            </table>
-
+                        <td class="px-4 py-4 space-x-2 whitespace-nowrap">
+                          <a href="#" class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
+                          <a href="#" class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
+                        </td>
+                      </tr>
+                  
+                      <!-- H-1 (Estimasi Besok) -->
+                      <tr class="bg-white border-b border-gray-200 transition-all duration-300">
+                        <th class="px-4 py-4 font-medium text-primary2">BP5678</th>
+                        <td class="px-4 py-4">Xenia</td>
+                        <td class="px-4 py-4">R Type</td>
+                        <td class="px-4 py-4">Mobil</td>
+                        <td class="px-4 py-4">Dudung</td>
+                        <td class="px-4 py-4">04/25/2025 02:00 PM</td>
+                        <td class="px-4 py-4">04/27/2025 02:00 PM</td> <!-- Misal hari ini 26 April 2025 -->
+                        <td class="px-4 py-4">
+                          <p class="bg-yellow-100 rounded-full w-fit px-2 font-semibold">Digunakan</p>
+                        </td>
+                        <td class="px-4 py-4 space-x-2 whitespace-nowrap">
+                          <a href="#" class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
+                          <a href="#" class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
+                        </td>
+                      </tr>
+                  
+                      <!-- Aman (Estimasi Masih Lama) -->
+                      <tr class="bg-white border-b border-gray-200 transition-all duration-300">
+                        <th class="px-4 py-4 font-medium text-primary2">BP9101</th>
+                        <td class="px-4 py-4">Brio</td>
+                        <td class="px-4 py-4">S Type</td>
+                        <td class="px-4 py-4">Mobil</td>
+                        <td class="px-4 py-4">Diding</td>
+                        <td class="px-4 py-4">04/25/2025 09:00 AM</td>
+                        <td class="px-4 py-4">05/01/2025 09:00 AM</td>
+                        <td class="px-4 py-4">
+                          <p class="bg-yellow-100 rounded-full w-fit px-2 font-semibold">Digunakan</p>
+                        </td>
+                        <td class="px-4 py-4 space-x-2 whitespace-nowrap">
+                          <a href="#" class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
+                          <a href="#" class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
+                        </td>
+                      </tr>
+                  
+                      <!-- Status Done -->
+                      <tr class="bg-white border-b border-gray-200 transition-all duration-300">
+                        <th class="px-4 py-4 font-medium text-primary2">BP1122</th>
+                        <td class="px-4 py-4">Jazz</td>
+                        <td class="px-4 py-4">RS Type</td>
+                        <td class="px-4 py-4">Mobil</td>
+                        <td class="px-4 py-4">Diding</td>
+                        <td class="px-4 py-4">04/20/2025 11:00 AM</td>
+                        <td class="px-4 py-4">04/21/2025 11:00 AM</td>
+                        <td class="px-4 py-4">
+                          <p class="bg-green-300 rounded-full w-fit px-2 font-semibold">Done</p>
+                        </td>
+                        <td class="px-4 py-4 space-x-2 whitespace-nowrap">
+                          <a href="#" class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
+                          <a href="#" class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                  <script>
+                    function updateRowColors() {
+                      const now = new Date();
+                  
+                      const rows = document.querySelectorAll('#pinjamTable tbody tr');
+                      rows.forEach(row => {
+                        const cells = row.querySelectorAll("td");
+                        if (cells.length < 7) return;
+                  
+                        const estimasiText = cells[6].textContent.trim();
+                        const statusText = cells[7].textContent.trim();
+                        const estimasiDate = parseDate(estimasiText);
+                  
+                        // Reset semua bg-* dulu
+                        row.classList.remove("bg-white", "bg-red-100", "bg-yellow-100", "bg-green-300");
+                  
+                        if (statusText.toLowerCase() === "done") {
+                          row.classList.add("bg-green-300"); // Done
+                          return;
+                        }
+                  
+                        const diffTime = estimasiDate - now;
+                        const diffDays = diffTime / (1000 * 60 * 60 * 24);
+                  
+                        if (diffTime < 0) {
+                          row.classList.add("bg-red-100"); // Telat
+                        } else if (diffDays < 1) {
+                          row.classList.add("bg-yellow-100"); // H-1
+                        } else {
+                          row.classList.add("bg-white"); // Aman
+                        }
+                      });
+                    }
+                  
+                    // Helper function to parse date
+                    function parseDate(dateStr) {
+                      const [date, time] = dateStr.split(" ");
+                      const [day, month, year] = date.split("/");
+                      const [hour, minute] = time.split(":");
+                      return new Date(`${year}-${month}-${day}T${hour}:${minute}:00`);
+                    }
+                  
+                    // Call the function to update row colors when the page loads
+                    window.onload = updateRowColors;
+                  </script>
+                  
+                  
+                
         </div>
 
     </div>
@@ -554,8 +528,9 @@
         });
 
 
-
     </script>
+    
+        
 </body>
 
 
