@@ -24,8 +24,7 @@
                         class="flex items-center"><ion-icon name="apps" class="text-2xl pr-2"></ion-icon>Dashboard</a>
                 </li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="timeline-peminjaman-user.html"
-                        class="flex items-center"><ion-icon name="calendar" class="text-2xl pr-2"></ion-icon>Timeline
-                        Peminjaman</a></li>
+                        class="flex items-center"><ion-icon name="calendar" class="text-2xl pr-2"></ion-icon>Timeline</a></li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="peminjaman-saya-user.html"
                         class="flex items-center"><ion-icon name="car" class="text-2xl pr-2"></ion-icon>Peminjaman
                         Saya</a></li>
@@ -140,6 +139,17 @@
                                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                             </div>
 
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium">SIM</label>
+                                <p class="text-xs">SIM A</p>
+                                <input type="file" id="sima" name="sima" required
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+
+                                <p class="text-xs mt-2">SIM B</p>
+                                <input type="file" id="simb" name="simb" required
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                            </div>
+
                             <div class="flex flex-col w-full mb-4">
                                 <label for="depart"
                                     class="block text-sm font-medium  focus:ring-2 focus:ring-blue-400">Prodi</label>
@@ -173,7 +183,7 @@
                         <h2 class="text-lg font-semibold mb-4">Kondisi Kendaraan</h2>
 
                         <!-- Kondisi Ban -->
-                        <label class="block mb-2 font-medium">Kondisi Ban</label>
+                        <label class="block mb-2 font-medium text-sm">Kondisi Ban</label>
                         <select name="kondisi_ban"
                             class="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4">
                             <option value="">Pilih Kondisi Ban</option>
@@ -182,7 +192,7 @@
                         </select>
 
                         <!-- Kondisi Body -->
-                        <label class="block mb-2 font-medium">Kondisi Body</label>
+                        <label class="block mb-2 font-medium text-sm">Kondisi Body</label>
                         <select name="kondisi_body"
                             class="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4">
                             <option value="">Pilih Kondisi Body</option>
@@ -191,7 +201,7 @@
                         </select>
 
                         <!-- Kondisi Mesin -->
-                        <label class="block mb-2 font-medium">Kondisi Mesin</label>
+                        <label class="block mb-2 font-medium text-sm">Kondisi Mesin</label>
                         <select name="kondisi_mesin"
                             class="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4">
                             <option value="">Pilih Kondisi Mesin</option>
@@ -200,12 +210,12 @@
                         </select>
 
                         <!-- BBM Tersisa -->
-                        <label class="block mb-2 font-medium">BBM Tersisa (liter / %)</label>
+                        <label class="block mb-2 font-medium text-sm">BBM Tersisa (liter / %)</label>
                         <input type="text" name="bbm" placeholder="Contoh: 10 Liter atau 40%"
                             class="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4">
 
                         <!-- Lampu / Elektrikal -->
-                        <label class="block mb-2 font-medium">Lampu / Elektrikal</label>
+                        <label class="block mb-2 font-medium text-sm">Lampu / Elektrikal</label>
                         <select name="elektrikal"
                             class="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4">
                             <option value="">Pilih Kondisi Lampu / Elektrikal</option>
@@ -214,7 +224,7 @@
                         </select>
 
                         <div class="mb-4">
-                            <label class="block mb-2 font-medium">Foto Dokumentasi</label>
+                            <label class="block mb-2 font-medium text-sm">Foto Dokumentasi</label>
                             <input type="file" id="foto" name="foto" required
                                 class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                         </div>
@@ -224,42 +234,13 @@
                         <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
 
                         <!-- Form Lokasi -->
-                        <div class="mt-6">
-                            <h2 class=" font-poppins mb-2">Lokasi Pengembalian</h2>
-                            <div id="map" class="rounded-xl shadow-md" style="height: 300px;"></div>
-
-                            <input type="hidden" name="latitude" id="latitude">
-                            <input type="hidden" name="longitude" id="longitude">
-
-                            <p class="text-xs mt-2 text-slate-500">Pastikan lokasi sudah sesuai.</p>
-                        </div>
-
-                        <script>
-                            // Inisialisasi peta
-                            const map = L.map('map').setView([0, 0], 13);
-                            const marker = L.marker([0, 0]).addTo(map);
-
-                            // Tambahkan tiles (background peta)
-                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                                attribution: '&copy; OpenStreetMap'
-                            }).addTo(map);
-
-                            // Cari lokasi user
-                            navigator.geolocation.getCurrentPosition(function (position) {
-                                const lat = position.coords.latitude;
-                                const lng = position.coords.longitude;
-
-                                // Update marker dan peta
-                                map.setView([lat, lng], 15);
-                                marker.setLatLng([lat, lng]);
-
-                                // Set input value
-                                document.getElementById('latitude').value = lat;
-                                document.getElementById('longitude').value = lng;
-                            }, function () {
-                                alert('Gagal mengambil lokasi. Pastikan GPS aktif.');
-                            });
-                        </script>
+                        <label class="block mb-2 text-sm font-medium">Lokasi Kendaraan Terakhir</label>
+                        <select name="merk"
+                            class="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4">
+                            <option value="">Pilih Lokasi</option>
+                            <option value="Parkiran TA">Parkiran TA</option>
+                            <option value="Parkiran Gedung Utama">Parkiran Gedung Utama</option>
+                        </select>
 
                         <div class="flex justify-end space-x-2">
                             <a href="peminjaman-saya-user.html"

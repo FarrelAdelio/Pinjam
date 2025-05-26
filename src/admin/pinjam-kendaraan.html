@@ -147,6 +147,17 @@
                                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                             </div>
 
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium">SIM</label>
+                                <p class="text-xs">SIM A</p>
+                                <input type="file" id="sima" name="sima" required
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+
+                                <p class="text-xs mt-2">SIM B</p>
+                                <input type="file" id="simb" name="simb" required
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                            </div>
+
                             <div class="flex flex-col w-full mb-4">
                                 <label for="depart"
                                     class="block text-sm font-medium  focus:ring-2 focus:ring-blue-400">Prodi</label>
@@ -197,19 +208,19 @@
 
                             <form id="popupFormTambahKendaraan">
                                 <div class="mb-4">
-                                    <label for="seri" class="block text-sm font-medium">Atas Nama</label>
+                                    <label for="seri" class="block text-sm font-medium mb-2">Atas Nama</label>
                                     <input type="text" id="seri" name="seri" required value=""
                                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                                 </div> 
 
-                                <label class="block mb-2 font-medium">Jenis Kendaraan</label>
+                                <label class="block mb-2 text-sm font-medium">Jenis Kendaraan</label>
                                 <select name="kondisi_mesin"
                                     class="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4">
                                     <option value="">Pilih Jenis Kendaraan</option>
                                     <option value="normal">Mobil</option>
                                     <option value="ada_masalah">Motor</option>
                                 </select>
-                                <label class="block mb-2 font-medium">Merk Kendaraan</label>
+                                <label class="block mb-2 text-sm font-medium">Merk Kendaraan</label>
                                 <select name="merk"
                                     class="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4">
                                     <option value="">Pilih Merk Kendaraan</option>
@@ -221,61 +232,30 @@
                                 </select>
 
                                 <div class="mb-4">
-                                    <label for="seri" class="block text-sm font-medium">Seri Kendaraan</label>
+                                    <label for="seri" class="block text-sm font-medium mb-2">Seri Kendaraan</label>
                                     <input type="text" id="seri" name="seri" required value=""
                                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                                 </div>
 
                                 <div class="mb-4">
-                                    <label for="plat" class="block text-sm font-medium">Nomor Plat</label>
+                                    <label for="plat" class="block text-sm font-medium mb-2">Nomor Plat</label>
                                     <input type="text" id="plat" name="plat" required value="" placeholder="Contoh: BP 1234 ABC"
                                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                                 </div>
 
-                                <!-- Tambahkan ini di <head> -->
                         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
                         <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
 
-                        <!-- Form Lokasi -->
-                        <div class="mt-6 mb-4">
-                            <h2 class="block text-sm font-medium">Lokasi Kendaraan</h2>
-                            <div id="map" class="rounded-xl shadow-md" style="height: 300px;"></div>
-
-                            <input type="hidden" name="latitude" id="latitude">
-                            <input type="hidden" name="longitude" id="longitude">
-
-                            <p class="text-xs mt-2 text-slate-500">Pastikan lokasi sudah sesuai.</p>
-                        </div>
-
-                        <script>
-                            // Inisialisasi peta
-                            const map = L.map('map').setView([0, 0], 13);
-                            const marker = L.marker([0, 0]).addTo(map);
-
-                            // Tambahkan tiles (background peta)
-                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                                attribution: '&copy; OpenStreetMap'
-                            }).addTo(map);
-
-                            // Cari lokasi user
-                            navigator.geolocation.getCurrentPosition(function (position) {
-                                const lat = position.coords.latitude;
-                                const lng = position.coords.longitude;
-
-                                // Update marker dan peta
-                                map.setView([lat, lng], 15);
-                                marker.setLatLng([lat, lng]);
-
-                                // Set input value
-                                document.getElementById('latitude').value = lat;
-                                document.getElementById('longitude').value = lng;
-                            }, function () {
-                                alert('Gagal mengambil lokasi. Pastikan GPS aktif.');
-                            });
-                        </script>
+                        <label class="block mb-2 text-sm font-medium">Lokasi Kendaraan Terakhir</label>
+                        <select name="merk"
+                            class="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4">
+                            <option value="">Pilih Lokasi</option>
+                            <option value="Parkiran TA">Parkiran TA</option>
+                            <option value="Parkiran Gedung Utama">Parkiran Gedung Utama</option>
+                        </select>
 
                                 <div class="mb-4">
-                                    <label for="status" class="block text-sm font-medium">Status Kendaraan</label>
+                                    <label for="status" class="block text-sm font-medium mb-2">Status Kendaraan</label>
                                     <select id="status" name="status" required
                                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                                         <option value="">Pilih Status Kendaraan</option>
@@ -286,7 +266,7 @@
                                 </div>
 
                                 <div class="mb-4">
-                                    <label for="spesifikasi" class="block text-sm font-medium">Spesifikasi
+                                    <label for="spesifikasi" class="block text-sm font-medium  mb-2">Spesifikasi
                                         Kendaraan</label>
                                     <textarea id="spesifikasi" name="spesifikasi" required rows="4"
                                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
@@ -302,7 +282,7 @@
                                 </div>
 
                                 <div class="mb-4">
-                                    <label for="foto" class="block text-sm font-medium">Upload Foto Kendaraan</label>
+                                    <label for="foto" class="block text-sm font-medium  mb-2">Upload Foto Kendaraan</label>
                                     <input type="file" id="foto" name="foto" accept="image/*"
                                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                                 </div>
