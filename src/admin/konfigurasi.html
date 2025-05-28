@@ -61,8 +61,7 @@
 
             <!-- Navbar -->
             <div class="flex justify-between">
-                <h1 class="font-poppins font-bold text-xl sm:text-2xl flex items-center">Daftar Permohonan Peminjaman
-                </h1>
+                <h1 class="font-poppins font-bold text-xl sm:text-2xl flex items-center">Konfigurasi</h1>
 
                 <button class="flex w-fit gap-3" id="openPopupProfile">
                     <div class="flex flex-col text-sm">
@@ -187,124 +186,197 @@
                     </div>
                 </div>
 
-
             </div>
 
             <!-- Konten Utama -->
-            <div class="relative overflow-x-auto shadow-md rounded-lg mt-8">
 
 
-                <div class="flex mb-2 items-center ml-auto w-fit">
-                    <!-- Input Pencarian -->
-                    <input type="text" id="search" placeholder="Cari..." class="p-2 border rounded-md mr-2"
-                        onkeyup="searchTable()">
 
-                    <label for="sort" class="mr-2 font-semibold">Sort by</label>
-                    <select name="sort" id="sort" class="p-2 border rounded-md cursor-pointer">
-                        <option value="terbaru">Terbaru</option>
-                        <option value="terlama">Terlama</option>
-                    </select>
+            <!-- TIMELINE -->
+            <div class="relative overflow-x-auto rounded-lg mt-8">
+
+                <!-- Tabel data -->
+                <div class="flex justify-between flex-col md:flex-row gap-5">
+
+                    <div class="flex flex-col w-full">
+                        <div class="flex flex-wrap justify-between items-center gap-2 mb-4">
+                            <div class="flex gap-2">
+                                <button onclick="openModal()"
+                                    class="bg-blue-500 text-white w-fit h-fit px-3 py-2 rounded-md">
+                                    Tambah Merk
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <table id="dataTable" class="w-full text-sm text-left rtl:text-right text-primary2">
+                            <thead class="text-xs text-gray-700 uppercase bg-white">
+                                <tr>
+                                    <th class="px-4 py-3">Merk</th>
+                                    <th class="px-4 py-3">Seri Kendaraan</th>
+                                    <th class="px-4 py-3">Kategori</th>
+                                    <th class="px-4 py-3">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Dummy Data Baru -->
+                                <tr class="bg-white border-b border-gray-200">
+                                    <td class="px-4 py-4">Daihatsu</td>
+                                    <td class="px-4 py-4">Terios X</td>
+                                    <td class="px-4 py-4">Mobil</td>
+                                    <td class="px-4 py-4 space-x-2 whitespace-nowrap">
+                                        <a href="#"
+                                            class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
+                                        <a href="#"
+                                            class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <!-- Modal Background -->
+                        <div id="merkModal"
+                            class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden justify-center items-center">
+                            <!-- Modal Box -->
+                            <div class="bg-white rounded-lg shadow-lg w-full max-w-md p-6">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h2 class="text-lg font-semibold">Tambah Merk</h2>
+                                    <button onclick="closeModal()"
+                                        class="text-gray-500 hover:text-red-500">&times;</button>
+                                </div>
+                                <form>
+                                    <div class="mb-4">
+                                        <label for="merk" class="block text-sm font-medium text-gray-700">Merk</label>
+                                        <input type="text" id="merk" name="merk"
+                                            class="mt-1 p-2 w-full border rounded-md" required>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="seri" class="block text-sm font-medium text-gray-700">Seri
+                                            Kendaraan</label>
+                                        <input type="text" id="seri" name="seri"
+                                            class="mt-1 p-2 w-full border rounded-md" required>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="kategori"
+                                            class="block text-sm font-medium text-gray-700">Kategori</label>
+                                        <select id="kategori" name="kategori" class="mt-1 p-2 w-full border rounded-md"
+                                            required>
+                                            <option value="Mobil">Mobil</option>
+                                            <option value="Motor">Motor</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex justify-end">
+                                        <button type="button" onclick="closeModal()"
+                                            class="mr-2 bg-gray-300 px-4 py-2 rounded-md">Batal</button>
+                                        <button type="submit"
+                                            class="bg-blue-500 text-white px-4 py-2 rounded-md">Simpan</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <script>
+                            function openModal() {
+                                document.getElementById('merkModal').classList.remove('hidden');
+                                document.getElementById('merkModal').classList.add('flex');
+                            }
+
+                            function closeModal() {
+                                document.getElementById('merkModal').classList.remove('flex');
+                                document.getElementById('merkModal').classList.add('hidden');
+                            }
+                        </script>
+
+
+                    </div>
+                    <div class="flex flex-col w-full">
+
+                        <div class="flex flex-wrap justify-between items-center gap-2 mb-4">
+
+                            <div class="flex gap-2">
+                                <button onclick="openAreaModal()"
+                                    class="bg-blue-500 text-white w-fit h-fit px-3 py-2 rounded-md">
+                                    Tambah Area Parkir
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <table id="dataTable" class="w-full text-sm text-left rtl:text-right text-primary2">
+                            <thead class="text-xs text-gray-700 uppercase bg-white">
+                                <tr>
+                                    <th class="px-4 py-3 w-full">Area Parkir</th>
+                                    <th class="px-4 py-3 w-max">Aksi</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <td class="px-4 py-4 w-full">Parkiran Gedung Utama</td>
+                                    <td class="px-4 py-4 space-x-2 w-max whitespace-nowrap">
+                                        <a href="#"
+                                            class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
+                                        <a href="#"
+                                            class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <td class="px-4 py-4 w-full">Parkiran Tower A</td>
+                                    <td class="px-4 py-4 space-x-2 w-max whitespace-nowrap">
+                                        <a href="#"
+                                            class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
+                                        <a href="#"
+                                            class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Modal Area Parkir -->
+                        <div id="areaModal"
+                            class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden justify-center items-center">
+                            <div class="bg-white rounded-lg shadow-lg w-full max-w-md p-6">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h2 class="text-lg font-semibold">Tambah Area Parkir</h2>
+                                    <button onclick="closeAreaModal()"
+                                        class="text-gray-500 hover:text-red-500">&times;</button>
+                                </div>
+                                <form>
+                                    <div class="mb-4">
+                                        <label for="areaParkir" class="block text-sm font-medium text-gray-700">Nama
+                                            Area Parkir</label>
+                                        <input type="text" id="areaParkir" name="areaParkir"
+                                            class="mt-1 p-2 w-full border rounded-md" required>
+                                    </div>
+                                    <div class="flex justify-end">
+                                        <button type="button" onclick="closeAreaModal()"
+                                            class="mr-2 bg-gray-300 px-4 py-2 rounded-md">Batal</button>
+                                        <button type="submit"
+                                            class="bg-blue-500 text-white px-4 py-2 rounded-md">Simpan</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <script>
+                            function openAreaModal() {
+                                document.getElementById('areaModal').classList.remove('hidden');
+                                document.getElementById('areaModal').classList.add('flex');
+                            }
+
+                            function closeAreaModal() {
+                                document.getElementById('areaModal').classList.remove('flex');
+                                document.getElementById('areaModal').classList.add('hidden');
+                            }
+                        </script>
+
+                    </div>
                 </div>
 
-                <script>
-                    // Fungsi Pencarian di Tabel
-                    function searchTable() {
-                        const input = document.getElementById('search').value.toLowerCase();
-                        const rows = document.querySelectorAll('tbody tr');
-
-                        rows.forEach(row => {
-                            const text = row.textContent.toLowerCase();
-                            row.style.display = text.includes(input) ? '' : 'none';
-                        });
-                    }
-                </script>
-
-<table class="min-w-[700px] w-full text-sm text-left rtl:text-right text-primary2">
-    <thead class="text-xs text-gray-700 uppercase bg-white">
-        <tr>
-            <th scope="col" class="px-4 py-3">Nama</th>
-            <th scope="col" class="px-4 py-3">No Whatsapp</th>
-            <th scope="col" class="px-4 py-3">Merk</th>
-            <th scope="col" class="px-4 py-3">Seri</th>
-            <th scope="col" class="px-4 py-3">Di Pinjamkan</th>
-            <th scope="col" class="px-4 py-3">Estimasi di Kembalikan</th>
-            <th scope="col" class="px-4 py-3">Tujuan Peminjaman</th>
-            <th scope="col" class="px-4 py-3">Aksi</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class="bg-white border-b border-gray-200">
-            <th scope="row" class="px-4 py-4 font-medium text-primary2 whitespace-nowrap">Farrel Adelio Asman</th>
-            <td class="px-4 py-4">089686968886</td>
-            <td class="px-4 py-4">Honda</td>
-            <td class="px-4 py-4">Honda Civic 2017</td>
-            <td class="px-4 py-4">01/23/2025 07:40 PM</td>
-            <td class="px-4 py-4">01/24/2025 07:40 PM</td>
-            <td class="px-4 py-4">Menjenguk mahasiswa yang sedang rawat inap</td>
-            <td class="px-4 py-4 space-x-2 flex whitespace-nowrap">
-                <a href="#" class="rounded-md hover:opacity-85 bg-green-500 flex p-2 font-semibold text-white">Accept</a>
-                <a href="#" class="rounded-md hover:opacity-85 bg-red-500 flex p-2 font-semibold text-white">Reject</a>
-            </td>
-        </tr>
-        <tr class="bg-white border-b border-gray-200">
-            <th scope="row" class="px-4 py-4 font-medium text-primary2 whitespace-nowrap">Zoro</th>
-            <td class="px-4 py-4">0987654321</td>
-            <td class="px-4 py-4">Toyota</td>
-            <td class="px-4 py-4">Pajero Pro Max</td>
-            <td class="px-4 py-4">02/23/2025 07:40 PM</td>
-            <td class="px-4 py-4">02/24/2025 07:40 PM</td>
-            <td class="px-4 py-4">Menjenguk mahasiswa yang sedang rawat inap</td>
-            <td class="px-4 py-4 space-x-2 flex whitespace-nowrap">
-                <a href="#" class="rounded-md hover:opacity-85 bg-green-500 flex p-2 font-semibold text-white">Accept</a>
-                <a href="#" class="rounded-md hover:opacity-85 bg-red-500 flex p-2 font-semibold text-white">Reject</a>
-            </td>
-        </tr>
-        <tr class="bg-white border-b border-gray-200">
-            <th scope="row" class="px-4 py-4 font-medium text-primary2 whitespace-nowrap">Lisa Wirawan</th>
-            <td class="px-4 py-4">082123456789</td>
-            <td class="px-4 py-4">BMW</td>
-            <td class="px-4 py-4">BMW X7</td>
-            <td class="px-4 py-4">03/01/2025 10:00 AM</td>
-            <td class="px-4 py-4">03/02/2025 10:00 AM</td>
-            <td class="px-4 py-4">Perjalanan bisnis ke Jakarta</td>
-            <td class="px-4 py-4 space-x-2 flex whitespace-nowrap">
-                <a href="#" class="rounded-md hover:opacity-85 bg-green-500 flex p-2 font-semibold text-white">Accept</a>
-                <a href="#" class="rounded-md hover:opacity-85 bg-red-500 flex p-2 font-semibold text-white">Reject</a>
-            </td>
-        </tr>
-        <tr class="bg-white border-b border-gray-200">
-            <th scope="row" class="px-4 py-4 font-medium text-primary2 whitespace-nowrap">Anton Salim</th>
-            <td class="px-4 py-4">081234567890</td>
-            <td class="px-4 py-4">Mercedes-Benz</td>
-            <td class="px-4 py-4">GLC 300</td>
-            <td class="px-4 py-4">04/15/2025 09:00 AM</td>
-            <td class="px-4 py-4">04/16/2025 09:00 AM</td>
-            <td class="px-4 py-4">Kunjungan keluarga di luar kota</td>
-            <td class="px-4 py-4 space-x-2 flex whitespace-nowrap">
-                <a href="#" class="rounded-md hover:opacity-85 bg-green-500 flex p-2 font-semibold text-white">Accept</a>
-                <a href="#" class="rounded-md hover:opacity-85 bg-red-500 flex p-2 font-semibold text-white">Reject</a>
-            </td>
-        </tr>
-        <tr class="bg-white border-b border-gray-200">
-            <th scope="row" class="px-4 py-4 font-medium text-primary2 whitespace-nowrap">Rudi Hartono</th>
-            <td class="px-4 py-4">085612345678</td>
-            <td class="px-4 py-4">Suzuki</td>
-            <td class="px-4 py-4">Ertiga</td>
-            <td class="px-4 py-4">05/10/2025 08:00 AM</td>
-            <td class="px-4 py-4">05/11/2025 08:00 AM</td>
-            <td class="px-4 py-4">Wisata keluarga</td>
-            <td class="px-4 py-4 space-x-2 flex whitespace-nowrap">
-                <a href="#" class="rounded-md hover:opacity-85 bg-green-500 flex p-2 font-semibold text-white">Accept</a>
-                <a href="#" class="rounded-md hover:opacity-85 bg-red-500 flex p-2 font-semibold text-white">Reject</a>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-
-
-
             </div>
+
+
         </div>
     </div>
 
@@ -343,7 +415,26 @@
             alert('Form submitted!');
             popup.classList.add('hidden');
         });
+
+        // Ambil elemen yang dibutuhkan
+        const openPopupProfile = document.getElementById('openPopupProfile');
+        const closePopupProfile = document.getElementById('closePopupProfile');
+        const popupProfile = document.getElementById('popupProfile');
+
+        // Buka popup profile
+        openPopupProfile.addEventListener('click', () => {
+            popupProfile.classList.remove('hidden');
+        });
+
+        // Tutup popup profile
+        closePopupProfile.addEventListener('click', () => {
+            popupProfile.classList.add('hidden');
+        });
+
+
     </script>
+
+
 </body>
 
 
