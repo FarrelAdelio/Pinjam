@@ -36,13 +36,18 @@
                         class="flex items-center"><ion-icon name="megaphone" class="text-2xl pr-2"></ion-icon>Daftar
                         Permohonan</a></li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="pengembalian-kendaraan.html"
-                        class="flex items-center"><ion-icon name="megaphone" class="text-2xl pr-2"></ion-icon>Pengembalian Kendaraan</a></li>
+                        class="flex items-center"><ion-icon name="megaphone"
+                            class="text-2xl pr-2"></ion-icon>Pengembalian Kendaraan</a></li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="users.html"
                         class="flex items-center"><ion-icon name="person" class="text-2xl pr-2"></ion-icon>Users</a>
                 </li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="permohonan-verifikasi.html"
                         class="flex items-center"><ion-icon name="person-add"
                             class="text-2xl pr-2"></ion-icon>Permohonan Verifikasi</a></li>
+                <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="konfigurasi.html"
+                        class="flex items-center"><ion-icon name="settings"
+                            class="text-2xl pr-2"></ion-icon>Konfigurasi</a>
+                </li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="../index.html"
                         class="flex items-center"><ion-icon name="log-out" class="text-2xl pr-2"></ion-icon>Keluar</a>
                 </li>
@@ -56,7 +61,7 @@
 
             <!-- Navbar -->
             <div class="flex justify-between">
-                <h1 class="font-poppins font-bold text-xl sm:text-2xl flex items-center">Timeline Peminjaman</h1>
+                <h1 class="font-poppins font-bold text-xl sm:text-2xl flex items-center">Pinjam Kendaraan</h1>
 
                 <button class="flex w-fit gap-3" id="openPopupProfile">
                     <div class="flex flex-col text-sm">
@@ -76,6 +81,12 @@
                         <h2 class="text-xl font-semibold mb-4">Form: Data Diri</h2>
 
                         <form id="popupFormProfile">
+                            <div class="mb-4">
+                                <label for="foto-profile" class="block text-sm font-medium">Foto Profile</label>
+                                <input type="file" id="foto-profile" name="foto-profile" required
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                            </div>
+
                             <div class="mb-4">
                                 <label for="name" class="block text-sm font-medium">Nama</label>
                                 <input type="text" id="name" name="name" required
@@ -141,6 +152,17 @@
                                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                             </div>
 
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium">SIM</label>
+                                <p class="text-xs">SIM A</p>
+                                <input type="file" id="sima" name="sima" required
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+
+                                <p class="text-xs mt-2">SIM B</p>
+                                <input type="file" id="simb" name="simb" required
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                            </div>
+
                             <div class="flex flex-col w-full mb-4">
                                 <label for="depart"
                                     class="block text-sm font-medium  focus:ring-2 focus:ring-blue-400">Prodi</label>
@@ -173,306 +195,129 @@
             <!-- TIMELINE -->
             <div class="relative overflow-x-auto shadow-md rounded-lg mt-8">
 
-                <div class="flex justify-between whitespace-nowrap gap-2">
-                    <a href="pinjam-kendaraan.html"
-                        class="bg-blue-500 text-white w-fit h-fit px-2 py-2 rounded-md">Pinjam
-                        Sekarang</a>
-
-                    <!-- Popup (Modal) -->
-                    <div id="popupPinjam"
-                        class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
-                        <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full max-h-[90vh] overflow-y-auto">
-                            <h2 class="text-xl font-semibold mb-4">Form: Pinjam Kendaraan</h2>
-
-                            <form id="popupFormPinjam">
-                                <div class="mb-4">
-                                    <label for="foto-profile" class="block text-sm font-medium">Foto Profile</label>
-                                    <input type="file" id="foto-profile" name="foto-profile" required
-                                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="name" class="block text-sm font-medium">Nama</label>
-                                    <input type="text" id="name" name="name" required
-                                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="wa" class="block text-sm font-medium">No Whatsapp</label>
-                                    <input type="text" id="wa" name="wa" required
-                                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="email" class="block text-sm font-medium">Email</label>
-                                    <input type="email" id="email" name="email" required
-                                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="email" class="block text-sm font-medium">Estimasi</label>
-                                    <div class="flex flex-col gap-2 sm:flex-row sm:justify-between">
-                                        <input type="datetime-local" id="email" name="email" required
-                                            class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 w-full">
-
-                                        <input type="datetime-local" id="email" name="email" required
-                                            class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 w-full">
-                                    </div>
-                                </div>
-
-
-                                <div class="mb-4">
-                                    <label for="merk" class="block text-sm font-medium">Pilih Kendaraan</label>
-                                    <div class="mb-4">
-                                        <select name="depart" id="sort"
-                                            class="p-2 border rounded-md md:w-24 xl:w-32 z-20 focus:ring-2 focus:ring-blue-400">
-                                            <option value="poltek">Avanza</option>
-                                            <option value="saab">Toyota</option>
-                                            <option value="saab">Beat</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="relative inline-block w-64">
-                                        <!-- Dropdown Button -->
-                                        <button id="dropdownButton" type="button"
-                                            class="p-2 w-full border rounded-md text-left bg-white">Seri
-                                            Kendaraan</button>
-
-                                        <!-- Dropdown -->
-                                        <div id="dropdownContent"
-                                            class="absolute hidden w-full border bg-white rounded-md shadow-md mt-1 z-50">
-                                            <div class="option p-2 hover:bg-gray-100 flex items-center cursor-pointer"
-                                                data-value="toyota1">
-                                                <img src="../assets/avanza (3).jpg" alt="Toyota Avanza 1.3 G"
-                                                    class="w-10 h-10 mr-2">Toyota Avanza 1.3 G
-                                            </div>
-                                            <div class="option p-2 hover:bg-gray-100 flex items-center cursor-pointer"
-                                                data-value="toyota2">
-                                                <img src="../assets/avanza (4).jpg" alt="2022 Toyota Avanza 1.3 E"
-                                                    class="w-10 h-10 mr-2">2022 Toyota
-                                                Avanza 1.3 E
-                                            </div>
-                                            <div class="option p-2 hover:bg-gray-100 flex items-center cursor-pointer"
-                                                data-value="toyota3">
-                                                <img src="../assets/avanza (5).jpg" alt="Toyota Avanza 1.3 E"
-                                                    class="w-10 h-10 mr-2">Toyota Avanza 1.3 E
-                                            </div>
-                                            <div class="option p-2 hover:bg-gray-100 flex items-center cursor-pointer"
-                                                data-value="toyota3">
-                                                <img src="../assets/beat-deluxe.jpg" alt="Toyota Avanza 1.3 E"
-                                                    class="w-10 h-10 mr-2">Toyota Avanza 1.3 E
-                                            </div>
-                                        </div>
-
-                                        <!-- Form Modal -->
-                                        <input type="hidden" id="selectedValue" name="sort" value="">
-                                    </div>
-
-                                    <script>
-                                        const dropdownButton = document.getElementById('dropdownButton');
-                                        const dropdownContent = document.getElementById('dropdownContent');
-                                        const hiddenInput = document.getElementById('selectedValue');
-
-                                        dropdownButton.addEventListener('click', () => {
-                                            dropdownContent.classList.toggle('hidden');
-                                        });
-
-                                        document.querySelectorAll('.option').forEach(option => {
-                                            option.addEventListener('click', () => {
-                                                dropdownButton.textContent = option.textContent.trim();
-                                                hiddenInput.value = option.dataset.value;
-                                                dropdownContent.classList.add('hidden');
-                                            });
-                                        });
-
-                                        document.addEventListener('click', (e) => {
-                                            if (!dropdownButton.contains(e.target) && !dropdownContent.contains(e.target)) {
-                                                dropdownContent.classList.add('hidden');
-                                            }
-                                        });
-                                    </script>
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="tujuan" class="block text-sm font-medium">Tujuan Peminjaman</label>
-                                    <textarea type="text" id="tujuan" name="tujuan" required
-                                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
-                                </div>
-
-                                <div class="flex justify-end space-x-2">
-                                    <button type="button" id="closePopupPinjam"
-                                        class="bg-gray-300 text-black px-4 py-2 rounded-md">Cancel</button>
-                                    <button type="submit"
-                                        class="bg-green-500 text-white px-4 py-2 rounded-md">Submit</button>
-                                </div>
-                            </form>
-                        </div>
+                <!-- Kontrol atas tabel -->
+                <div class="flex flex-wrap justify-between items-center gap-2 mb-4">
+                    <!-- Button Pinjam dan Unduh -->
+                    <div class="flex gap-2">
+                        <a href="pinjam-kendaraan.html"
+                            class="bg-blue-500 text-white w-fit h-fit px-3 py-2 rounded-md">Pinjam Sekarang</a>
+                        <button onclick="exportToExcel()"
+                            class="bg-green-500 text-white w-fit h-fit px-3 py-2 rounded-md">Unduh XLSX</button>
                     </div>
 
-                    <div class="flex mb-2 items-center ml-auto w-fit">
-                        <input type="text" id="search" placeholder="Cari..." class="p-2 border rounded-md mr-2"
+                    <!-- Search & Sort -->
+                    <div class="flex flex-wrap gap-2 items-center ml-auto">
+                        <input type="text" id="search" placeholder="Cari..." class="p-2 border rounded-md"
                             onkeyup="searchTable()">
 
-                        <label for="sort" class="mr-2 font-semibold">Sort by</label>
+                        <label for="sort" class="font-semibold">Sort by</label>
                         <select name="sort" id="sort" class="p-2 border rounded-md cursor-pointer">
                             <option value="terbaru">Terbaru</option>
                             <option value="terlama">Terlama</option>
                         </select>
                     </div>
-
-                    <script>
-                        function searchTable() {
-                            const input = document.getElementById('search').value.toLowerCase();
-                            const rows = document.querySelectorAll('tbody tr');
-
-                            rows.forEach(row => {
-                                const text = row.textContent.toLowerCase();
-                                row.style.display = text.includes(input) ? '' : 'none';
-                            });
-                        }
-                    </script>
                 </div>
 
-                <table id="pinjamTable" class="min-w-[700px] w-full text-sm text-left rtl:text-right text-primary2">
+                <!-- Tabel data -->
+                <table id="dataTable" class="min-w-[700px] w-full text-sm text-left rtl:text-right text-primary2">
                     <thead class="text-xs text-gray-700 uppercase bg-white">
-                      <tr>
-                        <th class="px-4 py-3">Plat Nomor</th>
-                        <th class="px-4 py-3">Merk</th>
-                        <th class="px-4 py-3">Seri</th>
-                        <th class="px-4 py-3">Kategori</th>
-                        <th class="px-4 py-3">Peminjam</th>
-                        <th class="px-4 py-3">Dipinjam</th>
-                        <th class="px-4 py-3">Estimasi di Kembalikan</th>
-                        <th class="px-4 py-3">Status</th>
-                        <th class="px-4 py-3">Action</th>
-                      </tr>
+                        <tr>
+                            <th class="px-4 py-3">Plat Nomor</th>
+                            <th class="px-4 py-3">Merk</th>
+                            <th class="px-4 py-3">Seri</th>
+                            <th class="px-4 py-3">Kategori</th>
+                            <th class="px-4 py-3">Peminjam</th>
+                            <th class="px-4 py-3">Dipinjam</th>
+                            <th class="px-4 py-3">Estimasi di Kembalikan</th>
+                            <th class="px-4 py-3">Status</th>
+                            <th class="px-4 py-3">Aksi</th>
+                        </tr>
                     </thead>
                     <tbody>
-                      <!-- Telat (Estimasi sudah lewat) -->
-                      <tr class="bg-white border-b border-gray-200 transition-all duration-300">
-                        <th class="px-4 py-4 font-medium text-primary2">BP1234</th>
-                        <td class="px-4 py-4">Avanza</td>
-                        <td class="px-4 py-4">G Type</td>
-                        <td class="px-4 py-4">Mobil</td>
-                        <td class="px-4 py-4">Dadang</td>
-                        <td class="px-4 py-4">04/20/2025 10:00 AM</td>
-                        <td class="px-4 py-4">04/21/2025 10:00 AM</td>
-                        <td class="px-4 py-4">
-                          <p class="bg-yellow-100 rounded-full w-fit px-2 font-semibold">Digunakan</p>
-                        </td>
-                        <td class="px-4 py-4 space-x-2 whitespace-nowrap">
-                          <a href="#" class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
-                          <a href="#" class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
-                        </td>
-                      </tr>
-                  
-                      <!-- H-1 (Estimasi Besok) -->
-                      <tr class="bg-white border-b border-gray-200 transition-all duration-300">
-                        <th class="px-4 py-4 font-medium text-primary2">BP5678</th>
-                        <td class="px-4 py-4">Xenia</td>
-                        <td class="px-4 py-4">R Type</td>
-                        <td class="px-4 py-4">Mobil</td>
-                        <td class="px-4 py-4">Dudung</td>
-                        <td class="px-4 py-4">04/25/2025 02:00 PM</td>
-                        <td class="px-4 py-4">04/27/2025 02:00 PM</td> <!-- Misal hari ini 26 April 2025 -->
-                        <td class="px-4 py-4">
-                          <p class="bg-yellow-100 rounded-full w-fit px-2 font-semibold">Digunakan</p>
-                        </td>
-                        <td class="px-4 py-4 space-x-2 whitespace-nowrap">
-                          <a href="#" class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
-                          <a href="#" class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
-                        </td>
-                      </tr>
-                  
-                      <!-- Aman (Estimasi Masih Lama) -->
-                      <tr class="bg-white border-b border-gray-200 transition-all duration-300">
-                        <th class="px-4 py-4 font-medium text-primary2">BP9101</th>
-                        <td class="px-4 py-4">Brio</td>
-                        <td class="px-4 py-4">S Type</td>
-                        <td class="px-4 py-4">Mobil</td>
-                        <td class="px-4 py-4">Diding</td>
-                        <td class="px-4 py-4">04/25/2025 09:00 AM</td>
-                        <td class="px-4 py-4">05/01/2025 09:00 AM</td>
-                        <td class="px-4 py-4">
-                          <p class="bg-yellow-100 rounded-full w-fit px-2 font-semibold">Digunakan</p>
-                        </td>
-                        <td class="px-4 py-4 space-x-2 whitespace-nowrap">
-                          <a href="#" class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
-                          <a href="#" class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
-                        </td>
-                      </tr>
-                  
-                      <!-- Status Done -->
-                      <tr class="bg-white border-b border-gray-200 transition-all duration-300">
-                        <th class="px-4 py-4 font-medium text-primary2">BP1122</th>
-                        <td class="px-4 py-4">Jazz</td>
-                        <td class="px-4 py-4">RS Type</td>
-                        <td class="px-4 py-4">Mobil</td>
-                        <td class="px-4 py-4">Diding</td>
-                        <td class="px-4 py-4">04/20/2025 11:00 AM</td>
-                        <td class="px-4 py-4">04/21/2025 11:00 AM</td>
-                        <td class="px-4 py-4">
-                          <p class="bg-green-300 rounded-full w-fit px-2 font-semibold">Done</p>
-                        </td>
-                        <td class="px-4 py-4 space-x-2 whitespace-nowrap">
-                          <a href="#" class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
-                          <a href="#" class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
-                        </td>
-                      </tr>
+                        <!-- Dummy Data Baru -->
+                        <tr class="bg-white border-b border-gray-200">
+                            <td class="px-4 py-4 font-medium text-primary2">BP1240</td>
+                            <td class="px-4 py-4">Daihatsu</td>
+                            <td class="px-4 py-4">Terios X</td>
+                            <td class="px-4 py-4">Mobil</td>
+                            <td class="px-4 py-4">Yuni</td>
+                            <td class="px-4 py-4">2025-02-10 10:00 AM</td>
+                            <td class="px-4 py-4">2025-02-12 10:00 AM</td>
+                            <td class="px-4 py-4">
+                                <p class="bg-yellow-100 rounded-full w-fit px-2 font-semibold">Digunakan</p>
+                            </td>
+                            <td class="px-4 py-4 space-x-2 whitespace-nowrap">
+                                <a href="#"
+                                    class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
+                                <a href="#"
+                                    class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
+                            </td>
+                        </tr>
+                        <tr class="bg-white border-b border-gray-200">
+                            <td class="px-4 py-4 font-medium text-primary2">BP1241</td>
+                            <td class="px-4 py-4">Mitsubishi</td>
+                            <td class="px-4 py-4">Pajero Sport</td>
+                            <td class="px-4 py-4">Mobil</td>
+                            <td class="px-4 py-4">Bambang</td>
+                            <td class="px-4 py-4">2025-02-11 02:30 PM</td>
+                            <td class="px-4 py-4">2025-02-13 02:30 PM</td>
+                            <td class="px-4 py-4">
+                                <p class="bg-green-300 rounded-full w-fit px-2 font-semibold">Selesai</p>
+                            </td>
+                            <td class="px-4 py-4 space-x-2 whitespace-nowrap">
+                                <a href="#"
+                                    class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
+                                <a href="#"
+                                    class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
+                            </td>
+                        </tr>
+                        <tr class="bg-white border-b border-gray-200">
+                            <td class="px-4 py-4 font-medium text-primary2">BP1242</td>
+                            <td class="px-4 py-4">Nissan</td>
+                            <td class="px-4 py-4">Livina SV</td>
+                            <td class="px-4 py-4">Mobil</td>
+                            <td class="px-4 py-4">Soleh</td>
+                            <td class="px-4 py-4">2025-02-12 08:00 AM</td>
+                            <td class="px-4 py-4">2025-02-13 08:00 AM</td>
+                            <td class="px-4 py-4">
+                                <p class="bg-green-300 rounded-full w-fit px-2 font-semibold">Selesai</p>
+                            </td>
+                            <td class="px-4 py-4 space-x-2 whitespace-nowrap">
+                                <a href="#"
+                                    class="font-medium bg-yellow-300 px-3 py-1 rounded-lg hover:opacity-60">Edit</a>
+                                <a href="#"
+                                    class="font-medium bg-red-500 px-3 py-1 rounded-lg hover:opacity-60">Hapus</a>
+                            </td>
+                        </tr>
                     </tbody>
-                  </table>
-                  
-                  <script>
-                    function updateRowColors() {
-                      const now = new Date();
-                  
-                      const rows = document.querySelectorAll('#pinjamTable tbody tr');
-                      rows.forEach(row => {
-                        const cells = row.querySelectorAll("td");
-                        if (cells.length < 7) return;
-                  
-                        const estimasiText = cells[6].textContent.trim();
-                        const statusText = cells[7].textContent.trim();
-                        const estimasiDate = parseDate(estimasiText);
-                  
-                        // Reset semua bg-* dulu
-                        row.classList.remove("bg-white", "bg-red-100", "bg-yellow-100", "bg-green-300");
-                  
-                        if (statusText.toLowerCase() === "done") {
-                          row.classList.add("bg-green-300"); // Done
-                          return;
-                        }
-                  
-                        const diffTime = estimasiDate - now;
-                        const diffDays = diffTime / (1000 * 60 * 60 * 24);
-                  
-                        if (diffTime < 0) {
-                          row.classList.add("bg-red-100"); // Telat
-                        } else if (diffDays < 1) {
-                          row.classList.add("bg-yellow-100"); // H-1
-                        } else {
-                          row.classList.add("bg-white"); // Aman
-                        }
-                      });
-                    }
-                  
-                    // Helper function to parse date
-                    function parseDate(dateStr) {
-                      const [date, time] = dateStr.split(" ");
-                      const [day, month, year] = date.split("/");
-                      const [hour, minute] = time.split(":");
-                      return new Date(`${year}-${month}-${day}T${hour}:${minute}:00`);
-                    }
-                  
-                    // Call the function to update row colors when the page loads
-                    window.onload = updateRowColors;
-                  </script>
-                  
-                  
-                
-        </div>
+                </table>
 
-    </div>
+                <!-- Script pencarian -->
+                <script>
+                    function searchTable() {
+                        const input = document.getElementById('search').value.toLowerCase();
+                        const rows = document.querySelectorAll('tbody tr');
+
+                        rows.forEach(row => {
+                            const text = row.textContent.toLowerCase();
+                            row.style.display = text.includes(input) ? '' : 'none';
+                        });
+                    }
+                </script>
+
+                <!-- SheetJS CDN -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+                <script>
+                    function exportToExcel() {
+                        const table = document.getElementById("dataTable");
+                        const wb = XLSX.utils.table_to_book(table, { sheet: "Data Peminjaman" });
+                        XLSX.writeFile(wb, "data-peminjaman.xlsx");
+                    }
+                </script>
+            </div>
+
+
+        </div>
     </div>
 
     <script>
@@ -488,11 +333,11 @@
             sidebar.classList.add('-translate-x-full');
         });
 
-        // popup Pinjjam
+        // popup Profile
 
-        const openPopup = document.getElementById('openPopupPinjam');
-        const closePopup = document.getElementById('closePopupPinjam');
-        const popup = document.getElementById('popupPinjam');
+        const openPopup = document.getElementById('openPopupProfile');
+        const closePopup = document.getElementById('closePopupProfile');
+        const popup = document.getElementById('popupProfile');
 
         // Buka popup
         openPopup.addEventListener('click', () => {
@@ -505,13 +350,12 @@
         });
 
         // Submit form
-        document.getElementById('popupFormPinjam').addEventListener('submit', (e) => {
+        document.getElementById('popupForm').addEventListener('submit', (e) => {
             e.preventDefault();
             alert('Form submitted!');
             popup.classList.add('hidden');
         });
-
-
+        
         // Ambil elemen yang dibutuhkan
         const openPopupProfile = document.getElementById('openPopupProfile');
         const closePopupProfile = document.getElementById('closePopupProfile');
@@ -529,8 +373,8 @@
 
 
     </script>
-    
-        
+
+
 </body>
 
 

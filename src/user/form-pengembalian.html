@@ -24,8 +24,7 @@
                         class="flex items-center"><ion-icon name="apps" class="text-2xl pr-2"></ion-icon>Dashboard</a>
                 </li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="timeline-peminjaman-user.html"
-                        class="flex items-center"><ion-icon name="calendar" class="text-2xl pr-2"></ion-icon>Timeline
-                        Peminjaman</a></li>
+                        class="flex items-center"><ion-icon name="calendar" class="text-2xl pr-2"></ion-icon>Timeline</a></li>
                 <li class="hover:bg-slate-200 rounded-l-full p-2"><a href="peminjaman-saya-user.html"
                         class="flex items-center"><ion-icon name="car" class="text-2xl pr-2"></ion-icon>Peminjaman
                         Saya</a></li>
@@ -140,6 +139,17 @@
                                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                             </div>
 
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium">SIM</label>
+                                <p class="text-xs">SIM A</p>
+                                <input type="file" id="sima" name="sima" required
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+
+                                <p class="text-xs mt-2">SIM B</p>
+                                <input type="file" id="simb" name="simb" required
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                            </div>
+
                             <div class="flex flex-col w-full mb-4">
                                 <label for="depart"
                                     class="block text-sm font-medium  focus:ring-2 focus:ring-blue-400">Prodi</label>
@@ -168,6 +178,10 @@
             <div class="relative overflow-x-auto mt-8">
                 <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full max-h-[80vh] overflow-y-auto m-auto">
                     <h2 class="text-xl font-bold mb-4">Pengembalian Kendaraan</h2>
+                    <!-- Pastikan ini sudah di head halaman kamu -->
+                    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+                    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
                     <form id="popupFormPinjam1" class="font-normal">
 
                         <h2 class="text-lg font-semibold mb-4">Kondisi Kendaraan</h2>
@@ -213,60 +227,83 @@
                             <option value="bermasalah">Bermasalah</option>
                         </select>
 
+                        <!-- Foto Dokumentasi -->
                         <div class="mb-4">
                             <label class="block mb-2 font-medium">Foto Dokumentasi</label>
                             <input type="file" id="foto" name="foto" required
                                 class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                         </div>
 
-                        <!-- Tambahkan ini di <head> -->
-                        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
-                        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+                        <h2 class="text-lg font-semibold mb-4 mt-6">Pengembalian Kendaraan</h2>
 
-                        <!-- Form Lokasi -->
-                        <div class="mt-6">
-                            <h2 class=" font-poppins mb-2">Lokasi Pengembalian</h2>
-                            <div id="map" class="rounded-xl shadow-md" style="height: 300px;"></div>
+                        <!-- Tanggal Pengembalian -->
+                        <label class="block mb-2 font-medium">Tanggal Pengembalian</label>
+                        <input type="date" name="tanggal_pengembalian"
+                            class="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4"
+                            required>
 
-                            <input type="hidden" name="latitude" id="latitude">
-                            <input type="hidden" name="longitude" id="longitude">
+                        <!-- Lokasi Pengembalian -->
+                        <label class="block mb-2 font-medium">Lokasi Pengembalian</label>
+                        <select name="lokasi_pengembalian"
+                            class="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4"
+                            required>
+                            <option value="">Pilih Lokasi Pengembalian</option>
+                            <option value="Parkiran Gedung Utama">Parkiran Gedung Utama</option>
+                            <option value="Parkiran Tower A">Parkiran Tower A</option>
+                        </select>
 
-                            <p class="text-xs mt-2 text-slate-500">Pastikan lokasi sudah sesuai.</p>
-                        </div>
+                        <!-- Peta Lokasi Kendaraan Terakhir -->
+                        <label class="block mb-2 font-medium">Pilih Lokasi Kendaraan Terakhir</label>
+                        <div id="map" class="mb-4 rounded-md border" style="height: 300px;"></div>
 
-                        <script>
-                            // Inisialisasi peta
-                            const map = L.map('map').setView([0, 0], 13);
-                            const marker = L.marker([0, 0]).addTo(map);
+                        <input type="hidden" name="latitude" id="latitude" value="1.123437">
+                        <input type="hidden" name="longitude" id="longitude" value="104.048428">
 
-                            // Tambahkan tiles (background peta)
-                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                                attribution: '&copy; OpenStreetMap'
-                            }).addTo(map);
-
-                            // Cari lokasi user
-                            navigator.geolocation.getCurrentPosition(function (position) {
-                                const lat = position.coords.latitude;
-                                const lng = position.coords.longitude;
-
-                                // Update marker dan peta
-                                map.setView([lat, lng], 15);
-                                marker.setLatLng([lat, lng]);
-
-                                // Set input value
-                                document.getElementById('latitude').value = lat;
-                                document.getElementById('longitude').value = lng;
-                            }, function () {
-                                alert('Gagal mengambil lokasi. Pastikan GPS aktif.');
-                            });
-                        </script>
-
-                        <div class="flex justify-end space-x-2">
-                            <a href="peminjaman-saya-user.html"
+                        <div class="flex justify-end space-x-2 mt-6">
+                            <a href="pinjam-kendaraan.html"
                                 class="bg-gray-300 text-black px-4 py-2 rounded-md">Cancel</a>
                             <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md">Submit</button>
                         </div>
                     </form>
+
+                    <script>
+                        const defaultLat = 1.123437;
+                        const defaultLng = 104.048428;
+
+                        // Batas lebih ketat area Politeknik Negeri Batam
+                        const southWest = L.latLng(1.1195, 104.0445);
+                        const northEast = L.latLng(1.1275, 104.0515);
+                        const bounds = L.latLngBounds(southWest, northEast);
+
+                        const map = L.map('map', {
+                            maxBounds: bounds,
+                            maxBoundsViscosity: 1.0,
+                            minZoom: 18,
+                            maxZoom: 21
+                        }).setView([defaultLat, defaultLng], 19);
+
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '© OpenStreetMap contributors'
+                        }).addTo(map);
+
+                        const marker = L.marker([defaultLat, defaultLng], {
+                            draggable: true
+                        }).addTo(map).bindPopup('Geser marker untuk pilih lokasi').openPopup();
+
+                        marker.on('dragend', function (e) {
+                            const pos = e.target.getLatLng();
+
+                            if (!bounds.contains(pos)) {
+                                marker.setLatLng([defaultLat, defaultLng]);
+                                alert('Lokasi harus di dalam area Politeknik Negeri Batam');
+                                return;
+                            }
+
+                            document.getElementById('latitude').value = pos.lat.toFixed(6);
+                            document.getElementById('longitude').value = pos.lng.toFixed(6);
+                        });
+                    </script>
+
                 </div>
             </div>
         </div>
