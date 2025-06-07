@@ -103,16 +103,16 @@
 
                             <div class="mb-4">
                                 <label for="nip" class="block text-sm font-medium">NIP</label>
-                                <input type="nip" id="nip" name="nip" required
+                                <input type="text" id="nip" name="nip" required maxlength="18"
                                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                                    maxlength="18" value="11111111111111111">
+                                    value="11111111111111111">
                             </div>
 
                             <div class="mb-4">
                                 <label for="no-hp" class="block text-sm font-medium">No Whatsapp</label>
-                                <input type="text" id="no-hp" name="no-hp" required
+                                <input type="text" id="no-hp" name="no-hp" required maxlength="18"
                                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                                    maxlength="18" value="089686968886">
+                                    value="089686968886">
                             </div>
 
                             <div class="mb-4 relative">
@@ -120,8 +120,6 @@
                                 <input type="password" id="pass" name="pass" required
                                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                                     value="farrel@2025">
-
-                                <!-- Tombol Show/Hide dengan Ionicons -->
                                 <button type="button" id="togglePass"
                                     class="absolute right-2 top-8 text-xl text-gray-500">
                                     <ion-icon id="eyeIcon" name="eye-off"></ion-icon>
@@ -144,37 +142,69 @@
                                 });
                             </script>
 
-
-
                             <div class="mb-4">
-                                <label for="email" class="block text-sm font-medium">KTP</label>
-                                <input type="file" id="email" name="email" required
+                                <label for="ktp" class="block text-sm font-medium">KTP</label>
+                                <input type="file" id="ktp" name="ktp" required
                                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                             </div>
 
+                            <!-- Dropdown SIM (Single Select, Tambah Input Setiap Pilihan Baru) -->
                             <div class="mb-4">
-                                <label for="email" class="block text-sm font-medium">SIM</label>
-                                <p class="text-xs">SIM A</p>
-                                <input type="file" id="sima" name="sima" required
+                                <label for="simDropdown" class="block text-sm font-medium mb-2">Tambah SIM</label>
+                                <select id="simDropdown"
                                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-
-                                <p class="text-xs mt-2">SIM B</p>
-                                <input type="file" id="simb" name="simb" required
-                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                                    <option value="">Pilih SIM</option>
+                                    <option value="A">SIM A</option>
+                                    <option value="B">SIM B</option>
+                                    <option value="C">SIM C</option>
+                                </select>
                             </div>
+
+                            <!-- Tempat input file SIM -->
+                            <div id="simFileInputs" class="mb-4"></div>
+
+                            <script>
+                                const simDropdown = document.getElementById('simDropdown');
+                                const simFileInputs = document.getElementById('simFileInputs');
+                                const addedSIMs = new Set(); // menyimpan SIM yang sudah ditambahkan
+
+                                simDropdown.addEventListener('change', () => {
+                                    const simType = simDropdown.value;
+                                    if (!simType || addedSIMs.has(simType)) return;
+
+                                    // Tambahkan input baru
+                                    const group = document.createElement('div');
+                                    group.className = 'mt-2';
+                                    group.id = `group-sim-${simType}`;
+
+                                    const label = document.createElement('label');
+                                    label.className = 'block text-sm font-medium';
+                                    label.textContent = `Upload SIM ${simType}`;
+
+                                    const input = document.createElement('input');
+                                    input.type = 'file';
+                                    input.name = `sim${simType.toLowerCase()}`;
+                                    input.className = 'w-full p-2 border border-gray-300 rounded-md mt-1';
+
+                                    group.appendChild(label);
+                                    group.appendChild(input);
+                                    simFileInputs.appendChild(group);
+
+                                    addedSIMs.add(simType); // tandai SIM ini sudah ditambahkan
+                                    simDropdown.value = ""; // reset dropdown
+                                });
+                            </script>
+
 
                             <div class="flex flex-col w-full mb-4">
-                                <label for="depart"
-                                    class="block text-sm font-medium  focus:ring-2 focus:ring-blue-400">Prodi</label>
-
+                                <label for="depart" class="block text-sm font-medium">Prodi</label>
                                 <select name="depart" id="sort" disabled
-                                    class="p-2 border rounded-md w-full  focus:ring-2 focus:ring-blue-400">
+                                    class="p-2 border rounded-md w-full focus:ring-2 focus:ring-blue-400">
                                     <option value="TRPL">Teknik Rekayasa Perangkat Lunak</option>
                                     <option value="MB">Manajemen Bisnis</option>
                                     <option value="TI">Teknik Informatika</option>
                                 </select>
                             </div>
-
 
                             <div class="flex justify-end space-x-2 mt-2">
                                 <button type="button" id="closePopupProfile"
@@ -185,6 +215,7 @@
                         </form>
                     </div>
                 </div>
+
 
 
             </div>
@@ -242,8 +273,7 @@
                                 <div class="background w-10 h-10 md:w-20 md:h-20 xl:w-20 xl:h-20 bg-center bg-cover rounded-full m-auto shadow-sm"
                                     style="background-image: url(../assets/user\ \(2\).jpg);"></div>
                                 <div class="flex flex-col">
-                                    <h1
-                                        class="font-bold tracking-wide text-center text-xs sm:text-lg font-poppins">
+                                    <h1 class="font-bold tracking-wide text-center text-xs sm:text-lg font-poppins">
                                         Farrel
                                     </h1>
                                     <p class="text-center text-slate-400 font-poppins text-xs md:text-sm">Dept.
@@ -256,8 +286,7 @@
                                 <div class="background w-10 h-10 md:w-20 md:h-20 xl:w-20 xl:h-20 bg-center bg-cover rounded-full m-auto shadow-sm"
                                     style="background-image: url(../assets/user\ \(3\).jpg);"></div>
                                 <div class="flex flex-col">
-                                    <h1
-                                        class="font-bold tracking-wide text-center text-xs sm:text-lg font-poppins">
+                                    <h1 class="font-bold tracking-wide text-center text-xs sm:text-lg font-poppins">
                                         Adelio
                                     </h1>
                                     <p class="text-center text-slate-400 font-poppins text-xs md:text-sm">Dept.
@@ -270,8 +299,7 @@
                                 <div class="background w-10 h-10 md:w-20 md:h-20 xl:w-20 xl:h-20 bg-center bg-cover rounded-full m-auto shadow-sm"
                                     style="background-image: url(../assets/user\ \(4\).jpg);"></div>
                                 <div class="flex flex-col">
-                                    <h1
-                                        class="font-bold tracking-wide text-center text-xs sm:text-lg font-poppins">
+                                    <h1 class="font-bold tracking-wide text-center text-xs sm:text-lg font-poppins">
                                         Asman
                                     </h1>
                                     <p class="text-center text-slate-400 font-poppins text-xs md:text-sm">Dept.
@@ -358,7 +386,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        
+
                     </div>
                 </div>
 
@@ -401,11 +429,12 @@
                                 <p class="text-sm"><b>Azhar</b>, menunggu untuk verifikasi akun.</p>
                             </li>
                         </ul>
-                        <a href="daftar-permohonan.html" class="flex mt-2 mx-5 items-start border-2 border-dotted border-slate-300 rounded-xl p-2">
+                        <a href="daftar-permohonan.html"
+                            class="flex mt-2 mx-5 items-start border-2 border-dotted border-slate-300 rounded-xl p-2">
                             <h1 class="font-semibold mx-auto">Setujui Peminjaman</h1>
                         </a>
                     </div>
-                    
+
                     <h1 class="font-bold font-poppins text-xl mt-7 flex sm:hidden md:flex">Verifikasi Akun Terbaru</h1>
                     <div class="flex flex-col bg-white py-5 rounded-xl shadow-sm">
                         <ul class="flex flex-col gap-5 max-h-56 px-5 overflow-y-auto">
@@ -440,7 +469,8 @@
                                 <p class="text-sm"><b>Azhar</b>, menunggu untuk verifikasi akun.</p>
                             </li>
                         </ul>
-                        <a href="permohonan-verifikasi.html" class="flex mt-2 mx-5 items-start border-2 border-dotted border-slate-300 rounded-xl p-2">
+                        <a href="permohonan-verifikasi.html"
+                            class="flex mt-2 mx-5 items-start border-2 border-dotted border-slate-300 rounded-xl p-2">
                             <h1 class="font-semibold mx-auto">Verifikasi Login</h1>
                         </a>
                     </div>
